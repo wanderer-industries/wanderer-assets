@@ -1,0 +1,103 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@v9
+        with:
+          version: latest
+          working-directory: wanderer-sde
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+
+      - name: Run tests
+        working-directory: wanderer-sde
+        run: go test -v -race -coverprofile=coverage.out ./...
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./wanderer-sde/coverage.out
+          fail_ci_if_error: false
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+
+      - name: Build
+        working-directory: wanderer-sde
+        run: go build -v ./...
+
+      - name: Build binary
+        run: make build
+
+  integration:
+    name: Integration Test
+    runs-on: ubuntu-latest
+    # Only run on main branch or when explicitly requested
+    if: github.ref == 'refs/heads/main' || contains(github.event.pull_request.labels.*.name, 'run-integration')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+
+      - name: Build
+        run: make build
+
+      - name: Run integration test
+        run: |
+          ./bin/sdeconvert --download --output ./test-output --verbose
+          # Verify expected CSV output files exist (default format is CSV)
+          test -f ./test-output/mapSolarSystems.csv
+          # Verify CSV files are not empty and have headers
+          test $(wc -l < ./test-output/mapSolarSystems.csv) -gt 1
+          grep -q "solarSystemID" ./test-output/mapSolarSystems.csv
+          test -f ./test-output/mapRegions.csv
+          test -f ./test-output/mapConstellations.csv
+          test -f ./test-output/invTypes.csv
+          test -f ./test-output/invGroups.csv
+          test -f ./test-output/mapSolarSystemJumps.csv
+          test -f ./test-output/mapLocationWormholeClasses.csv
+          test -f ./test-output/sde_metadata.json
+          # Verify metadata JSON is valid
+          jq empty ./test-output/sde_metadata.json
+        timeout-minutes: 15

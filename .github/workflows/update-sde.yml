@@ -1,0 +1,105 @@
+name: Update SDE Data
+
+on:
+  schedule:
+    # Run weekly on Sunday at 00:00 UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+    # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  check-sde-update:
+    runs-on: ubuntu-latest
+    outputs:
+      sde_updated: ${{ steps.check.outputs.updated }}
+      sde_version: ${{ steps.check.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check SDE Version
+        id: check
+        run: |
+          # Fetch latest SDE build number from CCP's API (JSON Lines format)
+          echo "Fetching SDE version from CCP API..."
+          LATEST=$(curl -s https://developers.eveonline.com/static-data/tranquility/latest.jsonl | jq -r 'select(._key == "sde") | .buildNumber')
+          echo "Extracted version: $LATEST"
+
+          if [ -z "$LATEST" ]; then
+            echo "Failed to fetch SDE version from CCP API"
+            exit 1
+          fi
+
+          echo "Latest SDE version: $LATEST"
+          echo "version=$LATEST" >> $GITHUB_OUTPUT
+
+          # Check if we've processed this version before
+          if [ -f sde-files/.last-sde-version ] && [ "$(cat sde-files/.last-sde-version)" = "$LATEST" ]; then
+            echo "SDE version $LATEST has already been processed"
+            echo "updated=false" >> $GITHUB_OUTPUT
+          else
+            echo "New SDE version detected: $LATEST"
+            echo "updated=true" >> $GITHUB_OUTPUT
+          fi
+
+  update-sde:
+    needs: check-sde-update
+    if: needs.check-sde-update.outputs.sde_updated == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+          cache: true
+          cache-dependency-path: wanderer-sde/go.sum
+
+      - name: Build converter
+        run: make build
+
+      - name: Download and convert SDE
+        run: |
+          ./bin/sdeconvert \
+            --download \
+            --output ./sde-files \
+            --format csv \
+            --verbose
+
+      - name: Update version file
+        run: |
+          echo "${{ needs.check-sde-update.outputs.sde_version }}" > sde-files/.last-sde-version
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sde-files/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update SDE data to build ${{ needs.check-sde-update.outputs.sde_version }}"
+            # Retry push up to 3 times with exponential backoff
+            max_retries=3
+            retry_count=0
+            while [ $retry_count -lt $max_retries ]; do
+              if git push; then
+                echo "Push successful"
+                exit 0
+              fi
+              retry_count=$((retry_count + 1))
+              if [ $retry_count -lt $max_retries ]; then
+                echo "Push failed, retrying in $((2 ** retry_count)) seconds..."
+                sleep $((2 ** retry_count))
+                # Pull latest changes and rebase
+                git pull --rebase
+              fi
+            done
+            echo "Push failed after $max_retries attempts"
+            exit 1
+          fi
