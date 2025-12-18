@@ -1,0 +1,36 @@
+version: "2"
+
+run:
+  timeout: 5m
+  modules-download-mode: readonly
+
+linters:
+  enable:
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - misspell
+    - unconvert
+    - unparam
+  settings:
+    staticcheck:
+      checks:
+        - "all"
+        - "-SA5011"  # Disable nil pointer checks after nil guard (false positives in tests with t.Fatal)
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  settings:
+    gofmt:
+      simplify: true
+    goimports:
+      local-prefixes:
+        - github.com/guarzo/wanderer-sde
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0

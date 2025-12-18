@@ -1,0 +1,59 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+
+# Test binary
+*.test
+
+# Output of go coverage
+*.out
+coverage.html
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Dependency directories
+vendor/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Debug files
+debug
+*.log
+
+# Build cache
+.cache/
+
+# Other
+plans/
+docs/
+CLAUDE.md
+.claude/
+
+# Build output (file only, not directories)
+/wanderer-sde/sdeconvert
+
+test_output/
+
+# Downloaded raw SDE (keep only converted CSV files)
+sde-files/sde/
