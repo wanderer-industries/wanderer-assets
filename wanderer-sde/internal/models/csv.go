@@ -1,8 +1,8 @@
 package models
 
 import (
-	"fmt"
 	"strconv"
+	"strings"
 )
 
 // CSVHeaders defines the exact column headers for each CSV file.
@@ -60,9 +60,15 @@ func FormatFloat(v float64) string {
 }
 
 // FormatSecurity formats security status for CSV output.
-// Matches Fuzzwork's precision for security values.
+// Uses 'f' format to avoid scientific notation and ensures decimal point
+// for Elixir binary_to_float compatibility.
 func FormatSecurity(v float64) string {
-	return fmt.Sprintf("%.16g", v)
+	s := strconv.FormatFloat(v, 'f', -1, 64)
+	// Ensure decimal point for Elixir binary_to_float compatibility
+	if !strings.Contains(s, ".") {
+		s += ".0"
+	}
+	return s
 }
 
 // Int64PtrNonZero returns a pointer to an int64 value, or nil if the value is 0.
