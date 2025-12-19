@@ -528,15 +528,19 @@ func TestCSVWriter_CoordinateFormatting(t *testing.T) {
 
 func TestCSVWriter_SecurityFormatting(t *testing.T) {
 	// Test security value formatting
+	// All values must have decimal point for Elixir binary_to_float compatibility
 	tests := []struct {
 		value    float64
 		expected string
 	}{
 		{0.9459131166648389, "0.9459131166648389"},
-		{-1.0, "-1"},
+		{-1.0, "-1.0"}, // Must include decimal point
 		{0.5, "0.5"},
-		{0.0, "0"},
+		{0.0, "0.0"}, // Must include decimal point
 		{0.1, "0.1"},
+		{1.0, "1.0"},             // Must include decimal point
+		{-0.000031, "-0.000031"}, // No scientific notation
+		{-0.00005, "-0.00005"},   // No scientific notation
 	}
 
 	for _, tt := range tests {
