@@ -57,11 +57,13 @@ func (t *Transformer) Transform(parseResult *parser.ParseResult) (*models.Conver
 	}
 	invTypes := t.transformShipTypes(parseResult.Types, parseResult.Groups)
 
-	// Sort wormhole classes for consistent output
 	if t.config.Verbose {
-		fmt.Println("  Sorting wormhole classes...")
+		fmt.Println("  Normalizing wormhole classes...")
 	}
-	wormholeClasses := t.sortWormholeClasses(parseResult.WormholeClasses)
+	wormholeClasses, err := t.normalizeWormholeClasses(parseResult.WormholeClasses, systems)
+	if err != nil {
+		return nil, fmt.Errorf("failed to normalize wormhole classes: %w", err)
+	}
 
 	// Transform system jumps with region/constellation lookup
 	if t.config.Verbose {

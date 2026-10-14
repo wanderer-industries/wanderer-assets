@@ -142,7 +142,7 @@ The converter generates the following files (CSV by default, JSON with `--format
 | `mapSolarSystems.csv` | Solar systems with coordinates, security status, region/constellation IDs | `mapSolarSystems.yaml` |
 | `mapRegions.csv` | Region ID, name, and coordinate bounds | `mapRegions.yaml` |
 | `mapConstellations.csv` | Constellation ID, name, region, and coordinate bounds | `mapConstellations.yaml` |
-| `mapLocationWormholeClasses.csv` | Wormhole class assignments for locations | `mapLocationWormholeClasses.yaml` |
+| `mapLocationWormholeClasses.csv` | Space class assignments for locations | `mapRegions.yaml`, `mapConstellations.yaml`, `mapSolarSystems.yaml` |
 | `invTypes.csv` | All item type definitions | `types.yaml` |
 | `invGroups.csv` | All item group definitions | `groups.yaml` |
 | `mapSolarSystemJumps.csv` | Stargate connections between systems | `mapStargates.yaml` |
@@ -202,6 +202,22 @@ Location IDs can be regions, constellations, or solar systems. Wormhole class ID
 - 13: Shattered wormholes
 - 14-18: Drifter wormholes
 - 25: Pochven (Triglavian space)
+
+Explicit assignments from the SDE are preserved. When a solar system has no
+assignment at the system, constellation, or region level, a nonempty
+`securityClass` is used as ordinary-space evidence. The converter then adds a
+system-level assignment: null-sec for raw security at or below zero, high-sec
+for displayed security at or above 0.5, and low-sec otherwise. Displayed security
+uses EVE's rounding rules; the exported raw security value is unchanged.
+Systems without this evidence remain unmapped. Invalid security values for
+inference candidates (non-finite or outside -1.0 to 1.0) stop conversion with the
+system ID in the error. This normalization applies to both CSV and JSON output.
+
+After updating converter logic, regenerate and publish the output before
+refreshing Wanderer's database and restarting the server. The scheduled workflow
+checks the SDE build number even on manual dispatch, so it does not regenerate an
+already-processed build just because converter code changed. An existing local
+SDE can be reconverted with `sdeconvert --sde-path /path/to/sde --output ./output`.
 
 #### Item Types (`invTypes.csv`)
 
