@@ -1,0 +1,5698 @@
+{
+  "generatedAt": "2026-10-17T14:38:31.943Z",
+  "categoryId": 6,
+  "sdeBuildNumber": 3607705,
+  "count": 569,
+  "ships": [
+    {
+      "typeId": 24692,
+      "name": "Abaddon",
+      "modelTypeId": 24692,
+      "variationParentTypeId": null,
+      "graphicId": 3132,
+      "hullName": "ab3_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33625,
+      "name": "Abaddon Kador Edition",
+      "modelTypeId": 24692,
+      "variationParentTypeId": null,
+      "graphicId": 20469,
+      "hullName": "ab3_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33623,
+      "name": "Abaddon Tash-Murkon Edition",
+      "modelTypeId": 24692,
+      "variationParentTypeId": null,
+      "graphicId": 20470,
+      "hullName": "ab3_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 22448,
+      "name": "Absolution",
+      "modelTypeId": 24696,
+      "variationParentTypeId": 24696,
+      "graphicId": 2926,
+      "hullName": "abc2_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/battlecruiser/abc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 2836,
+      "name": "Adrestia",
+      "modelTypeId": 627,
+      "variationParentTypeId": null,
+      "graphicId": 10006,
+      "hullName": "gc4_tournament",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 23919,
+      "name": "Aeon",
+      "modelTypeId": 23919,
+      "variationParentTypeId": null,
+      "graphicId": 2911,
+      "hullName": "aca1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/carrier/aca1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 58745,
+      "name": "AIR Civilian Astero",
+      "modelTypeId": 33468,
+      "variationParentTypeId": null,
+      "graphicId": 25014,
+      "hullName": "soef1_t1",
+      "iconFolder": "res:/dx9/model/ship/soe/frigate/soef1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 95741,
+      "name": "Akoman",
+      "modelTypeId": 4302,
+      "variationParentTypeId": 4302,
+      "graphicId": 35823,
+      "hullName": "abc4_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battlecruiser/abc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32872,
+      "name": "Algos",
+      "modelTypeId": 32872,
+      "variationParentTypeId": null,
+      "graphicId": 20201,
+      "hullName": "gde2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 91849,
+      "name": "Algos Navy Issue",
+      "modelTypeId": 32872,
+      "variationParentTypeId": 32872,
+      "graphicId": 29322,
+      "hullName": "gde2_fn",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32848,
+      "name": "Aliastra Catalyst",
+      "modelTypeId": 16240,
+      "variationParentTypeId": null,
+      "graphicId": 20190,
+      "hullName": "gde1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 78366,
+      "name": "Alligator",
+      "modelTypeId": 24698,
+      "variationParentTypeId": 24698,
+      "graphicId": 26204,
+      "hullName": "cbc2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battlecruiser/cbc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29328,
+      "name": "Amarr Media Shuttle",
+      "modelTypeId": 11134,
+      "variationParentTypeId": null,
+      "graphicId": 2044,
+      "hullName": "as1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/shuttle/as1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 3768,
+      "name": "Amarr Police Frigate",
+      "modelTypeId": 17703,
+      "variationParentTypeId": null,
+      "graphicId": 1067,
+      "hullName": "af9_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af9/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11134,
+      "name": "Amarr Shuttle",
+      "modelTypeId": 11134,
+      "variationParentTypeId": null,
+      "graphicId": 2044,
+      "hullName": "as1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/shuttle/as1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11188,
+      "name": "Anathema",
+      "modelTypeId": 29248,
+      "variationParentTypeId": 29248,
+      "graphicId": 3424,
+      "hullName": "af7_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 89807,
+      "name": "Anhinga",
+      "modelTypeId": 89807,
+      "variationParentTypeId": null,
+      "graphicId": 29067,
+      "hullName": "cbc3_xxi",
+      "iconFolder": "res:\\dx9\\model\\ship\\caldari\\battlecruiser\\cbc3\\icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 28848,
+      "name": "Anshar",
+      "modelTypeId": 20187,
+      "variationParentTypeId": 20187,
+      "graphicId": 3359,
+      "hullName": "gfr1_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/freighter/gfr1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 642,
+      "name": "Apocalypse",
+      "modelTypeId": 642,
+      "variationParentTypeId": null,
+      "graphicId": 296,
+      "hullName": "ab1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34213,
+      "name": "Apocalypse Blood Raider Edition",
+      "modelTypeId": 642,
+      "variationParentTypeId": null,
+      "graphicId": 2121,
+      "hullName": "ab1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11936,
+      "name": "Apocalypse Imperial Issue",
+      "modelTypeId": 642,
+      "variationParentTypeId": 642,
+      "graphicId": 4515,
+      "hullName": "ab1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34215,
+      "name": "Apocalypse Kador Edition",
+      "modelTypeId": 642,
+      "variationParentTypeId": null,
+      "graphicId": 20312,
+      "hullName": "ab1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 17726,
+      "name": "Apocalypse Navy Issue",
+      "modelTypeId": 642,
+      "variationParentTypeId": 642,
+      "graphicId": 2239,
+      "hullName": "ab1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34217,
+      "name": "Apocalypse Tash-Murkon Edition",
+      "modelTypeId": 642,
+      "variationParentTypeId": null,
+      "graphicId": 20316,
+      "hullName": "ab1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 37604,
+      "name": "Apostle",
+      "modelTypeId": 37604,
+      "variationParentTypeId": null,
+      "graphicId": 21252,
+      "hullName": "afaux1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/forceauxillary/afaux1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29266,
+      "name": "Apotheosis",
+      "modelTypeId": 29266,
+      "variationParentTypeId": null,
+      "graphicId": 1233,
+      "hullName": "soctf1_t1",
+      "iconFolder": "res:/dx9/model/ship/soct/frigate/soctf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11969,
+      "name": "Arazu",
+      "modelTypeId": 633,
+      "variationParentTypeId": 633,
+      "graphicId": 1903,
+      "hullName": "gc1_t2a",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 628,
+      "name": "Arbitrator",
+      "modelTypeId": 628,
+      "variationParentTypeId": null,
+      "graphicId": 298,
+      "hullName": "ac1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 23757,
+      "name": "Archon",
+      "modelTypeId": 23757,
+      "variationParentTypeId": null,
+      "graphicId": 2905,
+      "hullName": "aca2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/carrier/aca2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11202,
+      "name": "Ares",
+      "modelTypeId": 608,
+      "variationParentTypeId": 608,
+      "graphicId": 1773,
+      "hullName": "gf6_t2a",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf6/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 28850,
+      "name": "Ark",
+      "modelTypeId": 20183,
+      "variationParentTypeId": 20183,
+      "graphicId": 3357,
+      "hullName": "afr1_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/freighter/afr1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 643,
+      "name": "Armageddon",
+      "modelTypeId": 643,
+      "variationParentTypeId": null,
+      "graphicId": 297,
+      "hullName": "ab2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11938,
+      "name": "Armageddon Imperial Issue",
+      "modelTypeId": 643,
+      "variationParentTypeId": 643,
+      "graphicId": 2240,
+      "hullName": "ab2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32305,
+      "name": "Armageddon Navy Issue",
+      "modelTypeId": 643,
+      "variationParentTypeId": 643,
+      "graphicId": 3814,
+      "hullName": "ab2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17922,
+      "name": "Ashimmu",
+      "modelTypeId": 17922,
+      "variationParentTypeId": null,
+      "graphicId": 2636,
+      "hullName": "ac6_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac6/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22466,
+      "name": "Astarte",
+      "modelTypeId": 16229,
+      "variationParentTypeId": 16229,
+      "graphicId": 2798,
+      "hullName": "gbc1_t2a",
+      "iconFolder": "res:/dx9/model/ship/gallente/battlecruiser/gbc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33468,
+      "name": "Astero",
+      "modelTypeId": 33468,
+      "variationParentTypeId": null,
+      "graphicId": 20386,
+      "hullName": "soef1_t1",
+      "iconFolder": "res:/dx9/model/ship/soe/frigate/soef1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 608,
+      "name": "Atron",
+      "modelTypeId": 608,
+      "variationParentTypeId": null,
+      "graphicId": 323,
+      "hullName": "gf6_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf6/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 625,
+      "name": "Augoror",
+      "modelTypeId": 625,
+      "variationParentTypeId": null,
+      "graphicId": 58,
+      "hullName": "ac3_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29337,
+      "name": "Augoror Navy Issue",
+      "modelTypeId": 625,
+      "variationParentTypeId": 625,
+      "graphicId": 1730,
+      "hullName": "ac3_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 81040,
+      "name": "Avalanche",
+      "modelTypeId": 81040,
+      "variationParentTypeId": null,
+      "graphicId": 27474,
+      "hullName": "uwfr01_t1",
+      "iconFolder": "res:/dx9/model/ship/upwell/Freighter/uwfr01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11567,
+      "name": "Avatar",
+      "modelTypeId": 11567,
+      "variationParentTypeId": null,
+      "graphicId": 2910,
+      "hullName": "at1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/titan/at1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 78576,
+      "name": "Azariel",
+      "modelTypeId": 78576,
+      "variationParentTypeId": null,
+      "graphicId": 26445,
+      "hullName": "angt1_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/titan/angt1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 88001,
+      "name": "Babaroga",
+      "modelTypeId": 47271,
+      "variationParentTypeId": 47271,
+      "graphicId": 28115,
+      "hullName": "tgb01_t2",
+      "iconFolder": "res:/dx9/model/ship/triglavian/battleship/tgb01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 648,
+      "name": "Badger",
+      "modelTypeId": 648,
+      "variationParentTypeId": null,
+      "graphicId": 51,
+      "hullName": "ci1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/industrial/ci1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 77283,
+      "name": "Bane",
+      "modelTypeId": 19720,
+      "variationParentTypeId": 19720,
+      "graphicId": 26015,
+      "hullName": "adn1_fn",
+      "iconFolder": "res:\\dx9\\model\\ship\\amarr\\dreadnought\\adn1\\icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 582,
+      "name": "Bantam",
+      "modelTypeId": 582,
+      "variationParentTypeId": null,
+      "graphicId": 38,
+      "hullName": "cf1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33820,
+      "name": "Barghest",
+      "modelTypeId": 33820,
+      "variationParentTypeId": null,
+      "graphicId": 20615,
+      "hullName": "morb1_t1",
+      "iconFolder": "res:/dx9/model/ship/mordu/battleship/morb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11985,
+      "name": "Basilisk",
+      "modelTypeId": 620,
+      "variationParentTypeId": 620,
+      "graphicId": 11865,
+      "hullName": "cc1_t2a",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 630,
+      "name": "Bellicose",
+      "modelTypeId": 630,
+      "variationParentTypeId": null,
+      "graphicId": 303,
+      "hullName": "mc3_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 74316,
+      "name": "Bestla",
+      "modelTypeId": 32209,
+      "variationParentTypeId": null,
+      "graphicId": 25815,
+      "hullName": "mc2_vii",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 1944,
+      "name": "Bestower",
+      "modelTypeId": 1944,
+      "variationParentTypeId": null,
+      "graphicId": 1064,
+      "hullName": "ai1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/industrial/ai1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33695,
+      "name": "Bestower Tash-Murkon Edition",
+      "modelTypeId": 1944,
+      "variationParentTypeId": null,
+      "graphicId": 20481,
+      "hullName": "ai1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/industrial/ai1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 17920,
+      "name": "Bhaalgorn",
+      "modelTypeId": 643,
+      "variationParentTypeId": 643,
+      "graphicId": 2122,
+      "hullName": "ab2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37480,
+      "name": "Bifrost",
+      "modelTypeId": 32878,
+      "variationParentTypeId": 32878,
+      "graphicId": 21224,
+      "hullName": "mde2_t2",
+      "iconFolder": "res:/dx9/model/ship/minmatar/destroyer/mde2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 632,
+      "name": "Blackbird",
+      "modelTypeId": 632,
+      "variationParentTypeId": null,
+      "graphicId": 311,
+      "hullName": "cc4_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11373,
+      "name": "Blade",
+      "modelTypeId": 587,
+      "variationParentTypeId": null,
+      "graphicId": 1782,
+      "hullName": "mf4_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 64034,
+      "name": "Boobook",
+      "modelTypeId": 672,
+      "variationParentTypeId": null,
+      "graphicId": 25265,
+      "hullName": "cs1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/shuttle/cs1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34328,
+      "name": "Bowhead",
+      "modelTypeId": 34328,
+      "variationParentTypeId": null,
+      "graphicId": 20977,
+      "hullName": "orecs2_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/capital/orecs2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 598,
+      "name": "Breacher",
+      "modelTypeId": 598,
+      "variationParentTypeId": null,
+      "graphicId": 305,
+      "hullName": "mf5_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12013,
+      "name": "Broadsword",
+      "modelTypeId": 629,
+      "variationParentTypeId": 629,
+      "graphicId": 1776,
+      "hullName": "mc2_t2c",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 16229,
+      "name": "Brutix",
+      "modelTypeId": 16229,
+      "variationParentTypeId": null,
+      "graphicId": 2383,
+      "hullName": "gbc1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battlecruiser/gbc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33151,
+      "name": "Brutix Navy Issue",
+      "modelTypeId": 16229,
+      "variationParentTypeId": 16229,
+      "graphicId": 20229,
+      "hullName": "gbc1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battlecruiser/gbc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33869,
+      "name": "Brutix Serpentis Edition",
+      "modelTypeId": 16229,
+      "variationParentTypeId": null,
+      "graphicId": 2917,
+      "hullName": "gbc1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battlecruiser/gbc1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 599,
+      "name": "Burst",
+      "modelTypeId": 599,
+      "variationParentTypeId": null,
+      "graphicId": 306,
+      "hullName": "mf6_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf6/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12731,
+      "name": "Bustard",
+      "modelTypeId": 649,
+      "variationParentTypeId": 649,
+      "graphicId": 3020,
+      "hullName": "ci2_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/industrial/ci2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11192,
+      "name": "Buzzard",
+      "modelTypeId": 605,
+      "variationParentTypeId": 605,
+      "graphicId": 1902,
+      "hullName": "cf3_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 42246,
+      "name": "Caedes",
+      "modelTypeId": 17926,
+      "variationParentTypeId": null,
+      "graphicId": 21360,
+      "hullName": "af8_xiv",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af8/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 45647,
+      "name": "Caiman",
+      "modelTypeId": 19726,
+      "variationParentTypeId": 19726,
+      "graphicId": 21279,
+      "hullName": "cdn1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/dreadnought/cdn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29330,
+      "name": "Caldari Media Shuttle",
+      "modelTypeId": 672,
+      "variationParentTypeId": null,
+      "graphicId": 317,
+      "hullName": "cs1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/shuttle/cs1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 17619,
+      "name": "Caldari Navy Hookbill",
+      "modelTypeId": 17619,
+      "variationParentTypeId": null,
+      "graphicId": 2633,
+      "hullName": "cf8_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf8/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 672,
+      "name": "Caldari Shuttle",
+      "modelTypeId": 672,
+      "variationParentTypeId": null,
+      "graphicId": 317,
+      "hullName": "cs1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/shuttle/cs1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32788,
+      "name": "Cambion",
+      "modelTypeId": 603,
+      "variationParentTypeId": null,
+      "graphicId": 20136,
+      "hullName": "cf7_x",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 670,
+      "name": "Capsule",
+      "modelTypeId": 670,
+      "variationParentTypeId": null,
+      "graphicId": 73,
+      "hullName": "cap1_t1",
+      "iconFolder": "res:/dx9/model/ship/jove/capsule/cap1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33328,
+      "name": "Capsule - Genolution 'Auroral' 197-variant",
+      "modelTypeId": 670,
+      "variationParentTypeId": 670,
+      "graphicId": 20307,
+      "hullName": "cap1_t1",
+      "iconFolder": "res:/dx9/model/ship/jove/capsule/cap1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 621,
+      "name": "Caracal",
+      "modelTypeId": 621,
+      "variationParentTypeId": null,
+      "graphicId": 42,
+      "hullName": "cc3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17634,
+      "name": "Caracal Navy Issue",
+      "modelTypeId": 621,
+      "variationParentTypeId": 621,
+      "graphicId": 1786,
+      "hullName": "cc3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33643,
+      "name": "Caracal Nugoeihuvi Edition",
+      "modelTypeId": 621,
+      "variationParentTypeId": null,
+      "graphicId": 20464,
+      "hullName": "cc3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33645,
+      "name": "Caracal Wiyrkomi Edition",
+      "modelTypeId": 621,
+      "variationParentTypeId": null,
+      "graphicId": 1954,
+      "hullName": "cc3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 16240,
+      "name": "Catalyst",
+      "modelTypeId": 16240,
+      "variationParentTypeId": null,
+      "graphicId": 2389,
+      "hullName": "gde1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 73796,
+      "name": "Catalyst Navy Issue",
+      "modelTypeId": 16240,
+      "variationParentTypeId": 16240,
+      "graphicId": 25608,
+      "hullName": "gde1_fn",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33877,
+      "name": "Catalyst Serpentis Edition",
+      "modelTypeId": 16240,
+      "variationParentTypeId": null,
+      "graphicId": 2918,
+      "hullName": "gde1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 633,
+      "name": "Celestis",
+      "modelTypeId": 633,
+      "variationParentTypeId": null,
+      "graphicId": 319,
+      "hullName": "gc1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 85086,
+      "name": "Cenotaph",
+      "modelTypeId": 85086,
+      "variationParentTypeId": null,
+      "graphicId": 27876,
+      "hullName": "deabc1_t1",
+      "iconFolder": "res:/dx9/model/ship/deathless/battlecruiser/deabc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11993,
+      "name": "Cerberus",
+      "modelTypeId": 621,
+      "variationParentTypeId": 621,
+      "graphicId": 1825,
+      "hullName": "cc3_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33675,
+      "name": "Chameleon",
+      "modelTypeId": 623,
+      "variationParentTypeId": null,
+      "graphicId": 20604,
+      "hullName": "cc2_xii",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 20185,
+      "name": "Charon",
+      "modelTypeId": 20185,
+      "variationParentTypeId": null,
+      "graphicId": 2740,
+      "hullName": "cfr1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/freighter/cfr1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11182,
+      "name": "Cheetah",
+      "modelTypeId": 586,
+      "variationParentTypeId": 586,
+      "graphicId": 1948,
+      "hullName": "mf2_t2b",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 42243,
+      "name": "Chemosh",
+      "modelTypeId": 19720,
+      "variationParentTypeId": 19720,
+      "graphicId": 21277,
+      "hullName": "adn1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/dreadnought/adn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 23915,
+      "name": "Chimera",
+      "modelTypeId": 23915,
+      "variationParentTypeId": null,
+      "graphicId": 2931,
+      "hullName": "cca1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/carrier/cca1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33397,
+      "name": "Chremoas",
+      "modelTypeId": 17932,
+      "variationParentTypeId": null,
+      "graphicId": 20344,
+      "hullName": "angf1_xi",
+      "iconFolder": "res:/dx9/model/ship/angel/frigate/angf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 27299,
+      "name": "Civilian Amarr Shuttle",
+      "modelTypeId": 11134,
+      "variationParentTypeId": null,
+      "graphicId": 2044,
+      "hullName": "as1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/shuttle/as1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 27301,
+      "name": "Civilian Caldari Shuttle",
+      "modelTypeId": 672,
+      "variationParentTypeId": null,
+      "graphicId": 317,
+      "hullName": "cs1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/shuttle/cs1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 27303,
+      "name": "Civilian Gallente Shuttle",
+      "modelTypeId": 11129,
+      "variationParentTypeId": null,
+      "graphicId": 2043,
+      "hullName": "gs1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/shuttle/gs1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 27305,
+      "name": "Civilian Minmatar Shuttle",
+      "modelTypeId": 11132,
+      "variationParentTypeId": null,
+      "graphicId": 2045,
+      "hullName": "ms1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/shuttle/ms1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11196,
+      "name": "Claw",
+      "modelTypeId": 585,
+      "variationParentTypeId": 585,
+      "graphicId": 1928,
+      "hullName": "mf1_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22468,
+      "name": "Claymore",
+      "modelTypeId": 16231,
+      "variationParentTypeId": 16231,
+      "graphicId": 2794,
+      "hullName": "mbc1_t2c",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battlecruiser/mbc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 85229,
+      "name": "Cobra",
+      "modelTypeId": 44995,
+      "variationParentTypeId": null,
+      "graphicId": 27915,
+      "hullName": "conc1_xx",
+      "iconFolder": "res:/dx9/model/ship/concord/cruiser/conc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11019,
+      "name": "Cockroach",
+      "modelTypeId": 11019,
+      "variationParentTypeId": null,
+      "graphicId": 10886,
+      "hullName": "conf4_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 16236,
+      "name": "Coercer",
+      "modelTypeId": 16236,
+      "variationParentTypeId": null,
+      "graphicId": 2387,
+      "hullName": "ade1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/destroyer/ade1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33879,
+      "name": "Coercer Blood Raiders Edition",
+      "modelTypeId": 16236,
+      "variationParentTypeId": null,
+      "graphicId": 2796,
+      "hullName": "ade1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/destroyer/ade1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 73789,
+      "name": "Coercer Navy Issue",
+      "modelTypeId": 16236,
+      "variationParentTypeId": 16236,
+      "graphicId": 25606,
+      "hullName": "ade1_fn",
+      "iconFolder": "res:/dx9/model/ship/amarr/destroyer/ade1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 1918,
+      "name": "Concord Army Battleship",
+      "modelTypeId": 44996,
+      "variationParentTypeId": null,
+      "graphicId": 1060,
+      "hullName": "conb1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/battleship/conb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 1900,
+      "name": "Concord Army Frigate",
+      "modelTypeId": 34496,
+      "variationParentTypeId": null,
+      "graphicId": 1055,
+      "hullName": "conf1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 1912,
+      "name": "Concord Police Battleship",
+      "modelTypeId": 44996,
+      "variationParentTypeId": null,
+      "graphicId": 1058,
+      "hullName": "conb1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/battleship/conb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 1904,
+      "name": "Concord Police Cruiser",
+      "modelTypeId": 44995,
+      "variationParentTypeId": null,
+      "graphicId": 1051,
+      "hullName": "conc1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/cruiser/conc1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 1896,
+      "name": "Concord Police Frigate",
+      "modelTypeId": 34496,
+      "variationParentTypeId": null,
+      "graphicId": 1049,
+      "hullName": "conf1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 1914,
+      "name": "Concord Special Ops Battleship",
+      "modelTypeId": 44996,
+      "variationParentTypeId": null,
+      "graphicId": 1059,
+      "hullName": "conb1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/battleship/conb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 1902,
+      "name": "Concord Special Ops Frigate",
+      "modelTypeId": 34496,
+      "variationParentTypeId": null,
+      "graphicId": 1053,
+      "hullName": "conf1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 1916,
+      "name": "Concord SWAT Battleship",
+      "modelTypeId": 44996,
+      "variationParentTypeId": null,
+      "graphicId": 1057,
+      "hullName": "conb1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/battleship/conb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 1898,
+      "name": "Concord SWAT Frigate",
+      "modelTypeId": 34496,
+      "variationParentTypeId": null,
+      "graphicId": 1054,
+      "hullName": "conf1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 583,
+      "name": "Condor",
+      "modelTypeId": 583,
+      "variationParentTypeId": null,
+      "graphicId": 39,
+      "hullName": "cf2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34317,
+      "name": "Confessor",
+      "modelTypeId": 34317,
+      "variationParentTypeId": null,
+      "graphicId": 20980,
+      "hullName": "ade3_t3",
+      "iconFolder": "res:/dx9/model/ship/amarr/destroyer/ade3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32876,
+      "name": "Corax",
+      "modelTypeId": 32876,
+      "variationParentTypeId": null,
+      "graphicId": 20200,
+      "hullName": "cde2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/destroyer/cde2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 91857,
+      "name": "Corax Navy Issue",
+      "modelTypeId": 32876,
+      "variationParentTypeId": 32876,
+      "graphicId": 29323,
+      "hullName": "cde2_fn",
+      "iconFolder": "res:/dx9/model/ship/caldari/destroyer/cde2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 16238,
+      "name": "Cormorant",
+      "modelTypeId": 16238,
+      "variationParentTypeId": null,
+      "graphicId": 2388,
+      "hullName": "cde1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/destroyer/cde1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33881,
+      "name": "Cormorant Guristas Edition",
+      "modelTypeId": 16238,
+      "variationParentTypeId": null,
+      "graphicId": 2920,
+      "hullName": "cde1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/destroyer/cde1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 73795,
+      "name": "Cormorant Navy Issue",
+      "modelTypeId": 16238,
+      "variationParentTypeId": 16238,
+      "graphicId": 25607,
+      "hullName": "cde1_fn",
+      "iconFolder": "res:/dx9/model/ship/caldari/destroyer/cde1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34496,
+      "name": "Council Diplomatic Shuttle",
+      "modelTypeId": 34496,
+      "variationParentTypeId": null,
+      "graphicId": 1053,
+      "hullName": "conf1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17476,
+      "name": "Covetor",
+      "modelTypeId": 17476,
+      "variationParentTypeId": null,
+      "graphicId": 2522,
+      "hullName": "oreba3_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/barge/oreba3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12729,
+      "name": "Crane",
+      "modelTypeId": 648,
+      "variationParentTypeId": 648,
+      "graphicId": 2709,
+      "hullName": "ci1_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/industrial/ci1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11176,
+      "name": "Crow",
+      "modelTypeId": 583,
+      "variationParentTypeId": 583,
+      "graphicId": 1848,
+      "hullName": "cf2_t2a",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 2161,
+      "name": "Crucifier",
+      "modelTypeId": 2161,
+      "variationParentTypeId": null,
+      "graphicId": 1066,
+      "hullName": "af2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37453,
+      "name": "Crucifier Navy Issue",
+      "modelTypeId": 2161,
+      "variationParentTypeId": 2161,
+      "graphicId": 1733,
+      "hullName": "af2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17926,
+      "name": "Cruor",
+      "modelTypeId": 17926,
+      "variationParentTypeId": null,
+      "graphicId": 2632,
+      "hullName": "af8_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af8/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11184,
+      "name": "Crusader",
+      "modelTypeId": 589,
+      "variationParentTypeId": 589,
+      "graphicId": 1921,
+      "hullName": "af4_t2b",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 20125,
+      "name": "Curse",
+      "modelTypeId": 628,
+      "variationParentTypeId": 628,
+      "graphicId": 1854,
+      "hullName": "ac1_t2a",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 77726,
+      "name": "Cybele",
+      "modelTypeId": 2836,
+      "variationParentTypeId": null,
+      "graphicId": 26516,
+      "hullName": "gc4_tournament",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 16231,
+      "name": "Cyclone",
+      "modelTypeId": 16231,
+      "variationParentTypeId": null,
+      "graphicId": 2384,
+      "hullName": "mbc1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battlecruiser/mbc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 72811,
+      "name": "Cyclone Fleet Issue",
+      "modelTypeId": 16231,
+      "variationParentTypeId": 16231,
+      "graphicId": 25575,
+      "hullName": "mbc1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battlecruiser/mbc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33871,
+      "name": "Cyclone Thukker Tribe Edition",
+      "modelTypeId": 16231,
+      "variationParentTypeId": null,
+      "graphicId": 2921,
+      "hullName": "mbc1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battlecruiser/mbc1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 17720,
+      "name": "Cynabal",
+      "modelTypeId": 17720,
+      "variationParentTypeId": null,
+      "graphicId": 337,
+      "hullName": "angbc1_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/battlecruiser/angbc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12036,
+      "name": "Dagger",
+      "modelTypeId": 598,
+      "variationParentTypeId": null,
+      "graphicId": 1966,
+      "hullName": "mf5_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf5/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 42242,
+      "name": "Dagon",
+      "modelTypeId": 37604,
+      "variationParentTypeId": 37604,
+      "graphicId": 21358,
+      "hullName": "afaux1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/forceauxillary/afaux1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 47269,
+      "name": "Damavik",
+      "modelTypeId": 47269,
+      "variationParentTypeId": null,
+      "graphicId": 22007,
+      "hullName": "tgf01_t1",
+      "iconFolder": "res:/dx9/model/ship/triglavian/frigate/tgf01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22474,
+      "name": "Damnation",
+      "modelTypeId": 16233,
+      "variationParentTypeId": 16233,
+      "graphicId": 2804,
+      "hullName": "abc1_t2a",
+      "iconFolder": "res:/dx9/model/ship/amarr/battlecruiser/abc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17928,
+      "name": "Daredevil",
+      "modelTypeId": 17928,
+      "variationParentTypeId": null,
+      "graphicId": 20301,
+      "hullName": "angf2_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/frigate/angf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37457,
+      "name": "Deacon",
+      "modelTypeId": 590,
+      "variationParentTypeId": 590,
+      "graphicId": 21220,
+      "hullName": "af5_t2b",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12023,
+      "name": "Deimos",
+      "modelTypeId": 627,
+      "variationParentTypeId": 627,
+      "graphicId": 11859,
+      "hullName": "gc4_t2a",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 81046,
+      "name": "Deluge",
+      "modelTypeId": 81008,
+      "variationParentTypeId": 81008,
+      "graphicId": 27538,
+      "hullName": "uwi01_t2a",
+      "iconFolder": "res:/dx9/model/ship/upwell/Industrial/uwi01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12017,
+      "name": "Devoter",
+      "modelTypeId": 624,
+      "variationParentTypeId": 624,
+      "graphicId": 3363,
+      "hullName": "ac2_t2b",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 613,
+      "name": "Devourer",
+      "modelTypeId": 17928,
+      "variationParentTypeId": null,
+      "graphicId": 339,
+      "hullName": "angf2_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/frigate/angf2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 645,
+      "name": "Dominix",
+      "modelTypeId": 645,
+      "variationParentTypeId": null,
+      "graphicId": 318,
+      "hullName": "gb1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32307,
+      "name": "Dominix Navy Issue",
+      "modelTypeId": 645,
+      "variationParentTypeId": 645,
+      "graphicId": 2138,
+      "hullName": "gb1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34441,
+      "name": "Dominix Quafe Edition",
+      "modelTypeId": 645,
+      "variationParentTypeId": null,
+      "graphicId": 20982,
+      "hullName": "gb1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 32874,
+      "name": "Dragoon",
+      "modelTypeId": 32874,
+      "variationParentTypeId": null,
+      "graphicId": 20199,
+      "hullName": "ade2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/destroyer/ade2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 91775,
+      "name": "Dragoon Navy Issue",
+      "modelTypeId": 32874,
+      "variationParentTypeId": 32874,
+      "graphicId": 29324,
+      "hullName": "ade2_fn",
+      "iconFolder": "res:/dx9/model/ship/amarr/destroyer/ade2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 24698,
+      "name": "Drake",
+      "modelTypeId": 22471,
+      "variationParentTypeId": null,
+      "graphicId": 3169,
+      "hullName": "cbc2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battlecruiser/cbc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33153,
+      "name": "Drake Navy Issue",
+      "modelTypeId": 24698,
+      "variationParentTypeId": 24698,
+      "graphicId": 20283,
+      "hullName": "cbc2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battlecruiser/cbc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17932,
+      "name": "Dramiel",
+      "modelTypeId": 17932,
+      "variationParentTypeId": null,
+      "graphicId": 338,
+      "hullName": "angf1_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/frigate/angf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 52254,
+      "name": "Draugur",
+      "modelTypeId": 49710,
+      "variationParentTypeId": 49710,
+      "graphicId": 24471,
+      "hullName": "tgde01_t2",
+      "iconFolder": "res:/dx9/model/ship/triglavian/destroyer/tgde01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 49711,
+      "name": "Drekavac",
+      "modelTypeId": 49711,
+      "variationParentTypeId": null,
+      "graphicId": 22318,
+      "hullName": "tgbc01_t1",
+      "iconFolder": "res:/dx9/model/ship/triglavian/battlecruiser/tgbc01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12011,
+      "name": "Eagle",
+      "modelTypeId": 623,
+      "variationParentTypeId": 623,
+      "graphicId": 1894,
+      "hullName": "cc2_t2b",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 3532,
+      "name": "Echelon",
+      "modelTypeId": 3532,
+      "variationParentTypeId": null,
+      "graphicId": 10782,
+      "hullName": "conf3_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 617,
+      "name": "Echo",
+      "modelTypeId": 617,
+      "variationParentTypeId": null,
+      "graphicId": 343,
+      "hullName": "angf6_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/frigate/angf6/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37135,
+      "name": "Endurance",
+      "modelTypeId": 32880,
+      "variationParentTypeId": 32880,
+      "graphicId": 21210,
+      "hullName": "oref1_t2c",
+      "iconFolder": "res:/dx9/model/ship/ore/frigate/oref1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 44995,
+      "name": "Enforcer",
+      "modelTypeId": 44995,
+      "variationParentTypeId": null,
+      "graphicId": 21489,
+      "hullName": "conc1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/cruiser/conc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12044,
+      "name": "Enyo",
+      "modelTypeId": 594,
+      "variationParentTypeId": 594,
+      "graphicId": 1771,
+      "hullName": "gf4_t2b",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22442,
+      "name": "Eos",
+      "modelTypeId": 24700,
+      "variationParentTypeId": 24700,
+      "graphicId": 2925,
+      "hullName": "gbc2_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/battlecruiser/gbc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 655,
+      "name": "Epithal",
+      "modelTypeId": 655,
+      "variationParentTypeId": null,
+      "graphicId": 326,
+      "hullName": "gi3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/industrial/gi3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 671,
+      "name": "Erebus",
+      "modelTypeId": 671,
+      "variationParentTypeId": null,
+      "graphicId": 2942,
+      "hullName": "gt1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/titan/gt1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11375,
+      "name": "Erinye",
+      "modelTypeId": 593,
+      "variationParentTypeId": null,
+      "graphicId": 1770,
+      "hullName": "gf3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 22460,
+      "name": "Eris",
+      "modelTypeId": 16240,
+      "variationParentTypeId": 16240,
+      "graphicId": 2811,
+      "hullName": "gde1_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32790,
+      "name": "Etana",
+      "modelTypeId": 620,
+      "variationParentTypeId": null,
+      "graphicId": 20137,
+      "hullName": "cc1_x",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 589,
+      "name": "Executioner",
+      "modelTypeId": 589,
+      "variationParentTypeId": null,
+      "graphicId": 54,
+      "hullName": "af4_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 634,
+      "name": "Exequror",
+      "modelTypeId": 634,
+      "variationParentTypeId": null,
+      "graphicId": 320,
+      "hullName": "gc2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29344,
+      "name": "Exequror Navy Issue",
+      "modelTypeId": 634,
+      "variationParentTypeId": 634,
+      "graphicId": 1802,
+      "hullName": "gc2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11957,
+      "name": "Falcon",
+      "modelTypeId": 632,
+      "variationParentTypeId": 632,
+      "graphicId": 11863,
+      "hullName": "cc4_t2a",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17841,
+      "name": "Federation Navy Comet",
+      "modelTypeId": 17841,
+      "variationParentTypeId": null,
+      "graphicId": 2634,
+      "hullName": "gf8_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf8/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 20189,
+      "name": "Fenrir",
+      "modelTypeId": 20189,
+      "variationParentTypeId": null,
+      "graphicId": 2737,
+      "hullName": "mfr1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/freighter/mfr1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 16227,
+      "name": "Ferox",
+      "modelTypeId": 16227,
+      "variationParentTypeId": null,
+      "graphicId": 2382,
+      "hullName": "cbc1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battlecruiser/cbc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33873,
+      "name": "Ferox Guristas Edition",
+      "modelTypeId": 16227,
+      "variationParentTypeId": null,
+      "graphicId": 2919,
+      "hullName": "cbc1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battlecruiser/cbc1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 72812,
+      "name": "Ferox Navy Issue",
+      "modelTypeId": 16227,
+      "variationParentTypeId": 16227,
+      "graphicId": 20228,
+      "hullName": "cbc1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battlecruiser/cbc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 35781,
+      "name": "Fiend",
+      "modelTypeId": 17718,
+      "variationParentTypeId": null,
+      "graphicId": 21155,
+      "hullName": "sc1_xiii",
+      "iconFolder": "res:/dx9/model/ship/sansha/cruiser/sc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22464,
+      "name": "Flycatcher",
+      "modelTypeId": 16238,
+      "variationParentTypeId": 16238,
+      "graphicId": 2802,
+      "hullName": "cde1_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/destroyer/cde1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32207,
+      "name": "Freki",
+      "modelTypeId": 587,
+      "variationParentTypeId": null,
+      "graphicId": 3799,
+      "hullName": "mf4_xviii",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 614,
+      "name": "Fury",
+      "modelTypeId": 614,
+      "variationParentTypeId": null,
+      "graphicId": 340,
+      "hullName": "angf3_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/frigate/angf3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 92824,
+      "name": "Gaia",
+      "modelTypeId": 23911,
+      "variationParentTypeId": 23911,
+      "graphicId": 33280,
+      "hullName": "gca2_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/carrier/gca2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29332,
+      "name": "Gallente Media Shuttle",
+      "modelTypeId": 11129,
+      "variationParentTypeId": null,
+      "graphicId": 2043,
+      "hullName": "gs1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/shuttle/gs1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 595,
+      "name": "Gallente Police Ship",
+      "modelTypeId": 17841,
+      "variationParentTypeId": null,
+      "graphicId": 66,
+      "hullName": "gf8_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf8/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11129,
+      "name": "Gallente Shuttle",
+      "modelTypeId": 11129,
+      "variationParentTypeId": null,
+      "graphicId": 2043,
+      "hullName": "gs1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/shuttle/gs1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33816,
+      "name": "Garmur",
+      "modelTypeId": 33816,
+      "variationParentTypeId": null,
+      "graphicId": 20616,
+      "hullName": "morf1_t1",
+      "iconFolder": "res:/dx9/model/ship/mordu/frigate/morf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11383,
+      "name": "Gatherer",
+      "modelTypeId": 596,
+      "variationParentTypeId": null,
+      "graphicId": 1868,
+      "hullName": "af1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 74141,
+      "name": "Geri",
+      "modelTypeId": 32207,
+      "variationParentTypeId": null,
+      "graphicId": 25814,
+      "hullName": "mf4_xviii",
+      "iconFolder": "res:\\dx9\\model\\ship\\minmatar\\frigate\\mf4\\icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 47727,
+      "name": "GFX Test Vargur 1/2",
+      "modelTypeId": 639,
+      "variationParentTypeId": null,
+      "graphicId": 20951,
+      "hullName": "mb2_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 47728,
+      "name": "GFX Test Vargur 2/2",
+      "modelTypeId": 639,
+      "variationParentTypeId": null,
+      "graphicId": 3354,
+      "hullName": "mb2_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 17715,
+      "name": "Gila",
+      "modelTypeId": 623,
+      "variationParentTypeId": 623,
+      "graphicId": 1824,
+      "hullName": "cc2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 3756,
+      "name": "Gnosis",
+      "modelTypeId": 3756,
+      "variationParentTypeId": null,
+      "graphicId": 1231,
+      "hullName": "soctbc1_t1",
+      "iconFolder": "res:/dx9/model/ship/soct/battlecruiser/soctbc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11940,
+      "name": "Gold Magnate",
+      "modelTypeId": 29248,
+      "variationParentTypeId": 29248,
+      "graphicId": 2242,
+      "hullName": "af7_i",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 28710,
+      "name": "Golem",
+      "modelTypeId": 638,
+      "variationParentTypeId": 638,
+      "graphicId": 3352,
+      "hullName": "cb1_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34231,
+      "name": "Golem Guristas Edition",
+      "modelTypeId": 638,
+      "variationParentTypeId": null,
+      "graphicId": 20939,
+      "hullName": "cb1_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34233,
+      "name": "Golem Kaalakiota Edition",
+      "modelTypeId": 638,
+      "variationParentTypeId": null,
+      "graphicId": 20940,
+      "hullName": "cb1_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34235,
+      "name": "Golem Nugoeihuvi Edition",
+      "modelTypeId": 638,
+      "variationParentTypeId": null,
+      "graphicId": 20941,
+      "hullName": "cb1_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 21097,
+      "name": "Goru's Shuttle",
+      "modelTypeId": 672,
+      "variationParentTypeId": 672,
+      "graphicId": 317,
+      "hullName": "cs1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/shuttle/cs1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 584,
+      "name": "Griffin",
+      "modelTypeId": 584,
+      "variationParentTypeId": null,
+      "graphicId": 40,
+      "hullName": "cf4_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37455,
+      "name": "Griffin Navy Issue",
+      "modelTypeId": 584,
+      "variationParentTypeId": 584,
+      "graphicId": 1789,
+      "hullName": "cf4_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11987,
+      "name": "Guardian",
+      "modelTypeId": 625,
+      "variationParentTypeId": 625,
+      "graphicId": 1916,
+      "hullName": "ac3_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11011,
+      "name": "Guardian-Vexor",
+      "modelTypeId": 626,
+      "variationParentTypeId": 626,
+      "graphicId": 1814,
+      "hullName": "gc3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 21628,
+      "name": "Guristas Shuttle",
+      "modelTypeId": 672,
+      "variationParentTypeId": 672,
+      "graphicId": 20231,
+      "hullName": "cs1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/shuttle/cs1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 24696,
+      "name": "Harbinger",
+      "modelTypeId": 22449,
+      "variationParentTypeId": null,
+      "graphicId": 3133,
+      "hullName": "abc2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battlecruiser/abc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33155,
+      "name": "Harbinger Navy Issue",
+      "modelTypeId": 24696,
+      "variationParentTypeId": 24696,
+      "graphicId": 20227,
+      "hullName": "abc2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battlecruiser/abc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11381,
+      "name": "Harpy",
+      "modelTypeId": 603,
+      "variationParentTypeId": 603,
+      "graphicId": 1901,
+      "hullName": "cf7_t2b",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11379,
+      "name": "Hawk",
+      "modelTypeId": 603,
+      "variationParentTypeId": 603,
+      "graphicId": 1882,
+      "hullName": "cf7_t2a",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 35683,
+      "name": "Hecate",
+      "modelTypeId": 35683,
+      "variationParentTypeId": null,
+      "graphicId": 21150,
+      "hullName": "gde3_t3",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22852,
+      "name": "Hel",
+      "modelTypeId": 22852,
+      "variationParentTypeId": null,
+      "graphicId": 2894,
+      "hullName": "mca1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/carrier/mca1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11172,
+      "name": "Helios",
+      "modelTypeId": 607,
+      "variationParentTypeId": 607,
+      "graphicId": 1841,
+      "hullName": "gf5_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33079,
+      "name": "Hematos",
+      "modelTypeId": 596,
+      "variationParentTypeId": null,
+      "graphicId": 1762,
+      "hullName": "af1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22452,
+      "name": "Heretic",
+      "modelTypeId": 16236,
+      "variationParentTypeId": 16236,
+      "graphicId": 2805,
+      "hullName": "ade1_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/destroyer/ade1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 605,
+      "name": "Heron",
+      "modelTypeId": 605,
+      "variationParentTypeId": null,
+      "graphicId": 316,
+      "hullName": "cf3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 72904,
+      "name": "Heron Navy Issue",
+      "modelTypeId": 605,
+      "variationParentTypeId": 605,
+      "graphicId": 1793,
+      "hullName": "cf3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 651,
+      "name": "Hoarder",
+      "modelTypeId": 651,
+      "variationParentTypeId": null,
+      "graphicId": 308,
+      "hullName": "mi1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/industrial/mi1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12034,
+      "name": "Hound",
+      "modelTypeId": 598,
+      "variationParentTypeId": 598,
+      "graphicId": 1966,
+      "hullName": "mf5_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 77281,
+      "name": "Hubris",
+      "modelTypeId": 19724,
+      "variationParentTypeId": 19724,
+      "graphicId": 26021,
+      "hullName": "gdn1_fn",
+      "iconFolder": "res:\\dx9\\model\\ship\\gallente\\dreadnought\\gdn1\\icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11961,
+      "name": "Huginn",
+      "modelTypeId": 630,
+      "variationParentTypeId": 630,
+      "graphicId": 1945,
+      "hullName": "mc3_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22544,
+      "name": "Hulk",
+      "modelTypeId": 17476,
+      "variationParentTypeId": 17476,
+      "graphicId": 2938,
+      "hullName": "oreba3_t2",
+      "iconFolder": "res:/dx9/model/ship/ore/barge/oreba3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 24702,
+      "name": "Hurricane",
+      "modelTypeId": 22445,
+      "variationParentTypeId": null,
+      "graphicId": 3135,
+      "hullName": "mbc2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battlecruiser/mbc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33157,
+      "name": "Hurricane Fleet Issue",
+      "modelTypeId": 24702,
+      "variationParentTypeId": 24702,
+      "graphicId": 20230,
+      "hullName": "mbc2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battlecruiser/mbc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 48636,
+      "name": "Hydra",
+      "modelTypeId": 47269,
+      "variationParentTypeId": null,
+      "graphicId": 22234,
+      "hullName": "tgf01_t1",
+      "iconFolder": "res:/dx9/model/ship/triglavian/frigate/tgf01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11387,
+      "name": "Hyena",
+      "modelTypeId": 3766,
+      "variationParentTypeId": 3766,
+      "graphicId": 1973,
+      "hullName": "mf7_t2c",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 24690,
+      "name": "Hyperion",
+      "modelTypeId": 24690,
+      "variationParentTypeId": null,
+      "graphicId": 3207,
+      "hullName": "gb3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33635,
+      "name": "Hyperion Aliastra Edition",
+      "modelTypeId": 24690,
+      "variationParentTypeId": null,
+      "graphicId": 20475,
+      "hullName": "gb3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33637,
+      "name": "Hyperion Inner Zone Shipping Edition",
+      "modelTypeId": 24690,
+      "variationParentTypeId": null,
+      "graphicId": 20476,
+      "hullName": "gb3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 601,
+      "name": "Ibis",
+      "modelTypeId": 601,
+      "variationParentTypeId": null,
+      "graphicId": 312,
+      "hullName": "cf5_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 52252,
+      "name": "Ikitursa",
+      "modelTypeId": 47270,
+      "variationParentTypeId": 47270,
+      "graphicId": 24469,
+      "hullName": "tgc01_t2",
+      "iconFolder": "res:/dx9/model/ship/triglavian/cruiser/tgc01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 607,
+      "name": "Imicus",
+      "modelTypeId": 607,
+      "variationParentTypeId": null,
+      "graphicId": 322,
+      "hullName": "gf5_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 72913,
+      "name": "Imicus Navy Issue",
+      "modelTypeId": 607,
+      "variationParentTypeId": 607,
+      "graphicId": 25578,
+      "hullName": "gf5_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 615,
+      "name": "Immolator",
+      "modelTypeId": 615,
+      "variationParentTypeId": null,
+      "graphicId": 341,
+      "hullName": "sf3_t1",
+      "iconFolder": "res:/dx9/model/ship/sansha/frigate/sf3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17360,
+      "name": "Immovable Enigma",
+      "modelTypeId": 1233,
+      "variationParentTypeId": null,
+      "graphicId": 1010,
+      "hullName": "conf2_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 35779,
+      "name": "Imp",
+      "modelTypeId": 35779,
+      "variationParentTypeId": null,
+      "graphicId": 21156,
+      "hullName": "sf2_xiii",
+      "iconFolder": "res:/dx9/model/ship/sansha/frigate/sf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 596,
+      "name": "Impairor",
+      "modelTypeId": 596,
+      "variationParentTypeId": null,
+      "graphicId": 299,
+      "hullName": "af1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12753,
+      "name": "Impel",
+      "modelTypeId": 1944,
+      "variationParentTypeId": 1944,
+      "graphicId": 2710,
+      "hullName": "ai1_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/industrial/ai1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17703,
+      "name": "Imperial Navy Slicer",
+      "modelTypeId": 17703,
+      "variationParentTypeId": null,
+      "graphicId": 1067,
+      "hullName": "af9_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af9/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 594,
+      "name": "Incursus",
+      "modelTypeId": 594,
+      "variationParentTypeId": null,
+      "graphicId": 61,
+      "hullName": "gf4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33667,
+      "name": "Incursus Aliastra Edition",
+      "modelTypeId": 594,
+      "variationParentTypeId": null,
+      "graphicId": 20456,
+      "hullName": "gf4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33669,
+      "name": "Incursus Inner Zone Shipping Edition",
+      "modelTypeId": 594,
+      "variationParentTypeId": null,
+      "graphicId": 20459,
+      "hullName": "gf4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 32844,
+      "name": "Inner Zone Shipping Catalyst",
+      "modelTypeId": 16240,
+      "variationParentTypeId": null,
+      "graphicId": 20192,
+      "hullName": "gde1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 32985,
+      "name": "Inner Zone Shipping Imicus",
+      "modelTypeId": 607,
+      "variationParentTypeId": null,
+      "graphicId": 20235,
+      "hullName": "gf5_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf5/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 590,
+      "name": "Inquisitor",
+      "modelTypeId": 590,
+      "variationParentTypeId": null,
+      "graphicId": 55,
+      "hullName": "af5_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32842,
+      "name": "Intaki Syndicate Catalyst",
+      "modelTypeId": 16240,
+      "variationParentTypeId": null,
+      "graphicId": 20193,
+      "hullName": "gde1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 32840,
+      "name": "InterBus Catalyst",
+      "modelTypeId": 16240,
+      "variationParentTypeId": null,
+      "graphicId": 20194,
+      "hullName": "gde1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 30842,
+      "name": "InterBus Shuttle",
+      "modelTypeId": 11129,
+      "variationParentTypeId": null,
+      "graphicId": 3714,
+      "hullName": "gs1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/shuttle/gs1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12042,
+      "name": "Ishkur",
+      "modelTypeId": 594,
+      "variationParentTypeId": 594,
+      "graphicId": 1840,
+      "hullName": "gf4_t2a",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12005,
+      "name": "Ishtar",
+      "modelTypeId": 626,
+      "variationParentTypeId": 626,
+      "graphicId": 1835,
+      "hullName": "gc3_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33689,
+      "name": "Iteron Inner Zone Shipping Edition",
+      "modelTypeId": 657,
+      "variationParentTypeId": null,
+      "graphicId": 20479,
+      "hullName": "gi5_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/industrial/gi5/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 657,
+      "name": "Iteron Mark V",
+      "modelTypeId": 657,
+      "variationParentTypeId": null,
+      "graphicId": 328,
+      "hullName": "gi5_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/industrial/gi5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34828,
+      "name": "Jackdaw",
+      "modelTypeId": 34828,
+      "variationParentTypeId": null,
+      "graphicId": 21135,
+      "hullName": "cde3_t3",
+      "iconFolder": "res:/dx9/model/ship/caldari/destroyer/cde3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11400,
+      "name": "Jaguar",
+      "modelTypeId": 587,
+      "variationParentTypeId": 587,
+      "graphicId": 1950,
+      "hullName": "mf4_t2b",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 77284,
+      "name": "Karura",
+      "modelTypeId": 19726,
+      "variationParentTypeId": 19726,
+      "graphicId": 26002,
+      "hullName": "cdn1_fn",
+      "iconFolder": "res:\\dx9\\model\\ship\\caldari\\dreadnought\\cdn1\\icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11174,
+      "name": "Keres",
+      "modelTypeId": 609,
+      "variationParentTypeId": 609,
+      "graphicId": 1913,
+      "hullName": "gf7_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 602,
+      "name": "Kestrel",
+      "modelTypeId": 602,
+      "variationParentTypeId": null,
+      "graphicId": 313,
+      "hullName": "cf6_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf6/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17705,
+      "name": "Khanid Navy Frigate",
+      "modelTypeId": 603,
+      "variationParentTypeId": null,
+      "graphicId": 314,
+      "hullName": "cf7_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf7/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 78369,
+      "name": "Khizriel",
+      "modelTypeId": 78369,
+      "variationParentTypeId": null,
+      "graphicId": 26378,
+      "hullName": "angbc2_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/battlecruiser/angbc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 49710,
+      "name": "Kikimora",
+      "modelTypeId": 49710,
+      "variationParentTypeId": null,
+      "graphicId": 22316,
+      "hullName": "tgde01_t1",
+      "iconFolder": "res:/dx9/model/ship/triglavian/destroyer/tgde01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37458,
+      "name": "Kirin",
+      "modelTypeId": 582,
+      "variationParentTypeId": 582,
+      "graphicId": 21218,
+      "hullName": "cf1_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11389,
+      "name": "Kishar",
+      "modelTypeId": 609,
+      "variationParentTypeId": null,
+      "graphicId": 1913,
+      "hullName": "gf7_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf7/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11194,
+      "name": "Kitsune",
+      "modelTypeId": 584,
+      "variationParentTypeId": 584,
+      "graphicId": 3364,
+      "hullName": "cf4_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 45649,
+      "name": "Komodo",
+      "modelTypeId": 3764,
+      "variationParentTypeId": 3764,
+      "graphicId": 21280,
+      "hullName": "ct1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/titan/ct1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 28661,
+      "name": "Kronos",
+      "modelTypeId": 641,
+      "variationParentTypeId": 641,
+      "graphicId": 3353,
+      "hullName": "gb2_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34245,
+      "name": "Kronos Inner Zone Shipping Edition",
+      "modelTypeId": 641,
+      "variationParentTypeId": null,
+      "graphicId": 20946,
+      "hullName": "gb2_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34241,
+      "name": "Kronos Police Edition",
+      "modelTypeId": 641,
+      "variationParentTypeId": null,
+      "graphicId": 20944,
+      "hullName": "gb2_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34243,
+      "name": "Kronos Quafe Edition",
+      "modelTypeId": 641,
+      "variationParentTypeId": null,
+      "graphicId": 20945,
+      "hullName": "gb2_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 654,
+      "name": "Kryos",
+      "modelTypeId": 654,
+      "variationParentTypeId": null,
+      "graphicId": 325,
+      "hullName": "gi2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/industrial/gi2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11971,
+      "name": "Lachesis",
+      "modelTypeId": 633,
+      "variationParentTypeId": 633,
+      "graphicId": 2140,
+      "hullName": "gc1_t2b",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 60764,
+      "name": "Laelaps",
+      "modelTypeId": 33818,
+      "variationParentTypeId": null,
+      "graphicId": 25142,
+      "hullName": "morc1_xvii",
+      "iconFolder": "res:/dx9/model/ship/mordu/cruiser/morc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29986,
+      "name": "Legion",
+      "modelTypeId": 29986,
+      "variationParentTypeId": null,
+      "graphicId": 20216,
+      "hullName": "asc1_t3",
+      "iconFolder": "res:/dx9/model/ship/amarr/strategiccruiser/asc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33513,
+      "name": "Leopard",
+      "modelTypeId": 11132,
+      "variationParentTypeId": null,
+      "graphicId": 20402,
+      "hullName": "ms1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/shuttle/ms1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 47271,
+      "name": "Leshak",
+      "modelTypeId": 47271,
+      "variationParentTypeId": null,
+      "graphicId": 21993,
+      "hullName": "tgb01_t1",
+      "iconFolder": "res:/dx9/model/ship/triglavian/battleship/tgb01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 3764,
+      "name": "Leviathan",
+      "modelTypeId": 3764,
+      "variationParentTypeId": null,
+      "graphicId": 2930,
+      "hullName": "ct1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/titan/ct1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37606,
+      "name": "Lif",
+      "modelTypeId": 37606,
+      "variationParentTypeId": null,
+      "graphicId": 21256,
+      "hullName": "mfaux1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/forceauxillary/mfaux1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 45645,
+      "name": "Loggerhead",
+      "modelTypeId": 37605,
+      "variationParentTypeId": 37605,
+      "graphicId": 21493,
+      "hullName": "cfaux1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/forceauxillary/cfaux1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29990,
+      "name": "Loki",
+      "modelTypeId": 29990,
+      "variationParentTypeId": null,
+      "graphicId": 20218,
+      "hullName": "msc1_t3",
+      "iconFolder": "res:/dx9/model/ship/minmatar/strategiccruiser/msc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 618,
+      "name": "Lynx",
+      "modelTypeId": 618,
+      "variationParentTypeId": null,
+      "graphicId": 344,
+      "hullName": "angf7_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/frigate/angf7/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 17738,
+      "name": "Machariel",
+      "modelTypeId": 17738,
+      "variationParentTypeId": null,
+      "graphicId": 335,
+      "hullName": "angb1_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/battleship/angb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22548,
+      "name": "Mackinaw",
+      "modelTypeId": 17478,
+      "variationParentTypeId": 17478,
+      "graphicId": 2939,
+      "hullName": "oreba2_t2",
+      "iconFolder": "res:/dx9/model/ship/ore/barge/oreba2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33683,
+      "name": "Mackinaw ORE Development Edition",
+      "modelTypeId": 17478,
+      "variationParentTypeId": null,
+      "graphicId": 20601,
+      "hullName": "oreba2_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/barge/oreba2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 24694,
+      "name": "Maelstrom",
+      "modelTypeId": 24694,
+      "variationParentTypeId": null,
+      "graphicId": 3134,
+      "hullName": "mb3_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33633,
+      "name": "Maelstrom Krusual Edition",
+      "modelTypeId": 24694,
+      "variationParentTypeId": null,
+      "graphicId": 20474,
+      "hullName": "mb3_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33631,
+      "name": "Maelstrom Nefantar Edition",
+      "modelTypeId": 24694,
+      "variationParentTypeId": null,
+      "graphicId": 20473,
+      "hullName": "mb3_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 29248,
+      "name": "Magnate",
+      "modelTypeId": 11189,
+      "variationParentTypeId": null,
+      "graphicId": 3367,
+      "hullName": "af7_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 72907,
+      "name": "Magnate Navy Issue",
+      "modelTypeId": 29248,
+      "variationParentTypeId": 29248,
+      "graphicId": 25576,
+      "hullName": "af7_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37483,
+      "name": "Magus",
+      "modelTypeId": 32872,
+      "variationParentTypeId": 32872,
+      "graphicId": 21223,
+      "hullName": "gde2_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11186,
+      "name": "Malediction",
+      "modelTypeId": 589,
+      "variationParentTypeId": 589,
+      "graphicId": 1861,
+      "hullName": "af4_t2a",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 3516,
+      "name": "Malice",
+      "modelTypeId": 597,
+      "variationParentTypeId": null,
+      "graphicId": 10950,
+      "hullName": "af3_ix",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 624,
+      "name": "Maller",
+      "modelTypeId": 624,
+      "variationParentTypeId": null,
+      "graphicId": 57,
+      "hullName": "ac2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 78367,
+      "name": "Mamba",
+      "modelTypeId": 32876,
+      "variationParentTypeId": 32876,
+      "graphicId": 24531,
+      "hullName": "cde2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/destroyer/cde2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 652,
+      "name": "Mammoth",
+      "modelTypeId": 652,
+      "variationParentTypeId": null,
+      "graphicId": 309,
+      "hullName": "mi2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/industrial/mi2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33693,
+      "name": "Mammoth Nefantar Edition",
+      "modelTypeId": 652,
+      "variationParentTypeId": null,
+      "graphicId": 20480,
+      "hullName": "mi2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/industrial/mi2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 12032,
+      "name": "Manticore",
+      "modelTypeId": 602,
+      "variationParentTypeId": 602,
+      "graphicId": 1881,
+      "hullName": "cf6_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf6/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 44996,
+      "name": "Marshal",
+      "modelTypeId": 44996,
+      "variationParentTypeId": null,
+      "graphicId": 21864,
+      "hullName": "conb1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/battleship/conb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12747,
+      "name": "Mastodon",
+      "modelTypeId": 652,
+      "variationParentTypeId": 652,
+      "graphicId": 2713,
+      "hullName": "mi2_t2b",
+      "iconFolder": "res:/dx9/model/ship/minmatar/industrial/mi2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 609,
+      "name": "Maulus",
+      "modelTypeId": 609,
+      "variationParentTypeId": null,
+      "graphicId": 324,
+      "hullName": "gf7_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37456,
+      "name": "Maulus Navy Issue",
+      "modelTypeId": 609,
+      "variationParentTypeId": 609,
+      "graphicId": 1811,
+      "hullName": "gf7_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 616,
+      "name": "Medusa",
+      "modelTypeId": 616,
+      "variationParentTypeId": null,
+      "graphicId": 342,
+      "hullName": "angf5_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/frigate/angf5/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 641,
+      "name": "Megathron",
+      "modelTypeId": 641,
+      "variationParentTypeId": null,
+      "graphicId": 64,
+      "hullName": "gb2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 13202,
+      "name": "Megathron Federate Issue",
+      "modelTypeId": 641,
+      "variationParentTypeId": 641,
+      "graphicId": 11869,
+      "hullName": "gb2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34239,
+      "name": "Megathron Inner Zone Shipping Edition",
+      "modelTypeId": 641,
+      "variationParentTypeId": null,
+      "graphicId": 20943,
+      "hullName": "gb2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 17728,
+      "name": "Megathron Navy Issue",
+      "modelTypeId": 641,
+      "variationParentTypeId": 641,
+      "graphicId": 2139,
+      "hullName": "gb2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34237,
+      "name": "Megathron Police Edition",
+      "modelTypeId": 641,
+      "variationParentTypeId": null,
+      "graphicId": 20942,
+      "hullName": "gb2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34118,
+      "name": "Megathron Quafe Edition",
+      "modelTypeId": 641,
+      "variationParentTypeId": null,
+      "graphicId": 20928,
+      "hullName": "gb2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 78333,
+      "name": "Mekubal",
+      "modelTypeId": 78333,
+      "variationParentTypeId": null,
+      "graphicId": 26216,
+      "hullName": "angde1_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/destroyer/angde1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 603,
+      "name": "Merlin",
+      "modelTypeId": 603,
+      "variationParentTypeId": null,
+      "graphicId": 314,
+      "hullName": "cf7_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33659,
+      "name": "Merlin Nugoeihuvi Edition",
+      "modelTypeId": 603,
+      "variationParentTypeId": null,
+      "graphicId": 20453,
+      "hullName": "cf7_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf7/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33661,
+      "name": "Merlin Wiyrkomi Edition",
+      "modelTypeId": 603,
+      "variationParentTypeId": null,
+      "graphicId": 1960,
+      "hullName": "cf7_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf7/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 77114,
+      "name": "Metamorphosis",
+      "modelTypeId": 77114,
+      "variationParentTypeId": null,
+      "graphicId": 25969,
+      "hullName": "soctf2_t1",
+      "iconFolder": "res:/dx9/model/ship/soct/frigate/soctf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 656,
+      "name": "Miasmos",
+      "modelTypeId": 650,
+      "variationParentTypeId": null,
+      "graphicId": 327,
+      "hullName": "gi4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/industrial/gi4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32811,
+      "name": "Miasmos Amastris Edition",
+      "modelTypeId": 656,
+      "variationParentTypeId": 656,
+      "graphicId": 11877,
+      "hullName": "gi4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/industrial/gi4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 4363,
+      "name": "Miasmos Quafe Ultra Edition",
+      "modelTypeId": 656,
+      "variationParentTypeId": 656,
+      "graphicId": 11876,
+      "hullName": "gi4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/industrial/gi4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 4388,
+      "name": "Miasmos Quafe Ultramarine Edition",
+      "modelTypeId": 656,
+      "variationParentTypeId": 656,
+      "graphicId": 11875,
+      "hullName": "gi4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/industrial/gi4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32209,
+      "name": "Mimir",
+      "modelTypeId": 629,
+      "variationParentTypeId": null,
+      "graphicId": 3800,
+      "hullName": "mc2_vii",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29334,
+      "name": "Minmatar Media Shuttle",
+      "modelTypeId": 11132,
+      "variationParentTypeId": null,
+      "graphicId": 2045,
+      "hullName": "ms1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/shuttle/ms1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 600,
+      "name": "Minmatar Peacekeeper Ship",
+      "modelTypeId": 17812,
+      "variationParentTypeId": null,
+      "graphicId": 307,
+      "hullName": "mf8_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf8/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11132,
+      "name": "Minmatar Shuttle",
+      "modelTypeId": 11132,
+      "variationParentTypeId": null,
+      "graphicId": 2045,
+      "hullName": "ms1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/shuttle/ms1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37605,
+      "name": "Minokawa",
+      "modelTypeId": 37605,
+      "variationParentTypeId": null,
+      "graphicId": 21254,
+      "hullName": "cfaux1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/forceauxillary/cfaux1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 623,
+      "name": "Moa",
+      "modelTypeId": 623,
+      "variationParentTypeId": null,
+      "graphicId": 49,
+      "hullName": "cc2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 42241,
+      "name": "Molok",
+      "modelTypeId": 11567,
+      "variationParentTypeId": 11567,
+      "graphicId": 21278,
+      "hullName": "at1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/titan/at1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 45534,
+      "name": "Monitor",
+      "modelTypeId": 44995,
+      "variationParentTypeId": null,
+      "graphicId": 22001,
+      "hullName": "conc1_t2b",
+      "iconFolder": "res:/dx9/model/ship/concord/cruiser/conc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33395,
+      "name": "Moracha",
+      "modelTypeId": 33395,
+      "variationParentTypeId": null,
+      "graphicId": 20345,
+      "hullName": "angc1_xi",
+      "iconFolder": "res:/dx9/model/ship/angel/cruiser/angc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17707,
+      "name": "Mordus Frigate",
+      "modelTypeId": 33816,
+      "variationParentTypeId": null,
+      "graphicId": 20616,
+      "hullName": "morf1_t1",
+      "iconFolder": "res:/dx9/model/ship/mordu/frigate/morf1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 92283,
+      "name": "Moreau YC128 Campaign Bus",
+      "modelTypeId": 635,
+      "variationParentTypeId": null,
+      "graphicId": 29376,
+      "hullName": "gy1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/shuttle/gy1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 19724,
+      "name": "Moros",
+      "modelTypeId": 19724,
+      "variationParentTypeId": null,
+      "graphicId": 2744,
+      "hullName": "gdn1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/dreadnought/gdn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34339,
+      "name": "Moros Interbus Edition",
+      "modelTypeId": 19724,
+      "variationParentTypeId": null,
+      "graphicId": 20974,
+      "hullName": "gdn1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/dreadnought/gdn1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 73792,
+      "name": "Moros Navy Issue",
+      "modelTypeId": 19724,
+      "variationParentTypeId": 19724,
+      "graphicId": 25602,
+      "hullName": "gdn1_fn",
+      "iconFolder": "res:/dx9/model/ship/gallente/dreadnought/gdn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12015,
+      "name": "Muninn",
+      "modelTypeId": 629,
+      "variationParentTypeId": 629,
+      "graphicId": 1925,
+      "hullName": "mc2_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 24700,
+      "name": "Myrmidon",
+      "modelTypeId": 22443,
+      "variationParentTypeId": null,
+      "graphicId": 3168,
+      "hullName": "gbc2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battlecruiser/gbc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 72869,
+      "name": "Myrmidon Navy Issue",
+      "modelTypeId": 24700,
+      "variationParentTypeId": 24700,
+      "graphicId": 25574,
+      "hullName": "gbc2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battlecruiser/gbc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 4306,
+      "name": "Naga",
+      "modelTypeId": 4306,
+      "variationParentTypeId": null,
+      "graphicId": 11776,
+      "hullName": "cbc3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battlecruiser/cbc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 19722,
+      "name": "Naglfar",
+      "modelTypeId": 19722,
+      "variationParentTypeId": null,
+      "graphicId": 2755,
+      "hullName": "mdn1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/dreadnought/mdn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 73787,
+      "name": "Naglfar Fleet Issue",
+      "modelTypeId": 19722,
+      "variationParentTypeId": 19722,
+      "graphicId": 25604,
+      "hullName": "mdn1_fn",
+      "iconFolder": "res:/dx9/model/ship/minmatar/dreadnought/mdn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34341,
+      "name": "Naglfar Justice Edition",
+      "modelTypeId": 19722,
+      "variationParentTypeId": null,
+      "graphicId": 20972,
+      "hullName": "mdn1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/dreadnought/mdn1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 3628,
+      "name": "Nation",
+      "modelTypeId": 3514,
+      "variationParentTypeId": null,
+      "graphicId": 10038,
+      "hullName": "sca1_t1",
+      "iconFolder": "res:/dx9/model/ship/sansha/carrier/sca1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 592,
+      "name": "Navitas",
+      "modelTypeId": 592,
+      "variationParentTypeId": null,
+      "graphicId": 59,
+      "hullName": "gf2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33099,
+      "name": "Nefantar Thrasher",
+      "modelTypeId": 16242,
+      "variationParentTypeId": null,
+      "graphicId": 20245,
+      "hullName": "mde1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/destroyer/mde1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11377,
+      "name": "Nemesis",
+      "modelTypeId": 593,
+      "variationParentTypeId": 593,
+      "graphicId": 1909,
+      "hullName": "gf3_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 650,
+      "name": "Nereus",
+      "modelTypeId": 650,
+      "variationParentTypeId": null,
+      "graphicId": 65,
+      "hullName": "gi1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/industrial/gi1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 52250,
+      "name": "Nergal",
+      "modelTypeId": 47269,
+      "variationParentTypeId": 47269,
+      "graphicId": 24470,
+      "hullName": "tgf01_t2",
+      "iconFolder": "res:/dx9/model/ship/triglavian/frigate/tgf01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33472,
+      "name": "Nestor",
+      "modelTypeId": 33472,
+      "variationParentTypeId": null,
+      "graphicId": 20384,
+      "hullName": "soeb1_t1",
+      "iconFolder": "res:/dx9/model/ship/soe/battleship/soeb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 24483,
+      "name": "Nidhoggur",
+      "modelTypeId": 24483,
+      "variationParentTypeId": null,
+      "graphicId": 2929,
+      "hullName": "mca2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/carrier/mca2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22470,
+      "name": "Nighthawk",
+      "modelTypeId": 24698,
+      "variationParentTypeId": 24698,
+      "graphicId": 2801,
+      "hullName": "cbc2_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/battlecruiser/cbc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17736,
+      "name": "Nightmare",
+      "modelTypeId": 17736,
+      "variationParentTypeId": null,
+      "graphicId": 2295,
+      "hullName": "sb1_t1",
+      "iconFolder": "res:/dx9/model/ship/sansha/battleship/sb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37607,
+      "name": "Ninazu",
+      "modelTypeId": 37607,
+      "variationParentTypeId": null,
+      "graphicId": 21255,
+      "hullName": "gfaux1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/forceauxillary/gfaux1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 2998,
+      "name": "Noctis",
+      "modelTypeId": 2863,
+      "variationParentTypeId": 2863,
+      "graphicId": 10040,
+      "hullName": "oreb1_t1b",
+      "iconFolder": "res:/dx9/model/ship/ore/battleship/oreb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 28846,
+      "name": "Nomad",
+      "modelTypeId": 20189,
+      "variationParentTypeId": 20189,
+      "graphicId": 3360,
+      "hullName": "mfr1_t2",
+      "iconFolder": "res:/dx9/model/ship/minmatar/freighter/mfr1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 23913,
+      "name": "Nyx",
+      "modelTypeId": 23913,
+      "variationParentTypeId": null,
+      "graphicId": 2909,
+      "hullName": "gca1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/carrier/gca1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 20187,
+      "name": "Obelisk",
+      "modelTypeId": 20187,
+      "variationParentTypeId": null,
+      "graphicId": 2739,
+      "hullName": "gfr1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/freighter/gfr1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12745,
+      "name": "Occator",
+      "modelTypeId": 655,
+      "variationParentTypeId": 655,
+      "graphicId": 2711,
+      "hullName": "gi2_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/industrial/gi2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 89607,
+      "name": "Odysseus",
+      "modelTypeId": 89607,
+      "variationParentTypeId": null,
+      "graphicId": 28749,
+      "hullName": "soebc1_t1",
+      "iconFolder": "res:/dx9/model/ship/soe/battlecruiser/soebc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 2006,
+      "name": "Omen",
+      "modelTypeId": 2006,
+      "variationParentTypeId": null,
+      "graphicId": 1065,
+      "hullName": "ac4_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33639,
+      "name": "Omen Kador Edition",
+      "modelTypeId": 2006,
+      "variationParentTypeId": null,
+      "graphicId": 20462,
+      "hullName": "ac4_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 17709,
+      "name": "Omen Navy Issue",
+      "modelTypeId": 2006,
+      "variationParentTypeId": 2006,
+      "graphicId": 1731,
+      "hullName": "ac4_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33641,
+      "name": "Omen Tash-Murkon Edition",
+      "modelTypeId": 2006,
+      "variationParentTypeId": null,
+      "graphicId": 20463,
+      "hullName": "ac4_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11989,
+      "name": "Oneiros",
+      "modelTypeId": 634,
+      "variationParentTypeId": 634,
+      "graphicId": 2141,
+      "hullName": "gc2_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11995,
+      "name": "Onyx",
+      "modelTypeId": 623,
+      "variationParentTypeId": 623,
+      "graphicId": 3362,
+      "hullName": "cc2_t2a",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 25560,
+      "name": "Opux Dragoon Yacht",
+      "modelTypeId": 635,
+      "variationParentTypeId": null,
+      "graphicId": 330,
+      "hullName": "gy1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/shuttle/gy1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 635,
+      "name": "Opux Luxury Yacht",
+      "modelTypeId": 635,
+      "variationParentTypeId": null,
+      "graphicId": 330,
+      "hullName": "gy1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/shuttle/gy1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 4302,
+      "name": "Oracle",
+      "modelTypeId": 4302,
+      "variationParentTypeId": null,
+      "graphicId": 11775,
+      "hullName": "abc3_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battlecruiser/abc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 28606,
+      "name": "Orca",
+      "modelTypeId": 28606,
+      "variationParentTypeId": null,
+      "graphicId": 3466,
+      "hullName": "orefr1_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/freighter/orefr1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33685,
+      "name": "Orca ORE Development Edition",
+      "modelTypeId": 28606,
+      "variationParentTypeId": null,
+      "graphicId": 20602,
+      "hullName": "orefr1_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/freighter/orefr1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33818,
+      "name": "Orthrus",
+      "modelTypeId": 33818,
+      "variationParentTypeId": null,
+      "graphicId": 20614,
+      "hullName": "morc1_t1",
+      "iconFolder": "res:/dx9/model/ship/mordu/cruiser/morc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 620,
+      "name": "Osprey",
+      "modelTypeId": 620,
+      "variationParentTypeId": null,
+      "graphicId": 41,
+      "hullName": "cc1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29340,
+      "name": "Osprey Navy Issue",
+      "modelTypeId": 620,
+      "variationParentTypeId": 620,
+      "graphicId": 1784,
+      "hullName": "cc1_fn",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 89649,
+      "name": "Outrider",
+      "modelTypeId": 89240,
+      "variationParentTypeId": 89240,
+      "graphicId": 28932,
+      "hullName": "orede1_t2b",
+      "iconFolder": "res:/dx9/model/ship/ore/destroyer/orede1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 44993,
+      "name": "Pacifier",
+      "modelTypeId": 34496,
+      "variationParentTypeId": null,
+      "graphicId": 21490,
+      "hullName": "conf1_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 28659,
+      "name": "Paladin",
+      "modelTypeId": 642,
+      "variationParentTypeId": 642,
+      "graphicId": 3351,
+      "hullName": "ab1_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34219,
+      "name": "Paladin Blood Raider Edition",
+      "modelTypeId": 642,
+      "variationParentTypeId": null,
+      "graphicId": 20934,
+      "hullName": "ab1_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34221,
+      "name": "Paladin Kador Edition",
+      "modelTypeId": 642,
+      "variationParentTypeId": null,
+      "graphicId": 20935,
+      "hullName": "ab1_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34223,
+      "name": "Paladin Tash-Murkon Edition",
+      "modelTypeId": 642,
+      "variationParentTypeId": null,
+      "graphicId": 20936,
+      "hullName": "ab1_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 22440,
+      "name": "Panther",
+      "modelTypeId": 644,
+      "variationParentTypeId": 644,
+      "graphicId": 3355,
+      "hullName": "mb1_t2b",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 91174,
+      "name": "Perseverance",
+      "modelTypeId": 89240,
+      "variationParentTypeId": 89240,
+      "graphicId": 29105,
+      "hullName": "orede1_t2c",
+      "iconFolder": "res:/dx9/model/ship/ore/destroyer/orede1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17718,
+      "name": "Phantasm",
+      "modelTypeId": 17718,
+      "variationParentTypeId": null,
+      "graphicId": 1236,
+      "hullName": "sc1_t1",
+      "iconFolder": "res:/dx9/model/ship/sansha/cruiser/sc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12021,
+      "name": "Phobos",
+      "modelTypeId": 627,
+      "variationParentTypeId": 627,
+      "graphicId": 3361,
+      "hullName": "gc4_t2b",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 19726,
+      "name": "Phoenix",
+      "modelTypeId": 19726,
+      "variationParentTypeId": null,
+      "graphicId": 2786,
+      "hullName": "cdn1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/dreadnought/cdn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 73793,
+      "name": "Phoenix Navy Issue",
+      "modelTypeId": 19726,
+      "variationParentTypeId": 19726,
+      "graphicId": 25603,
+      "hullName": "cdn1_fn",
+      "iconFolder": "res:/dx9/model/ship/caldari/dreadnought/cdn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34343,
+      "name": "Phoenix Wiyrkomi Edition",
+      "modelTypeId": 19726,
+      "variationParentTypeId": null,
+      "graphicId": 20973,
+      "hullName": "cdn1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/dreadnought/cdn1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11965,
+      "name": "Pilgrim",
+      "modelTypeId": 628,
+      "variationParentTypeId": 628,
+      "graphicId": 1914,
+      "hullName": "ac1_t2b",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 89240,
+      "name": "Pioneer",
+      "modelTypeId": 89240,
+      "variationParentTypeId": null,
+      "graphicId": 28748,
+      "hullName": "orede1_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/destroyer/orede1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 89647,
+      "name": "Pioneer Consortium Issue",
+      "modelTypeId": 89240,
+      "variationParentTypeId": 89240,
+      "graphicId": 28933,
+      "hullName": "orede1_fn",
+      "iconFolder": "res:/dx9/model/ship/ore/destroyer/orede1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 9862,
+      "name": "Polaris Centurion Frigate",
+      "modelTypeId": 1233,
+      "variationParentTypeId": null,
+      "graphicId": 1375,
+      "hullName": "conf2_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 9858,
+      "name": "Polaris Centurion TEST",
+      "modelTypeId": 1233,
+      "variationParentTypeId": null,
+      "graphicId": 1375,
+      "hullName": "conf2_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 1233,
+      "name": "Polaris Enigma Frigate",
+      "modelTypeId": 1233,
+      "variationParentTypeId": null,
+      "graphicId": 1010,
+      "hullName": "conf2_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 9854,
+      "name": "Polaris Inspector Frigate",
+      "modelTypeId": 1233,
+      "variationParentTypeId": null,
+      "graphicId": 1375,
+      "hullName": "conf2_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 9860,
+      "name": "Polaris Legatus Frigate",
+      "modelTypeId": 1233,
+      "variationParentTypeId": null,
+      "graphicId": 1376,
+      "hullName": "conf2_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33677,
+      "name": "Police Pursuit Comet",
+      "modelTypeId": 17841,
+      "variationParentTypeId": null,
+      "graphicId": 66,
+      "hullName": "gf8_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf8/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 37481,
+      "name": "Pontifex",
+      "modelTypeId": 32874,
+      "variationParentTypeId": 32874,
+      "graphicId": 21222,
+      "hullName": "ade2_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/destroyer/ade2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 42244,
+      "name": "Porpoise",
+      "modelTypeId": 42244,
+      "variationParentTypeId": null,
+      "graphicId": 21362,
+      "hullName": "oreb1_t1c",
+      "iconFolder": "res:/dx9/model/ship/ore/battleship/oreb1/icons/",
+      "sdePublished": true
+    },
+    {
+      "typeId": 47466,
+      "name": "Praxis",
+      "modelTypeId": 47466,
+      "variationParentTypeId": null,
+      "graphicId": 22070,
+      "hullName": "soctb1_t1",
+      "iconFolder": "res:/dx9/model/ship/soct/battleship/soctb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 2863,
+      "name": "Primae",
+      "modelTypeId": 2863,
+      "variationParentTypeId": null,
+      "graphicId": 10013,
+      "hullName": "oreb1_t1a",
+      "iconFolder": "res:/dx9/model/ship/ore/battleship/oreb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 586,
+      "name": "Probe",
+      "modelTypeId": 586,
+      "variationParentTypeId": null,
+      "graphicId": 45,
+      "hullName": "mf2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 72903,
+      "name": "Probe Fleet Issue",
+      "modelTypeId": 586,
+      "variationParentTypeId": 586,
+      "graphicId": 1889,
+      "hullName": "mf2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17480,
+      "name": "Procurer",
+      "modelTypeId": 17480,
+      "variationParentTypeId": null,
+      "graphicId": 2524,
+      "hullName": "oreba1_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/barge/oreba1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 16233,
+      "name": "Prophecy",
+      "modelTypeId": 16233,
+      "variationParentTypeId": null,
+      "graphicId": 2385,
+      "hullName": "abc1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battlecruiser/abc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33875,
+      "name": "Prophecy Blood Raiders Edition",
+      "modelTypeId": 16233,
+      "variationParentTypeId": null,
+      "graphicId": 2795,
+      "hullName": "abc1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battlecruiser/abc1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 72872,
+      "name": "Prophecy Navy Issue",
+      "modelTypeId": 16233,
+      "variationParentTypeId": 16233,
+      "graphicId": 25573,
+      "hullName": "abc1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battlecruiser/abc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12733,
+      "name": "Prorator",
+      "modelTypeId": 19744,
+      "variationParentTypeId": 19744,
+      "graphicId": 2716,
+      "hullName": "ai2_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/industrial/ai2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33697,
+      "name": "Prospect",
+      "modelTypeId": 32880,
+      "variationParentTypeId": 32880,
+      "graphicId": 20600,
+      "hullName": "oref1_t2b",
+      "iconFolder": "res:/dx9/model/ship/ore/frigate/oref1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29988,
+      "name": "Proteus",
+      "modelTypeId": 29988,
+      "variationParentTypeId": null,
+      "graphicId": 20217,
+      "hullName": "gsc1_t3",
+      "iconFolder": "res:/dx9/model/ship/gallente/strategiccruiser/gsc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 20183,
+      "name": "Providence",
+      "modelTypeId": 20183,
+      "variationParentTypeId": null,
+      "graphicId": 2738,
+      "hullName": "afr1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/freighter/afr1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12735,
+      "name": "Prowler",
+      "modelTypeId": 653,
+      "variationParentTypeId": 653,
+      "graphicId": 2714,
+      "hullName": "mi3_t2c",
+      "iconFolder": "res:/dx9/model/ship/minmatar/industrial/mi3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 597,
+      "name": "Punisher",
+      "modelTypeId": 597,
+      "variationParentTypeId": null,
+      "graphicId": 300,
+      "hullName": "af3_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33655,
+      "name": "Punisher Kador Edition",
+      "modelTypeId": 597,
+      "variationParentTypeId": null,
+      "graphicId": 20451,
+      "hullName": "af3_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33657,
+      "name": "Punisher Tash-Murkon Edition",
+      "modelTypeId": 597,
+      "variationParentTypeId": null,
+      "graphicId": 20452,
+      "hullName": "af3_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 12038,
+      "name": "Purifier",
+      "modelTypeId": 590,
+      "variationParentTypeId": 590,
+      "graphicId": 1872,
+      "hullName": "af5_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 85236,
+      "name": "Python",
+      "modelTypeId": 44996,
+      "variationParentTypeId": null,
+      "graphicId": 27916,
+      "hullName": "conb1_xx",
+      "iconFolder": "res:/dx9/model/ship/concord/battleship/conb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32846,
+      "name": "Quafe Catalyst",
+      "modelTypeId": 16240,
+      "variationParentTypeId": null,
+      "graphicId": 20195,
+      "hullName": "gde1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/destroyer/gde1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 42245,
+      "name": "Rabisu",
+      "modelTypeId": 17922,
+      "variationParentTypeId": null,
+      "graphicId": 21361,
+      "hullName": "ac6_xiv",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac6/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 23773,
+      "name": "Ragnarok",
+      "modelTypeId": 23773,
+      "variationParentTypeId": null,
+      "graphicId": 2906,
+      "hullName": "mt1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/titan/mt1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 60765,
+      "name": "Raiju",
+      "modelTypeId": 33816,
+      "variationParentTypeId": null,
+      "graphicId": 25141,
+      "hullName": "morf1_xvii",
+      "iconFolder": "res:/dx9/model/ship/mordu/frigate/morf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11963,
+      "name": "Rapier",
+      "modelTypeId": 630,
+      "variationParentTypeId": 630,
+      "graphicId": 1777,
+      "hullName": "mc3_t2c",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11178,
+      "name": "Raptor",
+      "modelTypeId": 583,
+      "variationParentTypeId": 583,
+      "graphicId": 1878,
+      "hullName": "cf2_t2b",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17918,
+      "name": "Rattlesnake",
+      "modelTypeId": 640,
+      "variationParentTypeId": 640,
+      "graphicId": 2159,
+      "hullName": "cb2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34151,
+      "name": "Rattlesnake Victory Edition",
+      "modelTypeId": 640,
+      "variationParentTypeId": null,
+      "graphicId": 20927,
+      "hullName": "cb2_xii",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 638,
+      "name": "Raven",
+      "modelTypeId": 638,
+      "variationParentTypeId": null,
+      "graphicId": 43,
+      "hullName": "cb1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34225,
+      "name": "Raven Guristas Edition",
+      "modelTypeId": 638,
+      "variationParentTypeId": null,
+      "graphicId": 2158,
+      "hullName": "cb1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34227,
+      "name": "Raven Kaalakiota Edition",
+      "modelTypeId": 638,
+      "variationParentTypeId": null,
+      "graphicId": 20937,
+      "hullName": "cb1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 17636,
+      "name": "Raven Navy Issue",
+      "modelTypeId": 638,
+      "variationParentTypeId": 638,
+      "graphicId": 2123,
+      "hullName": "cb1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34229,
+      "name": "Raven Nugoeihuvi Edition",
+      "modelTypeId": 638,
+      "variationParentTypeId": null,
+      "graphicId": 20938,
+      "hullName": "cb1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 26840,
+      "name": "Raven State Issue",
+      "modelTypeId": 638,
+      "variationParentTypeId": 638,
+      "graphicId": 3204,
+      "hullName": "cb1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 588,
+      "name": "Reaper",
+      "modelTypeId": 588,
+      "variationParentTypeId": null,
+      "graphicId": 53,
+      "hullName": "mf3_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22428,
+      "name": "Redeemer",
+      "modelTypeId": 643,
+      "variationParentTypeId": 643,
+      "graphicId": 3356,
+      "hullName": "ab2_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17812,
+      "name": "Republic Fleet Firetail",
+      "modelTypeId": 17812,
+      "variationParentTypeId": null,
+      "graphicId": 2635,
+      "hullName": "mf8_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf8/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11393,
+      "name": "Retribution",
+      "modelTypeId": 597,
+      "variationParentTypeId": 597,
+      "graphicId": 1920,
+      "hullName": "af3_t2b",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17478,
+      "name": "Retriever",
+      "modelTypeId": 17478,
+      "variationParentTypeId": null,
+      "graphicId": 2523,
+      "hullName": "oreba2_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/barge/oreba2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 19720,
+      "name": "Revelation",
+      "modelTypeId": 19720,
+      "variationParentTypeId": null,
+      "graphicId": 2743,
+      "hullName": "adn1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/dreadnought/adn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 73790,
+      "name": "Revelation Navy Issue",
+      "modelTypeId": 19720,
+      "variationParentTypeId": 19720,
+      "graphicId": 25601,
+      "hullName": "adn1_fn",
+      "iconFolder": "res:/dx9/model/ship/amarr/dreadnought/adn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34345,
+      "name": "Revelation Sarum Edition",
+      "modelTypeId": 19720,
+      "variationParentTypeId": null,
+      "graphicId": 20971,
+      "hullName": "adn1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/dreadnought/adn1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 3514,
+      "name": "Revenant",
+      "modelTypeId": 3514,
+      "variationParentTypeId": null,
+      "graphicId": 10038,
+      "hullName": "sca1_t1",
+      "iconFolder": "res:/dx9/model/ship/sansha/carrier/sca1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 28844,
+      "name": "Rhea",
+      "modelTypeId": 20185,
+      "variationParentTypeId": 20185,
+      "graphicId": 20277,
+      "hullName": "cfr1_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/freighter/cfr1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 587,
+      "name": "Rifter",
+      "modelTypeId": 587,
+      "variationParentTypeId": null,
+      "graphicId": 46,
+      "hullName": "mf4_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33665,
+      "name": "Rifter Krusual Edition",
+      "modelTypeId": 587,
+      "variationParentTypeId": null,
+      "graphicId": 20455,
+      "hullName": "mf4_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33663,
+      "name": "Rifter Nefantar Edition",
+      "modelTypeId": 587,
+      "variationParentTypeId": null,
+      "graphicId": 20454,
+      "hullName": "mf4_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 92284,
+      "name": "Roden YC128 Campaign Bus",
+      "modelTypeId": 635,
+      "variationParentTypeId": null,
+      "graphicId": 29374,
+      "hullName": "gy1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/shuttle/gy1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 49712,
+      "name": "Rodiva",
+      "modelTypeId": 49712,
+      "variationParentTypeId": null,
+      "graphicId": 22317,
+      "hullName": "tgc02_t1",
+      "iconFolder": "res:/dx9/model/ship/triglavian/cruiser/tgc02/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 24688,
+      "name": "Rokh",
+      "modelTypeId": 24688,
+      "variationParentTypeId": null,
+      "graphicId": 3170,
+      "hullName": "cb3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33627,
+      "name": "Rokh Nugoeihuvi Edition",
+      "modelTypeId": 24688,
+      "variationParentTypeId": null,
+      "graphicId": 20471,
+      "hullName": "cb3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33629,
+      "name": "Rokh Wiyrkomi Edition",
+      "modelTypeId": 24688,
+      "variationParentTypeId": null,
+      "graphicId": 20472,
+      "hullName": "cb3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11959,
+      "name": "Rook",
+      "modelTypeId": 632,
+      "variationParentTypeId": 632,
+      "graphicId": 1847,
+      "hullName": "cc4_t2b",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 28352,
+      "name": "Rorqual",
+      "modelTypeId": 28352,
+      "variationParentTypeId": null,
+      "graphicId": 3331,
+      "hullName": "orecs1_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/capital/orecs1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33687,
+      "name": "Rorqual ORE Development Edition",
+      "modelTypeId": 28352,
+      "variationParentTypeId": null,
+      "graphicId": 20603,
+      "hullName": "orecs1_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/capital/orecs1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 629,
+      "name": "Rupture",
+      "modelTypeId": 629,
+      "variationParentTypeId": null,
+      "graphicId": 302,
+      "hullName": "mc2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22456,
+      "name": "Sabre",
+      "modelTypeId": 16242,
+      "variationParentTypeId": 16242,
+      "graphicId": 2814,
+      "hullName": "mde1_t2c",
+      "iconFolder": "res:/dx9/model/ship/minmatar/destroyer/mde1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12019,
+      "name": "Sacrilege",
+      "modelTypeId": 624,
+      "variationParentTypeId": 624,
+      "graphicId": 1855,
+      "hullName": "ac2_t2a",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 92822,
+      "name": "Salvation",
+      "modelTypeId": 23757,
+      "variationParentTypeId": 23757,
+      "graphicId": 33283,
+      "hullName": "aca2_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/carrier/aca2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 87381,
+      "name": "Sarathiel",
+      "modelTypeId": 87381,
+      "variationParentTypeId": null,
+      "graphicId": 28026,
+      "hullName": "angdn1_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/dreadnought/angdn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32987,
+      "name": "Sarum Magnate",
+      "modelTypeId": 29248,
+      "variationParentTypeId": null,
+      "graphicId": 20233,
+      "hullName": "af7_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af7/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 37460,
+      "name": "Scalpel",
+      "modelTypeId": 599,
+      "variationParentTypeId": 599,
+      "graphicId": 21219,
+      "hullName": "mf6_t2",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf6/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11978,
+      "name": "Scimitar",
+      "modelTypeId": 631,
+      "variationParentTypeId": 631,
+      "graphicId": 1778,
+      "hullName": "mc4_t2c",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 640,
+      "name": "Scorpion",
+      "modelTypeId": 640,
+      "variationParentTypeId": null,
+      "graphicId": 50,
+      "hullName": "cb2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 4005,
+      "name": "Scorpion Ishukone Watch",
+      "modelTypeId": 640,
+      "variationParentTypeId": null,
+      "graphicId": 11536,
+      "hullName": "cb2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 32309,
+      "name": "Scorpion Navy Issue",
+      "modelTypeId": 640,
+      "variationParentTypeId": 640,
+      "graphicId": 3815,
+      "hullName": "cb2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 631,
+      "name": "Scythe",
+      "modelTypeId": 631,
+      "variationParentTypeId": null,
+      "graphicId": 304,
+      "hullName": "mc4_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29336,
+      "name": "Scythe Fleet Issue",
+      "modelTypeId": 631,
+      "variationParentTypeId": 631,
+      "graphicId": 1887,
+      "hullName": "mc4_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11190,
+      "name": "Sentinel",
+      "modelTypeId": 2161,
+      "variationParentTypeId": 2161,
+      "graphicId": 3365,
+      "hullName": "af2_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 78414,
+      "name": "Shapash",
+      "modelTypeId": 2834,
+      "variationParentTypeId": null,
+      "graphicId": 26515,
+      "hullName": "gf4_tournament",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 85062,
+      "name": "Sidewinder",
+      "modelTypeId": 34496,
+      "variationParentTypeId": null,
+      "graphicId": 27914,
+      "hullName": "conf1_xx",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 19744,
+      "name": "Sigil",
+      "modelTypeId": 12734,
+      "variationParentTypeId": null,
+      "graphicId": 2715,
+      "hullName": "ai2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/industrial/ai2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11942,
+      "name": "Silver Magnate",
+      "modelTypeId": 29248,
+      "variationParentTypeId": 29248,
+      "graphicId": 2241,
+      "hullName": "af7_i",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 92823,
+      "name": "Simurgh",
+      "modelTypeId": 23915,
+      "variationParentTypeId": 23915,
+      "graphicId": 33284,
+      "hullName": "cca1_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/carrier/cca1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22430,
+      "name": "Sin",
+      "modelTypeId": 645,
+      "variationParentTypeId": 645,
+      "graphicId": 3350,
+      "hullName": "gb1_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22546,
+      "name": "Skiff",
+      "modelTypeId": 17480,
+      "variationParentTypeId": 17480,
+      "graphicId": 2940,
+      "hullName": "oreba1_t2",
+      "iconFolder": "res:/dx9/model/ship/ore/barge/oreba1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 89808,
+      "name": "Skua",
+      "modelTypeId": 89808,
+      "variationParentTypeId": null,
+      "graphicId": 29066,
+      "hullName": "cde3_xxi",
+      "iconFolder": "res:\\dx9\\model\\ship\\caldari\\destroyer\\cde3\\icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 54731,
+      "name": "Skybreaker",
+      "modelTypeId": 54731,
+      "variationParentTypeId": null,
+      "graphicId": 24569,
+      "hullName": "uwf01_t1",
+      "iconFolder": "res:/dx9/model/ship/upwell/frigate/uwf01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 585,
+      "name": "Slasher",
+      "modelTypeId": 585,
+      "variationParentTypeId": null,
+      "graphicId": 44,
+      "hullName": "mf1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22444,
+      "name": "Sleipnir",
+      "modelTypeId": 24702,
+      "variationParentTypeId": 24702,
+      "graphicId": 2912,
+      "hullName": "mbc2_t2",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battlecruiser/mbc2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 3751,
+      "name": "SOCT 1",
+      "modelTypeId": 29266,
+      "variationParentTypeId": null,
+      "graphicId": 1233,
+      "hullName": "soctf1_t1",
+      "iconFolder": "res:/dx9/model/ship/soct/frigate/soctf1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 3753,
+      "name": "SOCT 2",
+      "modelTypeId": 42685,
+      "variationParentTypeId": null,
+      "graphicId": 1232,
+      "hullName": "soctde1_t1",
+      "iconFolder": "res:/dx9/model/ship/soct/destroyer/soctde1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 81008,
+      "name": "Squall",
+      "modelTypeId": 81008,
+      "variationParentTypeId": null,
+      "graphicId": 27537,
+      "hullName": "uwi01_t1",
+      "iconFolder": "res:/dx9/model/ship/upwell/Industrial/uwi01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 622,
+      "name": "Stabber",
+      "modelTypeId": 622,
+      "variationParentTypeId": null,
+      "graphicId": 47,
+      "hullName": "mc1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17713,
+      "name": "Stabber Fleet Issue",
+      "modelTypeId": 622,
+      "variationParentTypeId": 622,
+      "graphicId": 1884,
+      "hullName": "mc1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33649,
+      "name": "Stabber Krusual Edition",
+      "modelTypeId": 622,
+      "variationParentTypeId": null,
+      "graphicId": 20466,
+      "hullName": "mc1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33647,
+      "name": "Stabber Nefantar Edition",
+      "modelTypeId": 622,
+      "variationParentTypeId": null,
+      "graphicId": 20465,
+      "hullName": "mc1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11198,
+      "name": "Stiletto",
+      "modelTypeId": 585,
+      "variationParentTypeId": 585,
+      "graphicId": 1779,
+      "hullName": "mf1_t2c",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37482,
+      "name": "Stork",
+      "modelTypeId": 32876,
+      "variationParentTypeId": 32876,
+      "graphicId": 21221,
+      "hullName": "cde2_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/destroyer/cde2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 54732,
+      "name": "Stormbringer",
+      "modelTypeId": 54732,
+      "variationParentTypeId": null,
+      "graphicId": 24570,
+      "hullName": "uwc01_t1",
+      "iconFolder": "res:/dx9/model/ship/upwell/cruiser/uwc01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33470,
+      "name": "Stratios",
+      "modelTypeId": 33470,
+      "variationParentTypeId": null,
+      "graphicId": 20385,
+      "hullName": "soec1_t1",
+      "iconFolder": "res:/dx9/model/ship/soe/cruiser/soec1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33553,
+      "name": "Stratios Emergency Responder",
+      "modelTypeId": 33470,
+      "variationParentTypeId": null,
+      "graphicId": 20403,
+      "hullName": "soec1_t1",
+      "iconFolder": "res:/dx9/model/ship/soe/cruiser/soec1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17924,
+      "name": "Succubus",
+      "modelTypeId": 17924,
+      "variationParentTypeId": null,
+      "graphicId": 1237,
+      "hullName": "sf1_t1",
+      "iconFolder": "res:/dx9/model/ship/sansha/frigate/sf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32983,
+      "name": "Sukuuvestaa Heron",
+      "modelTypeId": 605,
+      "variationParentTypeId": null,
+      "graphicId": 20236,
+      "hullName": "cf3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 42685,
+      "name": "Sunesis",
+      "modelTypeId": 42685,
+      "variationParentTypeId": null,
+      "graphicId": 1232,
+      "hullName": "soctde1_t1",
+      "iconFolder": "res:/dx9/model/ship/soct/destroyer/soctde1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34562,
+      "name": "Svipul",
+      "modelTypeId": 34562,
+      "variationParentTypeId": null,
+      "graphicId": 21052,
+      "hullName": "mde3_t3",
+      "iconFolder": "res:/dx9/model/ship/minmatar/destroyer/mde3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 619,
+      "name": "Swordspine",
+      "modelTypeId": 619,
+      "variationParentTypeId": null,
+      "graphicId": 345,
+      "hullName": "angf4_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/frigate/angf4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33081,
+      "name": "Taipan",
+      "modelTypeId": 601,
+      "variationParentTypeId": null,
+      "graphicId": 1829,
+      "hullName": "cf5_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 4308,
+      "name": "Talos",
+      "modelTypeId": 4308,
+      "variationParentTypeId": null,
+      "graphicId": 11777,
+      "hullName": "gbc3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battlecruiser/gbc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32878,
+      "name": "Talwar",
+      "modelTypeId": 32878,
+      "variationParentTypeId": null,
+      "graphicId": 20202,
+      "hullName": "mde2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/destroyer/mde2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 91858,
+      "name": "Talwar Fleet Issue",
+      "modelTypeId": 32878,
+      "variationParentTypeId": 32878,
+      "graphicId": 29325,
+      "hullName": "mde2_fn",
+      "iconFolder": "res:/dx9/model/ship/minmatar/destroyer/mde2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11200,
+      "name": "Taranis",
+      "modelTypeId": 608,
+      "variationParentTypeId": 608,
+      "graphicId": 1912,
+      "hullName": "gf6_t2b",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf6/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33190,
+      "name": "Tash-Murkon Magnate",
+      "modelTypeId": 29248,
+      "variationParentTypeId": null,
+      "graphicId": 20300,
+      "hullName": "af7_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af7/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 649,
+      "name": "Tayra",
+      "modelTypeId": 649,
+      "variationParentTypeId": null,
+      "graphicId": 52,
+      "hullName": "ci2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/industrial/ci2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33691,
+      "name": "Tayra Wiyrkomi Edition",
+      "modelTypeId": 649,
+      "variationParentTypeId": null,
+      "graphicId": 20478,
+      "hullName": "ci2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/industrial/ci2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 639,
+      "name": "Tempest",
+      "modelTypeId": 639,
+      "variationParentTypeId": null,
+      "graphicId": 48,
+      "hullName": "mb2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17732,
+      "name": "Tempest Fleet Issue",
+      "modelTypeId": 639,
+      "variationParentTypeId": 639,
+      "graphicId": 2642,
+      "hullName": "mb2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34247,
+      "name": "Tempest Justice Edition",
+      "modelTypeId": 639,
+      "variationParentTypeId": null,
+      "graphicId": 3205,
+      "hullName": "mb2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34249,
+      "name": "Tempest Krusual Edition",
+      "modelTypeId": 639,
+      "variationParentTypeId": null,
+      "graphicId": 20947,
+      "hullName": "mb2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34251,
+      "name": "Tempest Nefantar Edition",
+      "modelTypeId": 639,
+      "variationParentTypeId": null,
+      "graphicId": 20948,
+      "hullName": "mb2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 26842,
+      "name": "Tempest Tribal Issue",
+      "modelTypeId": 639,
+      "variationParentTypeId": 639,
+      "graphicId": 3205,
+      "hullName": "mb2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 29984,
+      "name": "Tengu",
+      "modelTypeId": 29984,
+      "variationParentTypeId": null,
+      "graphicId": 20215,
+      "hullName": "csc1_t3",
+      "iconFolder": "res:/dx9/model/ship/caldari/strategiccruiser/csc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 92282,
+      "name": "Tenzin YC128 Campaign Bus",
+      "modelTypeId": 635,
+      "variationParentTypeId": null,
+      "graphicId": 29375,
+      "hullName": "gy1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/shuttle/gy1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 52267,
+      "name": "Test Site Maller",
+      "modelTypeId": 624,
+      "variationParentTypeId": null,
+      "graphicId": 57,
+      "hullName": "ac2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 37459,
+      "name": "Thalia",
+      "modelTypeId": 592,
+      "variationParentTypeId": 592,
+      "graphicId": 21217,
+      "hullName": "gf2_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 23911,
+      "name": "Thanatos",
+      "modelTypeId": 23911,
+      "variationParentTypeId": null,
+      "graphicId": 2932,
+      "hullName": "gca2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/carrier/gca2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 85087,
+      "name": "Tholos",
+      "modelTypeId": 85087,
+      "variationParentTypeId": null,
+      "graphicId": 27875,
+      "hullName": "deade1_t1",
+      "iconFolder": "res:/dx9/model/ship/deathless/destroyer/deade1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 627,
+      "name": "Thorax",
+      "modelTypeId": 627,
+      "variationParentTypeId": null,
+      "graphicId": 63,
+      "hullName": "gc4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33651,
+      "name": "Thorax Aliastra Edition",
+      "modelTypeId": 627,
+      "variationParentTypeId": null,
+      "graphicId": 20468,
+      "hullName": "gc4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 33653,
+      "name": "Thorax Inner Zone Shipping Edition",
+      "modelTypeId": 627,
+      "variationParentTypeId": null,
+      "graphicId": 20467,
+      "hullName": "gc4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 16242,
+      "name": "Thrasher",
+      "modelTypeId": 16242,
+      "variationParentTypeId": null,
+      "graphicId": 2390,
+      "hullName": "mde1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/destroyer/mde1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 73794,
+      "name": "Thrasher Fleet Issue",
+      "modelTypeId": 16242,
+      "variationParentTypeId": 16242,
+      "graphicId": 25609,
+      "hullName": "mde1_fn",
+      "iconFolder": "res:/dx9/model/ship/minmatar/destroyer/mde1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33883,
+      "name": "Thrasher Thukker Tribe Edition",
+      "modelTypeId": 16242,
+      "variationParentTypeId": null,
+      "graphicId": 2922,
+      "hullName": "mde1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/destroyer/mde1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 54733,
+      "name": "Thunderchild",
+      "modelTypeId": 54733,
+      "variationParentTypeId": null,
+      "graphicId": 24571,
+      "hullName": "uwb01_t1",
+      "iconFolder": "res:/dx9/model/ship/upwell/battleship/uwb01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 48635,
+      "name": "Tiamat",
+      "modelTypeId": 47270,
+      "variationParentTypeId": null,
+      "graphicId": 22233,
+      "hullName": "tgc01_t1",
+      "iconFolder": "res:/dx9/model/ship/triglavian/cruiser/tgc01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 591,
+      "name": "Tormentor",
+      "modelTypeId": 591,
+      "variationParentTypeId": null,
+      "graphicId": 56,
+      "hullName": "af6_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af6/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 4310,
+      "name": "Tornado",
+      "modelTypeId": 4310,
+      "variationParentTypeId": null,
+      "graphicId": 11778,
+      "hullName": "mbc3_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battlecruiser/mbc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 81047,
+      "name": "Torrent",
+      "modelTypeId": 81008,
+      "variationParentTypeId": 81008,
+      "graphicId": 27539,
+      "hullName": "uwi01_t2b",
+      "iconFolder": "res:/dx9/model/ship/upwell/Industrial/uwi01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 593,
+      "name": "Tristan",
+      "modelTypeId": 593,
+      "variationParentTypeId": null,
+      "graphicId": 60,
+      "hullName": "gf3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34443,
+      "name": "Tristan Quafe Edition",
+      "modelTypeId": 593,
+      "variationParentTypeId": null,
+      "graphicId": 1796,
+      "hullName": "gf3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 644,
+      "name": "Typhoon",
+      "modelTypeId": 644,
+      "variationParentTypeId": null,
+      "graphicId": 301,
+      "hullName": "mb1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32311,
+      "name": "Typhoon Fleet Issue",
+      "modelTypeId": 644,
+      "variationParentTypeId": 644,
+      "graphicId": 2160,
+      "hullName": "mb1_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 2834,
+      "name": "Utu",
+      "modelTypeId": 594,
+      "variationParentTypeId": null,
+      "graphicId": 21766,
+      "hullName": "gf4_tournament",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11999,
+      "name": "Vagabond",
+      "modelTypeId": 622,
+      "variationParentTypeId": 622,
+      "graphicId": 1943,
+      "hullName": "mc1_t2b",
+      "iconFolder": "res:/dx9/model/ship/minmatar/cruiser/mc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 77288,
+      "name": "Valravn",
+      "modelTypeId": 19722,
+      "variationParentTypeId": 19722,
+      "graphicId": 26024,
+      "hullName": "mdn1_fn",
+      "iconFolder": "res:\\dx9\\model\\ship\\minmatar\\dreadnought\\mdn1\\icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 3518,
+      "name": "Vangel",
+      "modelTypeId": 624,
+      "variationParentTypeId": null,
+      "graphicId": 10951,
+      "hullName": "ac2_ix",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 42132,
+      "name": "Vanguard",
+      "modelTypeId": 23911,
+      "variationParentTypeId": null,
+      "graphicId": 21353,
+      "hullName": "gca2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/carrier/gca2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 42126,
+      "name": "Vanquisher",
+      "modelTypeId": 671,
+      "variationParentTypeId": 671,
+      "graphicId": 21283,
+      "hullName": "gt1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/titan/gt1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 28665,
+      "name": "Vargur",
+      "modelTypeId": 639,
+      "variationParentTypeId": 639,
+      "graphicId": 3354,
+      "hullName": "mb2_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34253,
+      "name": "Vargur Justice Edition",
+      "modelTypeId": 639,
+      "variationParentTypeId": null,
+      "graphicId": 20949,
+      "hullName": "mb2_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34255,
+      "name": "Vargur Krusual Edition",
+      "modelTypeId": 639,
+      "variationParentTypeId": null,
+      "graphicId": 20950,
+      "hullName": "mb2_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34257,
+      "name": "Vargur Nefantar Edition",
+      "modelTypeId": 639,
+      "variationParentTypeId": null,
+      "graphicId": 20951,
+      "hullName": "mb2_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 47270,
+      "name": "Vedmak",
+      "modelTypeId": 47270,
+      "variationParentTypeId": null,
+      "graphicId": 21976,
+      "hullName": "tgc01_t1",
+      "iconFolder": "res:/dx9/model/ship/triglavian/cruiser/tgc01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 42124,
+      "name": "Vehement",
+      "modelTypeId": 19724,
+      "variationParentTypeId": 19724,
+      "graphicId": 21282,
+      "hullName": "gdn1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/dreadnought/gdn1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 606,
+      "name": "Velator",
+      "modelTypeId": 606,
+      "variationParentTypeId": null,
+      "graphicId": 321,
+      "hullName": "gf1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 42125,
+      "name": "Vendetta",
+      "modelTypeId": 23913,
+      "variationParentTypeId": 23913,
+      "graphicId": 21354,
+      "hullName": "gca1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/carrier/gca1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 42133,
+      "name": "Venerable",
+      "modelTypeId": 37607,
+      "variationParentTypeId": null,
+      "graphicId": 21355,
+      "hullName": "gfaux1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/forceauxillary/gfaux1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 11365,
+      "name": "Vengeance",
+      "modelTypeId": 597,
+      "variationParentTypeId": 597,
+      "graphicId": 1860,
+      "hullName": "af3_t2a",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 32880,
+      "name": "Venture",
+      "modelTypeId": 32880,
+      "variationParentTypeId": null,
+      "graphicId": 20198,
+      "hullName": "oref1_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/frigate/oref1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 89648,
+      "name": "Venture Consortium Issue",
+      "modelTypeId": 32880,
+      "variationParentTypeId": 32880,
+      "graphicId": 28928,
+      "hullName": "oref1_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/frigate/oref1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 626,
+      "name": "Vexor",
+      "modelTypeId": 626,
+      "variationParentTypeId": null,
+      "graphicId": 62,
+      "hullName": "gc3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17843,
+      "name": "Vexor Navy Issue",
+      "modelTypeId": 626,
+      "variationParentTypeId": 626,
+      "graphicId": 1803,
+      "hullName": "gc3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34445,
+      "name": "Vexor Quafe Edition",
+      "modelTypeId": 626,
+      "variationParentTypeId": null,
+      "graphicId": 20981,
+      "hullName": "gc3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 32989,
+      "name": "Vherokior Probe",
+      "modelTypeId": 586,
+      "variationParentTypeId": null,
+      "graphicId": 20234,
+      "hullName": "mf2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 12743,
+      "name": "Viator",
+      "modelTypeId": 650,
+      "variationParentTypeId": 650,
+      "graphicId": 2712,
+      "hullName": "gi4_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/industrial/gi4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 45531,
+      "name": "Victor",
+      "modelTypeId": 633,
+      "variationParentTypeId": null,
+      "graphicId": 21822,
+      "hullName": "gc1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34590,
+      "name": "Victorieux Luxury Yacht",
+      "modelTypeId": 635,
+      "variationParentTypeId": 635,
+      "graphicId": 21076,
+      "hullName": "gy1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/shuttle/gy1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 3766,
+      "name": "Vigil",
+      "modelTypeId": 3766,
+      "variationParentTypeId": null,
+      "graphicId": 1240,
+      "hullName": "mf7_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 37454,
+      "name": "Vigil Fleet Issue",
+      "modelTypeId": 3766,
+      "variationParentTypeId": 3766,
+      "graphicId": 1976,
+      "hullName": "mf7_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17722,
+      "name": "Vigilant",
+      "modelTypeId": 627,
+      "variationParentTypeId": 627,
+      "graphicId": 1815,
+      "hullName": "gc4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17740,
+      "name": "Vindicator",
+      "modelTypeId": 641,
+      "variationParentTypeId": 641,
+      "graphicId": 2157,
+      "hullName": "gb2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33083,
+      "name": "Violator",
+      "modelTypeId": 606,
+      "variationParentTypeId": null,
+      "graphicId": 1816,
+      "hullName": "gf1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 45530,
+      "name": "Virtuoso",
+      "modelTypeId": 593,
+      "variationParentTypeId": null,
+      "graphicId": 21821,
+      "hullName": "gf3_t2",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22446,
+      "name": "Vulture",
+      "modelTypeId": 16227,
+      "variationParentTypeId": 16227,
+      "graphicId": 2807,
+      "hullName": "cbc1_t2b",
+      "iconFolder": "res:/dx9/model/ship/caldari/battlecruiser/cbc1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 33673,
+      "name": "Whiptail",
+      "modelTypeId": 583,
+      "variationParentTypeId": null,
+      "graphicId": 20605,
+      "hullName": "cf2_xii",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 22436,
+      "name": "Widow",
+      "modelTypeId": 640,
+      "variationParentTypeId": 640,
+      "graphicId": 3349,
+      "hullName": "cb2_t2",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 11371,
+      "name": "Wolf",
+      "modelTypeId": 587,
+      "variationParentTypeId": 587,
+      "graphicId": 1931,
+      "hullName": "mf4_t2a",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 17930,
+      "name": "Worm",
+      "modelTypeId": 603,
+      "variationParentTypeId": 603,
+      "graphicId": 1831,
+      "hullName": "cf7_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf7/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 653,
+      "name": "Wreathe",
+      "modelTypeId": 653,
+      "variationParentTypeId": null,
+      "graphicId": 310,
+      "hullName": "mi3_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/industrial/mi3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 23917,
+      "name": "Wyvern",
+      "modelTypeId": 23917,
+      "variationParentTypeId": null,
+      "graphicId": 2928,
+      "hullName": "cca2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/carrier/cca2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 92825,
+      "name": "Ymir",
+      "modelTypeId": 24483,
+      "variationParentTypeId": 24483,
+      "graphicId": 33285,
+      "hullName": "mca2_t2",
+      "iconFolder": "res:/dx9/model/ship/minmatar/carrier/mca2/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 49713,
+      "name": "Zarmazd",
+      "modelTypeId": 49712,
+      "variationParentTypeId": 49712,
+      "graphicId": 22325,
+      "hullName": "tgc02_t2",
+      "iconFolder": "res:/dx9/model/ship/triglavian/cruiser/tgc02/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 12003,
+      "name": "Zealot",
+      "modelTypeId": 2006,
+      "variationParentTypeId": 2006,
+      "graphicId": 1751,
+      "hullName": "ac4_t2",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac4/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 2078,
+      "name": "Zephyr",
+      "modelTypeId": 2078,
+      "variationParentTypeId": null,
+      "graphicId": 4517,
+      "hullName": "conf5_t1",
+      "iconFolder": "res:/dx9/model/ship/concord/frigate/conf5/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 52907,
+      "name": "Zirnitra",
+      "modelTypeId": 52907,
+      "variationParentTypeId": null,
+      "graphicId": 24503,
+      "hullName": "tgdn01_t1",
+      "iconFolder": "res:/dx9/model/ship/triglavian/dreadnought/tgdn01/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 34467,
+      "name": "万王宝座级YC117年特别版",
+      "modelTypeId": 641,
+      "variationParentTypeId": null,
+      "graphicId": 20991,
+      "hullName": "gb2_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34469,
+      "name": "乌鸦级YC117年特别版",
+      "modelTypeId": 638,
+      "variationParentTypeId": null,
+      "graphicId": 20993,
+      "hullName": "cb1_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34479,
+      "name": "伊什塔级YC117年特别版",
+      "modelTypeId": 626,
+      "variationParentTypeId": null,
+      "graphicId": 20998,
+      "hullName": "gc3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/cruiser/gc3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34463,
+      "name": "响尾蛇级YC117年特别版",
+      "modelTypeId": 640,
+      "variationParentTypeId": null,
+      "graphicId": 20992,
+      "hullName": "cb2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battleship/cb2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34459,
+      "name": "地狱天使级YC117年特别版",
+      "modelTypeId": 24692,
+      "variationParentTypeId": null,
+      "graphicId": 20986,
+      "hullName": "ab3_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34465,
+      "name": "多米尼克斯级YC117年特别版",
+      "modelTypeId": 645,
+      "variationParentTypeId": null,
+      "graphicId": 20990,
+      "hullName": "gb1_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/battleship/gb1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34473,
+      "name": "幼龙级YC117年特别版",
+      "modelTypeId": 24698,
+      "variationParentTypeId": null,
+      "graphicId": 20995,
+      "hullName": "cbc2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/battlecruiser/cbc2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34457,
+      "name": "末日沙场级YC117年特别版",
+      "modelTypeId": 643,
+      "variationParentTypeId": null,
+      "graphicId": 20989,
+      "hullName": "ab2_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34475,
+      "name": "毒蜥级YC117年特别版",
+      "modelTypeId": 623,
+      "variationParentTypeId": null,
+      "graphicId": 20996,
+      "hullName": "cc2_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34471,
+      "name": "灾难级YC117年特别版",
+      "modelTypeId": 642,
+      "variationParentTypeId": null,
+      "graphicId": 20987,
+      "hullName": "ab1_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/battleship/ab1/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34477,
+      "name": "银鹰级YC117年特别版",
+      "modelTypeId": 623,
+      "variationParentTypeId": null,
+      "graphicId": 20997,
+      "hullName": "cc2_t2b",
+      "iconFolder": "res:/dx9/model/ship/caldari/cruiser/cc2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 34461,
+      "name": "马克瑞级YC117年特别版",
+      "modelTypeId": 17738,
+      "variationParentTypeId": null,
+      "graphicId": 20994,
+      "hullName": "angb1_t1",
+      "iconFolder": "res:/dx9/model/ship/angel/battleship/angb1/icons",
+      "sdePublished": false
+    }
+  ]
+}
