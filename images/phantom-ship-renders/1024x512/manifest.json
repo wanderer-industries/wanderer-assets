@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-17T14:44:05.716Z",
+  "generatedAt": "2026-11-19T10:25:14.434Z",
   "preset": "phantom-gray",
-  "sdeBuildNumber": 3607705,
+  "sdeBuildNumber": 3714173,
   "transparent": true,
   "width": 1024,
   "height": 512,
-  "discovered": 569,
-  "generated": 569,
+  "discovered": 588,
+  "generated": 588,
   "failed": 0,
   "ships": [
     {
@@ -53,6 +53,149 @@
       "hullName": "abc2_t2",
       "iconFolder": "res:/dx9/model/ship/amarr/battlecruiser/abc2/icons",
       "sdePublished": true
+    },
+    {
+      "typeId": 97269,
+      "name": "Academy Breacher",
+      "file": "97269.png",
+      "modelTypeId": 598,
+      "variationParentTypeId": null,
+      "graphicId": 35680,
+      "hullName": "mf5_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf5/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 97272,
+      "name": "Academy Heron",
+      "file": "97272.png",
+      "modelTypeId": 605,
+      "variationParentTypeId": null,
+      "graphicId": 35669,
+      "hullName": "cf3_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 97273,
+      "name": "Academy Imicus",
+      "file": "97273.png",
+      "modelTypeId": 607,
+      "variationParentTypeId": null,
+      "graphicId": 35674,
+      "hullName": "gf5_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf5/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 95860,
+      "name": "Academy Incursus",
+      "file": "95860.png",
+      "modelTypeId": 594,
+      "variationParentTypeId": null,
+      "graphicId": 35673,
+      "hullName": "gf4_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 97266,
+      "name": "Academy Kestrel",
+      "file": "97266.png",
+      "modelTypeId": 602,
+      "variationParentTypeId": null,
+      "graphicId": 35670,
+      "hullName": "cf6_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf6/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 97274,
+      "name": "Academy Magnate",
+      "file": "97274.png",
+      "modelTypeId": 29248,
+      "variationParentTypeId": null,
+      "graphicId": 35677,
+      "hullName": "af7_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af7/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 95859,
+      "name": "Academy Merlin",
+      "file": "95859.png",
+      "modelTypeId": 603,
+      "variationParentTypeId": null,
+      "graphicId": 35671,
+      "hullName": "cf7_t1",
+      "iconFolder": "res:/dx9/model/ship/caldari/frigate/cf7/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 95861,
+      "name": "Academy Probe",
+      "file": "95861.png",
+      "modelTypeId": 586,
+      "variationParentTypeId": null,
+      "graphicId": 35678,
+      "hullName": "mf2_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf2/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 97270,
+      "name": "Academy Punisher",
+      "file": "97270.png",
+      "modelTypeId": 597,
+      "variationParentTypeId": null,
+      "graphicId": 35675,
+      "hullName": "af3_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 97268,
+      "name": "Academy Rifter",
+      "file": "97268.png",
+      "modelTypeId": 587,
+      "variationParentTypeId": null,
+      "graphicId": 35679,
+      "hullName": "mf4_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/frigate/mf4/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 97271,
+      "name": "Academy Tormentor",
+      "file": "97271.png",
+      "modelTypeId": 591,
+      "variationParentTypeId": null,
+      "graphicId": 35676,
+      "hullName": "af6_t1",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af6/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 97267,
+      "name": "Academy Tristan",
+      "file": "97267.png",
+      "modelTypeId": 593,
+      "variationParentTypeId": null,
+      "graphicId": 35672,
+      "hullName": "gf3_t1",
+      "iconFolder": "res:/dx9/model/ship/gallente/frigate/gf3/icons",
+      "sdePublished": false
+    },
+    {
+      "typeId": 95862,
+      "name": "Academy Venture",
+      "file": "95862.png",
+      "modelTypeId": 32880,
+      "variationParentTypeId": null,
+      "graphicId": 35681,
+      "hullName": "oref1_t1",
+      "iconFolder": "res:/dx9/model/ship/ore/frigate/oref1/icons",
+      "sdePublished": false
     },
     {
       "typeId": 2836,
@@ -2288,6 +2431,17 @@
       "sdePublished": true
     },
     {
+      "typeId": 97793,
+      "name": "Herald",
+      "file": "97793.png",
+      "modelTypeId": 2161,
+      "variationParentTypeId": null,
+      "graphicId": 35980,
+      "hullName": "af2_xxii",
+      "iconFolder": "res:/dx9/model/ship/amarr/frigate/af2/icons",
+      "sdePublished": true
+    },
+    {
       "typeId": 22452,
       "name": "Heretic",
       "file": "22452.png",
@@ -3597,6 +3751,17 @@
       "sdePublished": true
     },
     {
+      "typeId": 95630,
+      "name": "Naga Navy Issue",
+      "file": "95630.png",
+      "modelTypeId": 4306,
+      "variationParentTypeId": 4306,
+      "graphicId": 34792,
+      "hullName": "cbc3_fn",
+      "iconFolder": "res:/dx9/model/ship/caldari/battlecruiser/cbc3/icons",
+      "sdePublished": true
+    },
+    {
       "typeId": 19722,
       "name": "Naglfar",
       "file": "19722.png",
@@ -3916,6 +4081,17 @@
       "sdePublished": true
     },
     {
+      "typeId": 95629,
+      "name": "Oracle Navy Issue",
+      "file": "95629.png",
+      "modelTypeId": 4302,
+      "variationParentTypeId": 4302,
+      "graphicId": 34791,
+      "hullName": "abc3_fn",
+      "iconFolder": "res:/dx9/model/ship/amarr/battlecruiser/abc3/icons",
+      "sdePublished": true
+    },
+    {
       "typeId": 28606,
       "name": "Orca",
       "file": "28606.png",
@@ -4045,6 +4221,17 @@
       "graphicId": 3355,
       "hullName": "mb1_t2b",
       "iconFolder": "res:/dx9/model/ship/minmatar/battleship/mb1/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 97904,
+      "name": "Penitence",
+      "file": "97904.png",
+      "modelTypeId": 628,
+      "variationParentTypeId": 628,
+      "graphicId": 35981,
+      "hullName": "ac1_xxii",
+      "iconFolder": "res:/dx9/model/ship/amarr/cruiser/ac1/icons",
       "sdePublished": true
     },
     {
@@ -5302,6 +5489,17 @@
       "sdePublished": true
     },
     {
+      "typeId": 95631,
+      "name": "Talos Navy Issue",
+      "file": "95631.png",
+      "modelTypeId": 4308,
+      "variationParentTypeId": 4308,
+      "graphicId": 34793,
+      "hullName": "gbc3_fn",
+      "iconFolder": "res:/dx9/model/ship/gallente/battlecruiser/gbc3/icons",
+      "sdePublished": true
+    },
+    {
       "typeId": 32878,
       "name": "Talwar",
       "file": "32878.png",
@@ -5606,6 +5804,17 @@
       "variationParentTypeId": null,
       "graphicId": 11778,
       "hullName": "mbc3_t1",
+      "iconFolder": "res:/dx9/model/ship/minmatar/battlecruiser/mbc3/icons",
+      "sdePublished": true
+    },
+    {
+      "typeId": 95632,
+      "name": "Tornado Fleet Issue",
+      "file": "95632.png",
+      "modelTypeId": 4310,
+      "variationParentTypeId": 4310,
+      "graphicId": 34794,
+      "hullName": "mbc3_fn",
       "iconFolder": "res:/dx9/model/ship/minmatar/battlecruiser/mbc3/icons",
       "sdePublished": true
     },
