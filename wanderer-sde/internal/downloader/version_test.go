@@ -75,15 +75,14 @@ func TestVersionChecker_StoreVersion(t *testing.T) {
 }
 
 func TestVersionChecker_GetLatestVersion(t *testing.T) {
-	// Create a test server with JSONL response
-	jsonlResponse := `{"_key":"sde","buildNumber":2025001,"releaseDate":"2025-01-15"}
-{"_key":"hoboleaks","buildNumber":123456}
-`
+	// A release index as served by sde.evetech.net/tranquility/latest/
+	indexResponse := `{"release":"20250115T110000Z","buildNumber":2025001,"releaseDate":"2025-01-15T11:00:00Z",
+"tables":{"types":{"version":"abc","jsonl":{"url":"https://example.invalid/types.jsonl"}}}}`
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Type", "application/x-ndjson")
+		w.Header().Set("Content-Type", "application/json")
 		w.Header().Set("ETag", "\"test-etag\"")
 		w.WriteHeader(http.StatusOK)
-		_, _ = w.Write([]byte(jsonlResponse))
+		_, _ = w.Write([]byte(indexResponse))
 	}))
 	defer server.Close()
 
@@ -100,11 +99,14 @@ func TestVersionChecker_GetLatestVersion(t *testing.T) {
 		t.Fatalf("GetLatestVersion failed: %v", err)
 	}
 
+	if info.Release != "20250115T110000Z" {
+		t.Errorf("Expected Release '20250115T110000Z', got %q", info.Release)
+	}
 	if info.BuildNumber != "2025001" {
 		t.Errorf("Expected BuildNumber '2025001', got %q", info.BuildNumber)
 	}
-	if info.ReleaseDate != "2025-01-15" {
-		t.Errorf("Expected ReleaseDate '2025-01-15', got %q", info.ReleaseDate)
+	if info.ReleaseDate != "2025-01-15T11:00:00Z" {
+		t.Errorf("Expected ReleaseDate '2025-01-15T11:00:00Z', got %q", info.ReleaseDate)
 	}
 	if info.ETag != "\"test-etag\"" {
 		t.Errorf("Expected ETag '\"test-etag\"', got %q", info.ETag)
@@ -118,13 +120,12 @@ func TestVersionChecker_NeedsUpdate(t *testing.T) {
 	}
 	defer func() { _ = os.RemoveAll(tmpDir) }()
 
-	// Create a test server that returns a specific SDE version
-	jsonlResponse := `{"_key":"sde","buildNumber":2025002}
-`
+	// Create a test server that returns a specific SDE release
+	indexResponse := `{"release":"20250116T110000Z","buildNumber":2025002,"releaseDate":"2025-01-16T11:00:00Z","tables":{}}`
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Type", "application/x-ndjson")
+		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
-		_, _ = w.Write([]byte(jsonlResponse))
+		_, _ = w.Write([]byte(indexResponse))
 	}))
 	defer server.Close()
 
@@ -148,12 +149,12 @@ func TestVersionChecker_NeedsUpdate(t *testing.T) {
 	if versionInfo == nil {
 		t.Fatal("Expected versionInfo to be non-nil")
 	}
-	if versionInfo.BuildNumber != "2025002" {
-		t.Errorf("Expected BuildNumber '2025002', got %q", versionInfo.BuildNumber)
+	if versionInfo.Release != "20250116T110000Z" || versionInfo.BuildNumber != "2025002" {
+		t.Errorf("Expected release 20250116T110000Z build 2025002, got %+v", versionInfo)
 	}
 
-	// Test 2: Store an old version, should need update
-	if err := vc.StoreVersion(tmpDir, "2025001"); err != nil {
+	// Test 2: Store an old release, should need update
+	if err := vc.StoreVersion(tmpDir, "20250115T110000Z"); err != nil {
 		t.Fatalf("StoreVersion failed: %v", err)
 	}
 
@@ -168,8 +169,22 @@ func TestVersionChecker_NeedsUpdate(t *testing.T) {
 		t.Errorf("Expected BuildNumber '2025002', got %q", versionInfo.BuildNumber)
 	}
 
-	// Test 3: Store the same version, should not need update
+	// Test 3: A build number stored before the SDE API never matches a
+	// release, so the first run after the switch downloads again
 	if err := vc.StoreVersion(tmpDir, "2025002"); err != nil {
+		t.Fatalf("StoreVersion failed: %v", err)
+	}
+
+	needsUpdate, _, err = vc.NeedsUpdate(ctx, tmpDir)
+	if err != nil {
+		t.Fatalf("NeedsUpdate failed: %v", err)
+	}
+	if !needsUpdate {
+		t.Error("Expected needsUpdate=true when the stored version is a build number")
+	}
+
+	// Test 4: Store the same release, should not need update
+	if err := vc.StoreVersion(tmpDir, "20250116T110000Z"); err != nil {
 		t.Fatalf("StoreVersion failed: %v", err)
 	}
 
@@ -282,8 +297,13 @@ func TestNewVersionChecker(t *testing.T) {
 
 func TestVersionInfo_Fields(t *testing.T) {
 	vi := VersionInfo{
+		Release:     "20250115T110000Z",
 		BuildNumber: "2025001",
 		ETag:        "\"test-etag\"",
+	}
+
+	if vi.Release != "20250115T110000Z" {
+		t.Errorf("Release mismatch: got %q, want %q", vi.Release, "20250115T110000Z")
 	}
 
 	if vi.BuildNumber != "2025001" {

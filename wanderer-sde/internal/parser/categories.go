@@ -4,14 +4,14 @@ import (
 	"fmt"
 
 	"github.com/guarzo/wanderer-sde/internal/models"
-	"github.com/guarzo/wanderer-sde/pkg/yaml"
+	"github.com/guarzo/wanderer-sde/pkg/jsonl"
 )
 
-// ParseCategories parses the categories.yaml file.
+// ParseCategories parses the categories.jsonl file.
 func (p *Parser) ParseCategories() (map[int64]models.SDECategory, error) {
-	path := p.filePath("categories.yaml")
+	path := p.filePath("categories.jsonl")
 
-	categories, err := yaml.ParseFileMap[int64, models.SDECategory](path)
+	categories, err := jsonl.ParseFileMap(path, models.SDECategory.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse categories file: %w", err)
 	}

@@ -27,6 +27,7 @@ var Version = "dev"
 // SDEMetadata contains metadata about the SDE conversion.
 type SDEMetadata struct {
 	SDEVersion  string `json:"sde_version"`
+	SDERelease  string `json:"sde_release"`
 	ReleaseDate string `json:"release_date"`
 	GeneratedBy string `json:"generated_by"`
 	GeneratedAt string `json:"generated_at"`
@@ -48,12 +49,13 @@ var cfg = config.NewConfig()
 var rootCmd = &cobra.Command{
 	Use:   "sdeconvert",
 	Short: "Convert EVE SDE to Wanderer data format",
-	Long: `Converts EVE Online's Static Data Export (SDE) YAML files
-into CSV or JSON format compatible with Wanderer/Fuzzwork.
+	Long: `Converts EVE Online's Static Data Export (SDE) into CSV or JSON
+format compatible with Wanderer/Fuzzwork.
 
-This tool can download the latest SDE from CCP or use an existing
-SDE directory, then parse the YAML files and generate output files
-compatible with Wanderer's data format.`,
+This tool can download the tables it needs from CCP's SDE API
+(https://sde.evetech.net) or use a directory of SDE JSONL tables, then
+parse them and generate output files compatible with Wanderer's data
+format.`,
 	Example: `  # Download latest SDE and convert to CSV (default)
   sdeconvert --download --output ./output
 
@@ -80,13 +82,13 @@ var versionCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(versionCmd)
 
-	rootCmd.Flags().StringVarP(&cfg.SDEPath, "sde-path", "s", "", "Path to SDE directory or ZIP file")
+	rootCmd.Flags().StringVarP(&cfg.SDEPath, "sde-path", "s", "", "Path to a directory of SDE JSONL tables")
 	rootCmd.Flags().StringVarP(&cfg.OutputDir, "output", "o", "./output", "Output directory for output files")
-	rootCmd.Flags().BoolVarP(&cfg.DownloadSDE, "download", "d", false, "Download latest SDE from CCP")
+	rootCmd.Flags().BoolVarP(&cfg.DownloadSDE, "download", "d", false, "Download the latest SDE from CCP's SDE API")
 	rootCmd.Flags().StringVarP(&cfg.PassthroughDir, "passthrough", "p", "", "Directory with Wanderer JSON files to copy")
 	rootCmd.Flags().BoolVarP(&cfg.Verbose, "verbose", "v", false, "Enable verbose output")
 	rootCmd.Flags().BoolVar(&cfg.PrettyPrint, "pretty", true, "Pretty-print JSON output (only applies to JSON format)")
-	rootCmd.Flags().StringVar(&cfg.SDEUrl, "sde-url", config.SDELatestURL, "URL to download SDE from")
+	rootCmd.Flags().StringVar(&cfg.SDEUrl, "sde-url", config.SDEAPIURL, "SDE API URL that lists the releases")
 
 	var formatStr string
 	rootCmd.Flags().StringVarP(&formatStr, "format", "f", "csv", "Output format: csv or json (default: csv)")
@@ -168,11 +170,17 @@ func runConversion(cmd *cobra.Command, args []string) error {
 		if needsUpdate {
 			fmt.Println("Downloading latest SDE...")
 
-			// Download to a temp location first
-			downloadedPath, err := dl.DownloadAndExtract(ctx)
+			// Download the release the version check saw (the latest if the
+			// check failed), so the stored version matches the tables.
+			release := ""
+			if versionInfo != nil {
+				release = versionInfo.Release
+			}
+			downloadedPath, rel, err := dl.Download(ctx, release)
 			if err != nil {
 				return fmt.Errorf("failed to download SDE: %w", err)
 			}
+			versionInfo = rel.VersionInfo()
 
 			// Remove old SDE directory if it exists
 			if err := os.RemoveAll(sdePath); err != nil && !os.IsNotExist(err) {
@@ -190,13 +198,11 @@ func runConversion(cmd *cobra.Command, args []string) error {
 				_ = os.RemoveAll(downloadedPath)
 			}
 
-			fmt.Printf("SDE downloaded and extracted to: %s\n", sdePath)
+			fmt.Printf("SDE release %s downloaded to: %s\n", versionInfo.Release, sdePath)
 
-			// Store the version
-			if versionInfo != nil {
-				if err := vc.StoreVersion(cfg.OutputDir, versionInfo.BuildNumber); err != nil {
-					fmt.Printf("Warning: could not store version: %v\n", err)
-				}
+			// Store the release
+			if err := vc.StoreVersion(cfg.OutputDir, versionInfo.Release); err != nil {
+				fmt.Printf("Warning: could not store version: %v\n", err)
 			}
 		} else {
 			fmt.Println("SDE is up to date, using cached version")
@@ -215,7 +221,7 @@ func runConversion(cmd *cobra.Command, args []string) error {
 
 	fmt.Printf("Using SDE at: %s\n", sdePath)
 
-	// Step 2: Parse SDE YAML files
+	// Step 2: Parse SDE tables
 	p := parser.New(cfg, sdePath)
 	parseResult, err := p.ParseAll()
 	if err != nil {
@@ -372,10 +378,11 @@ func copyFile(src, dst string) error {
 func writeMetadata(outputDir string, versionInfo *downloader.VersionInfo) error {
 	metadata := SDEMetadata{
 		SDEVersion:  versionInfo.BuildNumber,
+		SDERelease:  versionInfo.Release,
 		ReleaseDate: versionInfo.ReleaseDate,
 		GeneratedBy: "wanderer-sde",
 		GeneratedAt: time.Now().UTC().Format(time.RFC3339),
-		Source:      "https://developers.eveonline.com/static-data",
+		Source:      "https://sde.evetech.net",
 	}
 
 	data, err := json.MarshalIndent(metadata, "", "  ")

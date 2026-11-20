@@ -1,9 +1,9 @@
 // Package config provides configuration management for the SDE converter.
 package config
 
-// SDELatestURL is the download URL for the latest EVE SDE YAML archive.
-// This is a shorthand URL that redirects to the latest build number.
-const SDELatestURL = "https://developers.eveonline.com/static-data/eve-online-static-data-latest-yaml.zip"
+// SDEAPIURL lists the Tranquility releases of CCP's SDE API. latest/ below
+// it redirects to the current release.
+const SDEAPIURL = "https://sde.evetech.net/tranquility/"
 
 // OutputFormat specifies the output file format.
 type OutputFormat string
@@ -17,13 +17,13 @@ const (
 
 // Config holds all configuration options for the converter.
 type Config struct {
-	// SDEPath is the path to the SDE directory or ZIP file.
+	// SDEPath is the path to a directory of SDE JSONL tables (<table>.jsonl).
 	SDEPath string
 
 	// OutputDir is the directory where output files will be written.
 	OutputDir string
 
-	// SDEUrl is the URL to download the SDE from.
+	// SDEUrl is the SDE API URL that lists the releases to download from.
 	SDEUrl string
 
 	// DownloadSDE indicates whether to download the SDE.
@@ -49,7 +49,7 @@ type Config struct {
 func NewConfig() *Config {
 	return &Config{
 		OutputDir:    "./output",
-		SDEUrl:       SDELatestURL,
+		SDEUrl:       SDEAPIURL,
 		PrettyPrint:  true,
 		OutputFormat: FormatCSV, // Default to CSV for Fuzzwork compatibility
 	}

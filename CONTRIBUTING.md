@@ -119,7 +119,7 @@ docs(readme): update installation instructions
 internal/       # Private application code
   config/       # Configuration handling
   downloader/   # SDE download logic
-  parser/       # YAML parsing
+  parser/       # SDE table parsing (JSON Lines)
   transformer/  # Data transformation
   writer/       # JSON output
   models/       # Data structures
@@ -189,7 +189,7 @@ For integration testing, you can download the actual SDE:
 
 ### Sample Data
 
-For unit tests, use minimal sample YAML data in test fixtures rather than the full SDE.
+For unit tests, use minimal sample JSONL records in test fixtures rather than the full SDE.
 
 ## Reporting Issues
 

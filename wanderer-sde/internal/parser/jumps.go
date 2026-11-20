@@ -5,29 +5,30 @@ import (
 	"sort"
 
 	"github.com/guarzo/wanderer-sde/internal/models"
-	"github.com/guarzo/wanderer-sde/pkg/yaml"
+	"github.com/guarzo/wanderer-sde/pkg/jsonl"
 )
 
 // SDEStargateDestination represents the destination of a stargate.
 type SDEStargateDestination struct {
-	SolarSystemID int64 `yaml:"solarSystemID"`
-	StargateID    int64 `yaml:"stargateID"`
+	SolarSystemID int64 `json:"solarSystemID"`
+	StargateID    int64 `json:"stargateID"`
 }
 
 // SDEMapStargate represents a stargate in the flat SDE format.
 type SDEMapStargate struct {
-	SolarSystemID int64                  `yaml:"solarSystemID"`
-	Destination   SDEStargateDestination `yaml:"destination"`
-	TypeID        int64                  `yaml:"typeID,omitempty"`
+	StargateID    int64                  `json:"stargateID"`
+	SolarSystemID int64                  `json:"solarSystemID"`
+	Destination   SDEStargateDestination `json:"destination"`
+	TypeID        int64                  `json:"typeID,omitempty"`
 }
 
-// ParseStargates parses the mapStargates.yaml file and extracts system jumps.
+// ParseStargates parses the mapStargates.jsonl file and extracts system jumps.
 // Both directions of each stargate connection are included (A→B and B→A)
 // to match Fuzzwork CSV format.
 func (p *Parser) ParseStargates() ([]models.SystemJump, error) {
-	path := p.filePath("mapStargates.yaml")
+	path := p.filePath("mapStargates.jsonl")
 
-	rawStargates, err := yaml.ParseFileMap[int64, SDEMapStargate](path)
+	rawStargates, err := jsonl.ParseFileMap(path, SDEMapStargate.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse stargates file: %w", err)
 	}
@@ -68,3 +69,6 @@ func (p *Parser) ParseStargates() ([]models.SystemJump, error) {
 
 	return jumps, nil
 }
+
+// ID returns the record id, for jsonl.ParseFileMap.
+func (g SDEMapStargate) ID() int64 { return g.StargateID }

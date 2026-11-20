@@ -23,314 +23,108 @@ func createTestSDE(t *testing.T) string {
 		t.Fatalf("failed to create temp dir: %v", err)
 	}
 
-	// Create mapRegions.yaml with multiple regions
-	regionsYAML := `10000002:
-  regionID: 10000002
-  name:
-    en: "The Forge"
-10000001:
-  regionID: 10000001
-  name:
-    en: "Derelik"
-11000001:
-  regionID: 11000001
-  name:
-    en: "J-Space Region"
+	// Create mapRegions.jsonl with multiple regions
+	regionsJSONL := `{"regionID": 10000002, "name": {"en": "The Forge"}}
+{"regionID": 10000001, "name": {"en": "Derelik"}}
+{"regionID": 11000001, "name": {"en": "J-Space Region"}}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "mapRegions.yaml"), []byte(regionsYAML), 0644); err != nil {
-		t.Fatalf("failed to create mapRegions.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "mapRegions.jsonl"), []byte(regionsJSONL), 0644); err != nil {
+		t.Fatalf("failed to create mapRegions.jsonl: %v", err)
 	}
 
-	// Create mapConstellations.yaml
-	constellationsYAML := `20000020:
-  constellationID: 20000020
-  regionID: 10000002
-  name:
-    en: "Kimotoro"
-20000001:
-  constellationID: 20000001
-  regionID: 10000001
-  name:
-    en: "Joas"
-21000001:
-  constellationID: 21000001
-  regionID: 11000001
-  name:
-    en: "J-Constellation"
+	// Create mapConstellations.jsonl
+	constellationsJSONL := `{"constellationID": 20000020, "regionID": 10000002, "name": {"en": "Kimotoro"}}
+{"constellationID": 20000001, "regionID": 10000001, "name": {"en": "Joas"}}
+{"constellationID": 21000001, "regionID": 11000001, "name": {"en": "J-Constellation"}}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "mapConstellations.yaml"), []byte(constellationsYAML), 0644); err != nil {
-		t.Fatalf("failed to create mapConstellations.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "mapConstellations.jsonl"), []byte(constellationsJSONL), 0644); err != nil {
+		t.Fatalf("failed to create mapConstellations.jsonl: %v", err)
 	}
 
-	// Create mapSolarSystems.yaml with new SDE format (2025+)
-	systemsYAML := `30000142:
-  constellationID: 20000020
-  regionID: 10000002
-  name:
-    en: "Jita"
-  securityStatus: 0.9459
-  starID: 40000006
-30000001:
-  constellationID: 20000001
-  regionID: 10000001
-  name:
-    en: "Tanoo"
-  securityStatus: 0.8576
-  starID: 40000007
-30000144:
-  constellationID: 20000020
-  regionID: 10000002
-  name:
-    en: "Perimeter"
-  securityStatus: 0.94
-  starID: 40000008
-30000145:
-  constellationID: 20000020
-  regionID: 10000002
-  name:
-    en: "LowSec System"
-  securityStatus: 0.4
-  starID: 40000009
-30000146:
-  constellationID: 20000020
-  regionID: 10000002
-  name:
-    en: "NullSec System"
-  securityStatus: -0.7
-  starID: 40000010
-31000001:
-  constellationID: 21000001
-  regionID: 11000001
-  name:
-    en: "J123456"
-  securityStatus: -1.0
-  starID: 40045041
-  wormholeClassID: 3
-31000002:
-  constellationID: 21000001
-  regionID: 11000001
-  name:
-    en: "J654321"
-  securityStatus: -1.0
-  starID: 40045041
-  wormholeClassID: 5
+	// Create mapSolarSystems.jsonl
+	systemsJSONL := `{"solarSystemID": 30000142, "constellationID": 20000020, "regionID": 10000002, "name": {"en": "Jita"}, "securityStatus": 0.9459, "starID": 40000006}
+{"solarSystemID": 30000001, "constellationID": 20000001, "regionID": 10000001, "name": {"en": "Tanoo"}, "securityStatus": 0.8576, "starID": 40000007}
+{"solarSystemID": 30000144, "constellationID": 20000020, "regionID": 10000002, "name": {"en": "Perimeter"}, "securityStatus": 0.94, "starID": 40000008}
+{"solarSystemID": 30000145, "constellationID": 20000020, "regionID": 10000002, "name": {"en": "LowSec System"}, "securityStatus": 0.4, "starID": 40000009}
+{"solarSystemID": 30000146, "constellationID": 20000020, "regionID": 10000002, "name": {"en": "NullSec System"}, "securityStatus": -0.7, "starID": 40000010}
+{"solarSystemID": 31000001, "constellationID": 21000001, "regionID": 11000001, "name": {"en": "J123456"}, "securityStatus": -1.0, "starID": 40045041, "wormholeClassID": 3}
+{"solarSystemID": 31000002, "constellationID": 21000001, "regionID": 11000001, "name": {"en": "J654321"}, "securityStatus": -1.0, "starID": 40045041, "wormholeClassID": 5}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "mapSolarSystems.yaml"), []byte(systemsYAML), 0644); err != nil {
-		t.Fatalf("failed to create mapSolarSystems.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "mapSolarSystems.jsonl"), []byte(systemsJSONL), 0644); err != nil {
+		t.Fatalf("failed to create mapSolarSystems.jsonl: %v", err)
 	}
 
-	// Create mapStargates.yaml
-	stargatesYAML := `50000001:
-  solarSystemID: 30000142
-  destination:
-    solarSystemID: 30000144
-    stargateID: 50000002
-  typeID: 16
-50000002:
-  solarSystemID: 30000144
-  destination:
-    solarSystemID: 30000142
-    stargateID: 50000001
-  typeID: 16
-50000003:
-  solarSystemID: 30000144
-  destination:
-    solarSystemID: 30000145
-    stargateID: 50000004
-  typeID: 16
-50000004:
-  solarSystemID: 30000145
-  destination:
-    solarSystemID: 30000144
-    stargateID: 50000003
-  typeID: 16
-50000005:
-  solarSystemID: 30000145
-  destination:
-    solarSystemID: 30000146
-    stargateID: 50000006
-  typeID: 16
-50000006:
-  solarSystemID: 30000146
-  destination:
-    solarSystemID: 30000145
-    stargateID: 50000005
-  typeID: 16
+	// Create mapStargates.jsonl
+	stargatesJSONL := `{"stargateID": 50000001, "solarSystemID": 30000142, "destination": {"solarSystemID": 30000144, "stargateID": 50000002}, "typeID": 16}
+{"stargateID": 50000002, "solarSystemID": 30000144, "destination": {"solarSystemID": 30000142, "stargateID": 50000001}, "typeID": 16}
+{"stargateID": 50000003, "solarSystemID": 30000144, "destination": {"solarSystemID": 30000145, "stargateID": 50000004}, "typeID": 16}
+{"stargateID": 50000004, "solarSystemID": 30000145, "destination": {"solarSystemID": 30000144, "stargateID": 50000003}, "typeID": 16}
+{"stargateID": 50000005, "solarSystemID": 30000145, "destination": {"solarSystemID": 30000146, "stargateID": 50000006}, "typeID": 16}
+{"stargateID": 50000006, "solarSystemID": 30000146, "destination": {"solarSystemID": 30000145, "stargateID": 50000005}, "typeID": 16}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "mapStargates.yaml"), []byte(stargatesYAML), 0644); err != nil {
-		t.Fatalf("failed to create mapStargates.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "mapStargates.jsonl"), []byte(stargatesJSONL), 0644); err != nil {
+		t.Fatalf("failed to create mapStargates.jsonl: %v", err)
 	}
 
-	// Create types.yaml with ships and non-ships
-	typesYAML := `587:
-  groupID: 25
-  name:
-    en: "Rifter"
-  mass: 1350000.0
-  volume: 27500.0
-  capacity: 125.0
-  published: true
-588:
-  groupID: 25
-  name:
-    en: "Slasher"
-  mass: 1200000.0
-  volume: 26000.0
-  capacity: 115.0
-  published: true
-589:
-  groupID: 25
-  name:
-    en: "Breacher"
-  mass: 1100000.0
-  volume: 25000.0
-  capacity: 130.0
-  published: true
-625:
-  groupID: 26
-  name:
-    en: "Caracal"
-  mass: 11000000.0
-  volume: 92000.0
-  capacity: 350.0
-  published: true
-2456:
-  groupID: 18
-  name:
-    en: "Hobgoblin I"
-  mass: 2500.0
-  volume: 5.0
-  published: true
-17738:
-  groupID: 419
-  name:
-    en: "Prophecy"
-  mass: 15500000.0
-  volume: 270000.0
-  capacity: 500.0
-  published: true
-99999:
-  groupID: 25
-  name:
-    en: "Unpublished Ship"
-  mass: 1000000.0
-  volume: 20000.0
-  published: false
+	// Create types.jsonl with ships and non-ships
+	typesJSONL := `{"typeID": 587, "groupID": 25, "name": {"en": "Rifter"}, "mass": 1350000.0, "volume": 27500.0, "capacity": 125.0, "published": true}
+{"typeID": 588, "groupID": 25, "name": {"en": "Slasher"}, "mass": 1200000.0, "volume": 26000.0, "capacity": 115.0, "published": true}
+{"typeID": 589, "groupID": 25, "name": {"en": "Breacher"}, "mass": 1100000.0, "volume": 25000.0, "capacity": 130.0, "published": true}
+{"typeID": 625, "groupID": 26, "name": {"en": "Caracal"}, "mass": 11000000.0, "volume": 92000.0, "capacity": 350.0, "published": true}
+{"typeID": 2456, "groupID": 18, "name": {"en": "Hobgoblin I"}, "mass": 2500.0, "volume": 5.0, "published": true}
+{"typeID": 17738, "groupID": 419, "name": {"en": "Prophecy"}, "mass": 15500000.0, "volume": 270000.0, "capacity": 500.0, "published": true}
+{"typeID": 99999, "groupID": 25, "name": {"en": "Unpublished Ship"}, "mass": 1000000.0, "volume": 20000.0, "published": false}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "types.yaml"), []byte(typesYAML), 0644); err != nil {
-		t.Fatalf("failed to create types.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "types.jsonl"), []byte(typesJSONL), 0644); err != nil {
+		t.Fatalf("failed to create types.jsonl: %v", err)
 	}
 
-	// Create groups.yaml
-	groupsYAML := `25:
-  categoryID: 6
-  name:
-    en: "Frigate"
-  published: true
-26:
-  categoryID: 6
-  name:
-    en: "Cruiser"
-  published: true
-18:
-  categoryID: 7
-  name:
-    en: "Drone"
-  published: true
-419:
-  categoryID: 6
-  name:
-    en: "Battlecruiser"
-  published: true
-999:
-  categoryID: 6
-  name:
-    en: "Unpublished Group"
-  published: false
+	// Create groups.jsonl
+	groupsJSONL := `{"groupID": 25, "categoryID": 6, "name": {"en": "Frigate"}, "published": true}
+{"groupID": 26, "categoryID": 6, "name": {"en": "Cruiser"}, "published": true}
+{"groupID": 18, "categoryID": 7, "name": {"en": "Drone"}, "published": true}
+{"groupID": 419, "categoryID": 6, "name": {"en": "Battlecruiser"}, "published": true}
+{"groupID": 999, "categoryID": 6, "name": {"en": "Unpublished Group"}, "published": false}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "groups.yaml"), []byte(groupsYAML), 0644); err != nil {
-		t.Fatalf("failed to create groups.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "groups.jsonl"), []byte(groupsJSONL), 0644); err != nil {
+		t.Fatalf("failed to create groups.jsonl: %v", err)
 	}
 
-	// Create categories.yaml
-	categoriesYAML := `6:
-  name:
-    en: "Ship"
-  published: true
-7:
-  name:
-    en: "Drone"
-  published: true
+	// Create categories.jsonl
+	categoriesJSONL := `{"categoryID": 6, "name": {"en": "Ship"}, "published": true}
+{"categoryID": 7, "name": {"en": "Drone"}, "published": true}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "categories.yaml"), []byte(categoriesYAML), 0644); err != nil {
-		t.Fatalf("failed to create categories.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "categories.jsonl"), []byte(categoriesJSONL), 0644); err != nil {
+		t.Fatalf("failed to create categories.jsonl: %v", err)
 	}
 
-	// Create mapStars.yaml with star ID -> type ID mapping
-	starsYAML := `40000006:
-  solarSystemID: 30000142
-  typeID: 3796
-  radius: 123456789.0
-40000007:
-  solarSystemID: 30000001
-  typeID: 3797
-  radius: 987654321.0
-40000008:
-  solarSystemID: 30000144
-  typeID: 3798
-  radius: 111111111.0
-40000009:
-  solarSystemID: 30000145
-  typeID: 3799
-  radius: 222222222.0
-40000010:
-  solarSystemID: 30000146
-  typeID: 3800
-  radius: 333333333.0
-40045041:
-  solarSystemID: 31000001
-  typeID: 45041
-  radius: 444444444.0
+	// Create mapStars.jsonl with star ID -> type ID mapping
+	starsJSONL := `{"starID": 40000006, "solarSystemID": 30000142, "typeID": 3796, "radius": 123456789.0}
+{"starID": 40000007, "solarSystemID": 30000001, "typeID": 3797, "radius": 987654321.0}
+{"starID": 40000008, "solarSystemID": 30000144, "typeID": 3798, "radius": 111111111.0}
+{"starID": 40000009, "solarSystemID": 30000145, "typeID": 3799, "radius": 222222222.0}
+{"starID": 40000010, "solarSystemID": 30000146, "typeID": 3800, "radius": 333333333.0}
+{"starID": 40045041, "solarSystemID": 31000001, "typeID": 45041, "radius": 444444444.0}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "mapStars.yaml"), []byte(starsYAML), 0644); err != nil {
-		t.Fatalf("failed to create mapStars.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "mapStars.jsonl"), []byte(starsJSONL), 0644); err != nil {
+		t.Fatalf("failed to create mapStars.jsonl: %v", err)
 	}
 
-	// Create npcStations.yaml with test stations
-	npcStationsYAML := `60012736:
-  ownerID: 1000137
-  solarSystemID: 30000142
-  typeID: 2501
-  operationID: 14
-60012919:
-  ownerID: 1000137
-  solarSystemID: 30000144
-  typeID: 2498
-  operationID: 14
-60000001:
-  ownerID: 1000002
-  solarSystemID: 30000001
-  typeID: 1531
-  operationID: 26
+	// Create npcStations.jsonl with test stations
+	npcStationsJSONL := `{"stationID": 60012736, "ownerID": 1000137, "solarSystemID": 30000142, "typeID": 2501, "operationID": 14}
+{"stationID": 60012919, "ownerID": 1000137, "solarSystemID": 30000144, "typeID": 2498, "operationID": 14}
+{"stationID": 60000001, "ownerID": 1000002, "solarSystemID": 30000001, "typeID": 1531, "operationID": 26}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "npcStations.yaml"), []byte(npcStationsYAML), 0644); err != nil {
-		t.Fatalf("failed to create npcStations.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "npcStations.jsonl"), []byte(npcStationsJSONL), 0644); err != nil {
+		t.Fatalf("failed to create npcStations.jsonl: %v", err)
 	}
 
-	// Create npcCorporations.yaml with test corporations
-	npcCorporationsYAML := `1000137:
-  name:
-    en: "DED"
-  stationID: 60012736
-  deleted: false
-1000002:
-  name:
-    en: "CBD Corporation"
-  stationID: 60000001
-  deleted: false
+	// Create npcCorporations.jsonl with test corporations
+	npcCorporationsJSONL := `{"corporationID": 1000137, "name": {"en": "DED"}, "stationID": 60012736, "deleted": false}
+{"corporationID": 1000002, "name": {"en": "CBD Corporation"}, "stationID": 60000001, "deleted": false}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "npcCorporations.yaml"), []byte(npcCorporationsYAML), 0644); err != nil {
-		t.Fatalf("failed to create npcCorporations.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "npcCorporations.jsonl"), []byte(npcCorporationsJSONL), 0644); err != nil {
+		t.Fatalf("failed to create npcCorporations.jsonl: %v", err)
 	}
 
 	return tmpDir

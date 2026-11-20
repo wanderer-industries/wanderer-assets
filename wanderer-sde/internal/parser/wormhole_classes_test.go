@@ -94,47 +94,24 @@ func createTestSDENoWormholes(t *testing.T) string {
 	}
 
 	// Regions without wormholeClassID
-	regionsYAML := `10000002:
-  name:
-    en: "The Forge"
-  position:
-    x: -96538397329247680
-    y: 68904722523889856
-    z: 103886273221498080
-  factionID: 500001
+	regionsJSONL := `{"regionID": 10000002, "name": {"en": "The Forge"}, "position": {"x": -96538397329247680, "y": 68904722523889856, "z": 103886273221498080}, "factionID": 500001}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "mapRegions.yaml"), []byte(regionsYAML), 0644); err != nil {
-		t.Fatalf("failed to create mapRegions.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "mapRegions.jsonl"), []byte(regionsJSONL), 0644); err != nil {
+		t.Fatalf("failed to create mapRegions.jsonl: %v", err)
 	}
 
 	// Constellations without wormholeClassID
-	constellationsYAML := `20000020:
-  regionID: 10000002
-  name:
-    en: "Kimotoro"
-  position:
-    x: -107314934797574880
-    y: 65893634706137696
-    z: 106631148888006560
+	constellationsJSONL := `{"constellationID": 20000020, "regionID": 10000002, "name": {"en": "Kimotoro"}, "position": {"x": -107314934797574880, "y": 65893634706137696, "z": 106631148888006560}}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "mapConstellations.yaml"), []byte(constellationsYAML), 0644); err != nil {
-		t.Fatalf("failed to create mapConstellations.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "mapConstellations.jsonl"), []byte(constellationsJSONL), 0644); err != nil {
+		t.Fatalf("failed to create mapConstellations.jsonl: %v", err)
 	}
 
 	// Solar systems without wormholeClassID
-	systemsYAML := `30000142:
-  constellationID: 20000020
-  regionID: 10000002
-  name:
-    en: "Jita"
-  securityStatus: 0.9459
-  position:
-    x: -129500988494612512
-    y: 60552325055663632
-    z: 116970681498498304
+	systemsJSONL := `{"solarSystemID": 30000142, "constellationID": 20000020, "regionID": 10000002, "name": {"en": "Jita"}, "securityStatus": 0.9459, "position": {"x": -129500988494612512, "y": 60552325055663632, "z": 116970681498498304}}
 `
-	if err := os.WriteFile(filepath.Join(tmpDir, "mapSolarSystems.yaml"), []byte(systemsYAML), 0644); err != nil {
-		t.Fatalf("failed to create mapSolarSystems.yaml: %v", err)
+	if err := os.WriteFile(filepath.Join(tmpDir, "mapSolarSystems.jsonl"), []byte(systemsJSONL), 0644); err != nil {
+		t.Fatalf("failed to create mapSolarSystems.jsonl: %v", err)
 	}
 
 	return tmpDir

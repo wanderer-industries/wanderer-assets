@@ -4,14 +4,14 @@ import (
 	"fmt"
 
 	"github.com/guarzo/wanderer-sde/internal/models"
-	"github.com/guarzo/wanderer-sde/pkg/yaml"
+	"github.com/guarzo/wanderer-sde/pkg/jsonl"
 )
 
-// ParseTypes parses the types.yaml file.
+// ParseTypes parses the types.jsonl file.
 func (p *Parser) ParseTypes() (map[int64]models.SDEType, error) {
-	path := p.filePath("types.yaml")
+	path := p.filePath("types.jsonl")
 
-	types, err := yaml.ParseFileMap[int64, models.SDEType](path)
+	types, err := jsonl.ParseFileMap(path, models.SDEType.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse types file: %w", err)
 	}

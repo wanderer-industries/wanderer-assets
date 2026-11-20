@@ -5,60 +5,60 @@ import (
 	"sort"
 
 	"github.com/guarzo/wanderer-sde/internal/models"
-	"github.com/guarzo/wanderer-sde/pkg/yaml"
+	"github.com/guarzo/wanderer-sde/pkg/jsonl"
 )
 
 // SDEMapRegion represents a region in the flat SDE format.
 type SDEMapRegion struct {
-	RegionID        int64               `yaml:"regionID"`
-	Name            map[string]string   `yaml:"name"`
-	NameID          int64               `yaml:"nameID,omitempty"`
-	DescriptionID   int64               `yaml:"descriptionID,omitempty"`
-	FactionID       int64               `yaml:"factionID,omitempty"`
-	Position        *models.SDEPosition `yaml:"position,omitempty"`
-	NebulaID        int64               `yaml:"nebulaID,omitempty"`
-	WormholeClassID int64               `yaml:"wormholeClassID,omitempty"`
+	RegionID        int64               `json:"regionID"`
+	Name            map[string]string   `json:"name"`
+	NameID          int64               `json:"nameID,omitempty"`
+	DescriptionID   int64               `json:"descriptionID,omitempty"`
+	FactionID       int64               `json:"factionID,omitempty"`
+	Position        *models.SDEPosition `json:"position,omitempty"`
+	NebulaID        int64               `json:"nebulaID,omitempty"`
+	WormholeClassID int64               `json:"wormholeClassID,omitempty"`
 }
 
 // SDEMapConstellation represents a constellation in the flat SDE format.
 type SDEMapConstellation struct {
-	ConstellationID int64               `yaml:"constellationID"`
-	RegionID        int64               `yaml:"regionID"`
-	Name            map[string]string   `yaml:"name"`
-	NameID          int64               `yaml:"nameID,omitempty"`
-	FactionID       int64               `yaml:"factionID,omitempty"`
-	Position        *models.SDEPosition `yaml:"position,omitempty"`
-	Radius          float64             `yaml:"radius,omitempty"`
-	WormholeClassID int64               `yaml:"wormholeClassID,omitempty"`
+	ConstellationID int64               `json:"constellationID"`
+	RegionID        int64               `json:"regionID"`
+	Name            map[string]string   `json:"name"`
+	NameID          int64               `json:"nameID,omitempty"`
+	FactionID       int64               `json:"factionID,omitempty"`
+	Position        *models.SDEPosition `json:"position,omitempty"`
+	Radius          float64             `json:"radius,omitempty"`
+	WormholeClassID int64               `json:"wormholeClassID,omitempty"`
 }
 
 // SDEMapSolarSystem represents a solar system in the flat SDE format.
 type SDEMapSolarSystem struct {
-	SolarSystemID   int64               `yaml:"solarSystemID"`
-	ConstellationID int64               `yaml:"constellationID"`
-	RegionID        int64               `yaml:"regionID"`
-	Name            map[string]string   `yaml:"name"`
-	SecurityStatus  float64             `yaml:"securityStatus"`
-	SecurityClass   string              `yaml:"securityClass,omitempty"`
-	StarID          int64               `yaml:"starID,omitempty"`
-	WormholeClassID int64               `yaml:"wormholeClassID,omitempty"`
-	FactionID       int64               `yaml:"factionID,omitempty"`
-	Border          bool                `yaml:"border,omitempty"`
-	Corridor        bool                `yaml:"corridor,omitempty"`
-	Fringe          bool                `yaml:"fringe,omitempty"`
-	Hub             bool                `yaml:"hub,omitempty"`
-	International   bool                `yaml:"international,omitempty"`
-	Regional        bool                `yaml:"regional,omitempty"`
-	Position        *models.SDEPosition `yaml:"position,omitempty"`
-	Luminosity      float64             `yaml:"luminosity,omitempty"`
-	Radius          float64             `yaml:"radius,omitempty"`
+	SolarSystemID   int64               `json:"solarSystemID"`
+	ConstellationID int64               `json:"constellationID"`
+	RegionID        int64               `json:"regionID"`
+	Name            map[string]string   `json:"name"`
+	SecurityStatus  float64             `json:"securityStatus"`
+	SecurityClass   string              `json:"securityClass,omitempty"`
+	StarID          int64               `json:"starID,omitempty"`
+	WormholeClassID int64               `json:"wormholeClassID,omitempty"`
+	FactionID       int64               `json:"factionID,omitempty"`
+	Border          bool                `json:"border,omitempty"`
+	Corridor        bool                `json:"corridor,omitempty"`
+	Fringe          bool                `json:"fringe,omitempty"`
+	Hub             bool                `json:"hub,omitempty"`
+	International   bool                `json:"international,omitempty"`
+	Regional        bool                `json:"regional,omitempty"`
+	Position        *models.SDEPosition `json:"position,omitempty"`
+	Luminosity      float64             `json:"luminosity,omitempty"`
+	Radius          float64             `json:"radius,omitempty"`
 }
 
-// ParseRegions parses the mapRegions.yaml file.
+// ParseRegions parses the mapRegions.jsonl file.
 func (p *Parser) ParseRegions() ([]models.Region, error) {
-	path := p.filePath("mapRegions.yaml")
+	path := p.filePath("mapRegions.jsonl")
 
-	rawRegions, err := yaml.ParseFileMap[int64, SDEMapRegion](path)
+	rawRegions, err := jsonl.ParseFileMap(path, SDEMapRegion.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse regions file: %w", err)
 	}
@@ -97,11 +97,11 @@ func (p *Parser) ParseRegions() ([]models.Region, error) {
 	return regions, nil
 }
 
-// ParseConstellations parses the mapConstellations.yaml file.
+// ParseConstellations parses the mapConstellations.jsonl file.
 func (p *Parser) ParseConstellations() ([]models.Constellation, error) {
-	path := p.filePath("mapConstellations.yaml")
+	path := p.filePath("mapConstellations.jsonl")
 
-	rawConstellations, err := yaml.ParseFileMap[int64, SDEMapConstellation](path)
+	rawConstellations, err := jsonl.ParseFileMap(path, SDEMapConstellation.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse constellations file: %w", err)
 	}
@@ -139,12 +139,12 @@ func (p *Parser) ParseConstellations() ([]models.Constellation, error) {
 	return constellations, nil
 }
 
-// ParseSolarSystems parses the mapSolarSystems.yaml file.
+// ParseSolarSystems parses the mapSolarSystems.jsonl file.
 // starTypeMap provides starID -> typeID mapping for resolving sun types.
 func (p *Parser) ParseSolarSystems(starTypeMap map[int64]int64) ([]models.SolarSystem, error) {
-	path := p.filePath("mapSolarSystems.yaml")
+	path := p.filePath("mapSolarSystems.jsonl")
 
-	rawSystems, err := yaml.ParseFileMap[int64, SDEMapSolarSystem](path)
+	rawSystems, err := jsonl.ParseFileMap(path, SDEMapSolarSystem.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse solar systems file: %w", err)
 	}
@@ -201,3 +201,12 @@ func (p *Parser) ParseSolarSystems(starTypeMap map[int64]int64) ([]models.SolarS
 
 	return systems, nil
 }
+
+// ID returns the record id, for jsonl.ParseFileMap.
+func (r SDEMapRegion) ID() int64 { return r.RegionID }
+
+// ID returns the record id, for jsonl.ParseFileMap.
+func (c SDEMapConstellation) ID() int64 { return c.ConstellationID }
+
+// ID returns the record id, for jsonl.ParseFileMap.
+func (s SDEMapSolarSystem) ID() int64 { return s.SolarSystemID }

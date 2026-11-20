@@ -1,29 +1,78 @@
 package downloader
 
 import (
-	"archive/zip"
+	"bytes"
+	"compress/gzip"
 	"context"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"os"
 	"path/filepath"
-	"strconv"
+	"strings"
 	"testing"
 
 	"github.com/guarzo/wanderer-sde/internal/config"
 )
 
-func TestDownloader_Validate(t *testing.T) {
-	// Create a valid SDE structure
-	tmpDir, err := os.MkdirTemp("", "downloader_test")
-	if err != nil {
-		t.Fatalf("failed to create temp dir: %v", err)
+const testRelease = "20250115T110000Z"
+
+// fakeSDEAPI serves releases like sde.evetech.net: latest/ redirects to the
+// release, table URLs redirect to blobs, and every blob is gzipped whatever
+// the client asked for. skip names tables left out of the index.
+func fakeSDEAPI(t *testing.T, skip ...string) *httptest.Server {
+	t.Helper()
+	var srv *httptest.Server
+	mux := http.NewServeMux()
+	mux.HandleFunc("GET /tranquility/latest/", func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, "/tranquility/"+testRelease+"/", http.StatusFound)
+	})
+	mux.HandleFunc("GET /tranquility/"+testRelease+"/", func(w http.ResponseWriter, r *http.Request) {
+		var tables []string
+		for _, name := range Tables {
+			if contains(skip, name) {
+				continue
+			}
+			tables = append(tables, fmt.Sprintf(`%q: {"version": "v-%s", "jsonl": {"url": "%s/tranquility/%s/%s.jsonl"}}`,
+				name, name, srv.URL, testRelease, name))
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.Header().Set("ETag", `"index-etag"`)
+		_, _ = fmt.Fprintf(w, `{"release": %q, "buildNumber": 2025001, "releaseDate": "2025-01-15T11:00:00Z", "tables": {%s}}`,
+			testRelease, strings.Join(tables, ", "))
+	})
+	mux.HandleFunc("GET /tranquility/"+testRelease+"/{file}", func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, "/blobs/"+r.PathValue("file"), http.StatusFound)
+	})
+	mux.HandleFunc("GET /blobs/{file}", func(w http.ResponseWriter, r *http.Request) {
+		table := strings.TrimSuffix(r.PathValue("file"), ".jsonl")
+		var buf bytes.Buffer
+		zw := gzip.NewWriter(&buf)
+		_, _ = fmt.Fprintf(zw, `{"id": 1, "table": %q}`+"\n", table)
+		_ = zw.Close()
+		w.Header().Set("Content-Encoding", "gzip")
+		_, _ = w.Write(buf.Bytes())
+	})
+	srv = httptest.NewServer(mux)
+	t.Cleanup(srv.Close)
+	return srv
+}
+
+func contains(list []string, s string) bool {
+	for _, x := range list {
+		if x == s {
+			return true
+		}
 	}
-	defer func() { _ = os.RemoveAll(tmpDir) }()
+	return false
+}
+
+func TestDownloader_Validate(t *testing.T) {
+	tmpDir := t.TempDir()
 
 	// Create all expected files
 	for _, filename := range ExpectedFiles {
-		if err := os.WriteFile(filepath.Join(tmpDir, filename), []byte("test"), 0644); err != nil {
+		if err := os.WriteFile(filepath.Join(tmpDir, filename), []byte("{}\n"), 0644); err != nil {
 			t.Fatalf("failed to create %s: %v", filename, err)
 		}
 	}
@@ -37,157 +86,65 @@ func TestDownloader_Validate(t *testing.T) {
 	}
 
 	// Test missing file
-	_ = os.Remove(filepath.Join(tmpDir, "types.yaml"))
+	_ = os.Remove(filepath.Join(tmpDir, "types.jsonl"))
 	if err := dl.Validate(tmpDir); err == nil {
 		t.Error("Expected error for missing file")
 	}
 }
 
-func TestDownloader_Extract(t *testing.T) {
-	// Create a test ZIP file
-	tmpDir, err := os.MkdirTemp("", "downloader_extract_test")
-	if err != nil {
-		t.Fatalf("failed to create temp dir: %v", err)
-	}
-	defer func() { _ = os.RemoveAll(tmpDir) }()
-
-	zipPath := filepath.Join(tmpDir, "test.zip")
-	extractDir := filepath.Join(tmpDir, "extracted")
-
-	// Create ZIP file with test content
-	zipFile, err := os.Create(zipPath)
-	if err != nil {
-		t.Fatalf("failed to create zip file: %v", err)
-	}
-
-	zipWriter := zip.NewWriter(zipFile)
-
-	// Add some files to the ZIP
-	testFiles := map[string]string{
-		"types.yaml":             "type: test",
-		"groups.yaml":            "group: test",
-		"categories.yaml":        "category: test",
-		"mapSolarSystems.yaml":   "system: test",
-		"mapRegions.yaml":        "region: test",
-		"mapConstellations.yaml": "constellation: test",
-		"mapStargates.yaml":      "stargate: test",
-		"subdir/nested.yaml":     "nested: test",
-	}
-
-	for name, content := range testFiles {
-		w, err := zipWriter.Create(name)
-		if err != nil {
-			t.Fatalf("failed to create file in zip: %v", err)
-		}
-		if _, err := w.Write([]byte(content)); err != nil {
-			t.Fatalf("failed to write file content: %v", err)
-		}
-	}
-
-	if err := zipWriter.Close(); err != nil {
-		t.Fatalf("failed to close zip writer: %v", err)
-	}
-	_ = zipFile.Close()
-
-	cfg := &config.Config{Verbose: false}
-	dl := New(cfg)
-
-	// Extract the ZIP
-	sdePath, err := dl.Extract(zipPath, extractDir)
-	if err != nil {
-		t.Fatalf("Extract failed: %v", err)
-	}
-
-	// Verify files were extracted
-	for name := range testFiles {
-		path := filepath.Join(sdePath, name)
-		if _, err := os.Stat(path); os.IsNotExist(err) {
-			t.Errorf("File not extracted: %s", name)
-		}
-	}
-}
-
-func TestDownloader_ExtractZipSlipProtection(t *testing.T) {
-	// Create a test ZIP file with path traversal attempt
-	tmpDir, err := os.MkdirTemp("", "downloader_zipslip_test")
-	if err != nil {
-		t.Fatalf("failed to create temp dir: %v", err)
-	}
-	defer func() { _ = os.RemoveAll(tmpDir) }()
-
-	zipPath := filepath.Join(tmpDir, "malicious.zip")
-	extractDir := filepath.Join(tmpDir, "extracted")
-
-	// Create ZIP file with path traversal
-	zipFile, err := os.Create(zipPath)
-	if err != nil {
-		t.Fatalf("failed to create zip file: %v", err)
-	}
-
-	zipWriter := zip.NewWriter(zipFile)
-
-	// Add a file with path traversal
-	w, err := zipWriter.Create("../../../etc/passwd")
-	if err != nil {
-		t.Fatalf("failed to create file in zip: %v", err)
-	}
-	if _, err := w.Write([]byte("malicious content")); err != nil {
-		t.Fatalf("failed to write file content: %v", err)
-	}
-
-	if err := zipWriter.Close(); err != nil {
-		t.Fatalf("failed to close zip writer: %v", err)
-	}
-	_ = zipFile.Close()
-
-	cfg := &config.Config{Verbose: false}
-	dl := New(cfg)
-
-	// Extract should fail due to zip slip protection
-	_, err = dl.Extract(zipPath, extractDir)
-	if err == nil {
-		t.Error("Expected error for zip slip attack")
-	}
-}
-
 func TestDownloader_Download(t *testing.T) {
-	// Create a test server
-	testContent := []byte("test zip content")
-	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Length", strconv.Itoa(len(testContent)))
-		w.WriteHeader(http.StatusOK)
-		_, _ = w.Write(testContent)
-	}))
-	defer server.Close()
+	srv := fakeSDEAPI(t)
 
-	cfg := &config.Config{
-		SDEUrl:  server.URL,
-		Verbose: false,
+	for _, tt := range []struct {
+		name    string
+		release string
+		client  *http.Client
+	}{
+		// Go's transport asks for gzip and decodes it on its own
+		{"latest", "", nil},
+		{"named release", testRelease, nil},
+		// A client that does not ask for gzip still gets it
+		{"gzip not requested", "", &http.Client{Transport: &http.Transport{DisableCompression: true}}},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			cfg := &config.Config{SDEUrl: srv.URL + "/tranquility/"}
+			dl := New(cfg)
+			if tt.client != nil {
+				dl.httpClient = tt.client
+			}
+
+			dir, rel, err := dl.Download(context.Background(), tt.release)
+			if err != nil {
+				t.Fatalf("Download failed: %v", err)
+			}
+			defer func() { _ = os.RemoveAll(dir) }()
+
+			if rel.Release != testRelease || rel.BuildNumber != 2025001 {
+				t.Errorf("release = %+v", rel)
+			}
+			if err := dl.Validate(dir); err != nil {
+				t.Errorf("Validate: %v", err)
+			}
+			for _, name := range Tables {
+				got, err := os.ReadFile(filepath.Join(dir, name+".jsonl"))
+				if err != nil {
+					t.Fatalf("read %s: %v", name, err)
+				}
+				if want := fmt.Sprintf(`{"id": 1, "table": %q}`+"\n", name); string(got) != want {
+					t.Errorf("%s.jsonl = %q, want %q", name, got, want)
+				}
+			}
+		})
 	}
-	dl := New(cfg)
+}
 
-	ctx := context.Background()
-	result, err := dl.Download(ctx)
-	if err != nil {
-		t.Fatalf("Download failed: %v", err)
-	}
+func TestDownloader_DownloadMissingTable(t *testing.T) {
+	srv := fakeSDEAPI(t, "npcStations")
+	dl := New(&config.Config{SDEUrl: srv.URL + "/tranquility/"})
 
-	// Clean up downloaded file
-	defer func() { _ = os.RemoveAll(filepath.Dir(result.ZipPath)) }()
-
-	// Verify file was downloaded
-	if _, err := os.Stat(result.ZipPath); os.IsNotExist(err) {
-		t.Error("Downloaded file does not exist")
-	}
-
-	// Verify content
-	content, err := os.ReadFile(result.ZipPath)
-	if err != nil {
-		t.Fatalf("failed to read downloaded file: %v", err)
-	}
-
-	if string(content) != string(testContent) {
-		t.Errorf("Downloaded content mismatch: got %q, want %q", string(content), string(testContent))
+	_, _, err := dl.Download(context.Background(), "")
+	if err == nil || !strings.Contains(err.Error(), `"npcStations"`) {
+		t.Errorf("err = %v, want a missing npcStations table", err)
 	}
 }
 
@@ -205,28 +162,28 @@ func TestDownloader_DownloadError(t *testing.T) {
 	dl := New(cfg)
 
 	ctx := context.Background()
-	_, err := dl.Download(ctx)
+	_, _, err := dl.Download(ctx, "")
 	if err == nil {
 		t.Error("Expected error for failed download")
 	}
 }
 
-func TestDownloader_DownloadContextCancellation(t *testing.T) {
-	// Create a test server that delays
+func TestDownloader_NotAReleaseIndex(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// Check if context was canceled
-		select {
-		case <-r.Context().Done():
-			return
-		default:
-			w.WriteHeader(http.StatusOK)
-			_, _ = w.Write([]byte("test"))
-		}
+		_, _ = w.Write([]byte(`{"releases": []}`))
 	}))
 	defer server.Close()
 
+	dl := New(&config.Config{SDEUrl: server.URL})
+	if _, err := dl.FetchRelease(context.Background(), ""); err == nil {
+		t.Error("Expected error for a response that is not a release index")
+	}
+}
+
+func TestDownloader_DownloadContextCancellation(t *testing.T) {
+	srv := fakeSDEAPI(t)
 	cfg := &config.Config{
-		SDEUrl:  server.URL,
+		SDEUrl:  srv.URL + "/tranquility/",
 		Verbose: false,
 	}
 	dl := New(cfg)
@@ -235,9 +192,17 @@ func TestDownloader_DownloadContextCancellation(t *testing.T) {
 	ctx, cancel := context.WithCancel(context.Background())
 	cancel() // Cancel immediately
 
-	_, err := dl.Download(ctx)
+	_, _, err := dl.Download(ctx, "")
 	if err == nil {
 		t.Error("Expected error for canceled context")
+	}
+}
+
+func TestRelease_VersionInfo(t *testing.T) {
+	rel := &Release{Release: testRelease, BuildNumber: 2025001, ReleaseDate: "2025-01-15T11:00:00Z"}
+	vi := rel.VersionInfo()
+	if vi.Release != testRelease || vi.BuildNumber != "2025001" || vi.ReleaseDate != "2025-01-15T11:00:00Z" {
+		t.Errorf("VersionInfo = %+v", vi)
 	}
 }
 
@@ -267,26 +232,25 @@ func TestFormatBytes(t *testing.T) {
 }
 
 func TestExpectedFiles(t *testing.T) {
-	// Verify all expected files are defined
+	// Every table the parser reads must be downloaded and validated
 	expectedFilesList := []string{
-		"types.yaml",
-		"groups.yaml",
-		"categories.yaml",
-		"mapSolarSystems.yaml",
-		"mapRegions.yaml",
-		"mapConstellations.yaml",
-		"mapStargates.yaml",
+		"types.jsonl",
+		"groups.jsonl",
+		"categories.jsonl",
+		"mapRegions.jsonl",
+		"mapConstellations.jsonl",
+		"mapSolarSystems.jsonl",
+		"mapStars.jsonl",
+		"mapStargates.jsonl",
+		"npcStations.jsonl",
+		"npcCorporations.jsonl",
 	}
 
+	if len(ExpectedFiles) != len(expectedFilesList) {
+		t.Errorf("ExpectedFiles has %d files, want %d", len(ExpectedFiles), len(expectedFilesList))
+	}
 	for _, expected := range expectedFilesList {
-		found := false
-		for _, actual := range ExpectedFiles {
-			if actual == expected {
-				found = true
-				break
-			}
-		}
-		if !found {
+		if !contains(ExpectedFiles, expected) {
 			t.Errorf("Expected file %q not in ExpectedFiles", expected)
 		}
 	}

@@ -5,7 +5,7 @@ import (
 	"sort"
 
 	"github.com/guarzo/wanderer-sde/internal/models"
-	"github.com/guarzo/wanderer-sde/pkg/yaml"
+	"github.com/guarzo/wanderer-sde/pkg/jsonl"
 )
 
 // ExtractAllWormholeClasses extracts wormhole class information from
@@ -15,8 +15,8 @@ func (p *Parser) ExtractAllWormholeClasses() ([]models.WormholeClassLocation, er
 	var wormholeClasses []models.WormholeClassLocation
 
 	// 1. Extract from regions
-	regionsPath := p.filePath("mapRegions.yaml")
-	rawRegions, err := yaml.ParseFileMap[int64, SDEMapRegion](regionsPath)
+	regionsPath := p.filePath("mapRegions.jsonl")
+	rawRegions, err := jsonl.ParseFileMap(regionsPath, SDEMapRegion.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse regions for wormhole classes: %w", err)
 	}
@@ -30,8 +30,8 @@ func (p *Parser) ExtractAllWormholeClasses() ([]models.WormholeClassLocation, er
 	}
 
 	// 2. Extract from constellations
-	constellationsPath := p.filePath("mapConstellations.yaml")
-	rawConstellations, err := yaml.ParseFileMap[int64, SDEMapConstellation](constellationsPath)
+	constellationsPath := p.filePath("mapConstellations.jsonl")
+	rawConstellations, err := jsonl.ParseFileMap(constellationsPath, SDEMapConstellation.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse constellations for wormhole classes: %w", err)
 	}
@@ -45,8 +45,8 @@ func (p *Parser) ExtractAllWormholeClasses() ([]models.WormholeClassLocation, er
 	}
 
 	// 3. Extract from solar systems
-	systemsPath := p.filePath("mapSolarSystems.yaml")
-	rawSystems, err := yaml.ParseFileMap[int64, SDEMapSolarSystem](systemsPath)
+	systemsPath := p.filePath("mapSolarSystems.jsonl")
+	rawSystems, err := jsonl.ParseFileMap(systemsPath, SDEMapSolarSystem.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse solar systems for wormhole classes: %w", err)
 	}
