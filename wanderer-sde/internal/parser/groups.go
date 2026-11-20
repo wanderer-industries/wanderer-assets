@@ -4,14 +4,14 @@ import (
 	"fmt"
 
 	"github.com/guarzo/wanderer-sde/internal/models"
-	"github.com/guarzo/wanderer-sde/pkg/yaml"
+	"github.com/guarzo/wanderer-sde/pkg/jsonl"
 )
 
-// ParseGroups parses the groups.yaml file.
+// ParseGroups parses the groups.jsonl file.
 func (p *Parser) ParseGroups() (map[int64]models.SDEGroup, error) {
-	path := p.filePath("groups.yaml")
+	path := p.filePath("groups.jsonl")
 
-	groups, err := yaml.ParseFileMap[int64, models.SDEGroup](path)
+	groups, err := jsonl.ParseFileMap(path, models.SDEGroup.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse groups file: %w", err)
 	}

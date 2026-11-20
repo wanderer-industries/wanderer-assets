@@ -20,58 +20,23 @@ import (
 func TestIntegration_OrdinarySpaceClassifications(t *testing.T) {
 	sdeDir := t.TempDir()
 	files := map[string]string{
-		"mapRegions.yaml": `10000041:
-  name: {en: Syndicate}
-10001004:
-  name: {en: Exordium}
-10000070:
-  name: {en: Pochven}
-  wormholeClassID: 25
-11000031:
-  name: {en: G-R00031}
-  wormholeClassID: 12
-10000004:
-  name: {en: UUA-F4}
+		"mapRegions.jsonl": `{"regionID": 10000041, "name": {"en": "Syndicate"}}
+{"regionID": 10001004, "name": {"en": "Exordium"}}
+{"regionID": 10000070, "name": {"en": "Pochven"}, "wormholeClassID": 25}
+{"regionID": 11000031, "name": {"en": "G-R00031"}, "wormholeClassID": 12}
+{"regionID": 10000004, "name": {"en": "UUA-F4"}}
 `,
-		"mapConstellations.yaml": `20000487:
-  regionID: 10000041
-20010001:
-  regionID: 10001004
-20000788:
-  regionID: 10000070
-21000324:
-  regionID: 11000031
-20000047:
-  regionID: 10000004
+		"mapConstellations.jsonl": `{"constellationID": 20000487, "regionID": 10000041}
+{"constellationID": 20010001, "regionID": 10001004}
+{"constellationID": 20000788, "regionID": 10000070}
+{"constellationID": 21000324, "regionID": 11000031}
+{"constellationID": 20000047, "regionID": 10000004}
 `,
-		"mapSolarSystems.yaml": `30003346:
-  name: {en: 5-VKCN}
-  regionID: 10000041
-  constellationID: 20000487
-  securityStatus: -0.016492
-  securityClass: J
-30100032:
-  name: {en: Manifest}
-  regionID: 10001004
-  constellationID: 20010001
-  securityStatus: 1.0
-  securityClass: A
-30002770:
-  name: {en: Raravoss}
-  regionID: 10000070
-  constellationID: 20000788
-  securityStatus: -1.0
-  securityClass: C1
-31000005:
-  name: {en: Thera}
-  regionID: 11000031
-  constellationID: 21000324
-  securityStatus: -0.99
-30000326:
-  name: {en: WF-1LM}
-  regionID: 10000004
-  constellationID: 20000047
-  securityStatus: -0.0019
+		"mapSolarSystems.jsonl": `{"solarSystemID": 30003346, "name": {"en": "5-VKCN"}, "regionID": 10000041, "constellationID": 20000487, "securityStatus": -0.016492, "securityClass": "J"}
+{"solarSystemID": 30100032, "name": {"en": "Manifest"}, "regionID": 10001004, "constellationID": 20010001, "securityStatus": 1.0, "securityClass": "A"}
+{"solarSystemID": 30002770, "name": {"en": "Raravoss"}, "regionID": 10000070, "constellationID": 20000788, "securityStatus": -1.0, "securityClass": "C1"}
+{"solarSystemID": 31000005, "name": {"en": "Thera"}, "regionID": 11000031, "constellationID": 21000324, "securityStatus": -0.99}
+{"solarSystemID": 30000326, "name": {"en": "WF-1LM"}, "regionID": 10000004, "constellationID": 20000047, "securityStatus": -0.0019}
 `,
 	}
 	for name, content := range files {

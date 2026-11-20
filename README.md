@@ -4,16 +4,16 @@ This repository contains assets for [Wanderer](https://github.com/wanderer-indus
 
 ## SDE Converter (wanderer-sde)
 
-A Go tool to convert EVE Online's Static Data Export (SDE) YAML files into CSV or JSON format compatible with Wanderer and [Fuzzwork](https://www.fuzzwork.co.uk/dump/).
+A Go tool to convert EVE Online's Static Data Export (SDE), read from CCP's [SDE API](https://sde.evetech.net), into CSV or JSON format compatible with Wanderer and [Fuzzwork](https://www.fuzzwork.co.uk/dump/).
 
 ### Overview
 
-This converter eliminates the dependency on third-party CSV dumps (like Fuzzwork) by processing the official SDE directly from CCP. It parses the YAML files and generates CSV (default) or JSON output that Wanderer can consume.
+This converter eliminates the dependency on third-party CSV dumps (like Fuzzwork) by processing the official SDE directly from CCP. It reads the SDE tables as JSON Lines and generates CSV (default) or JSON output that Wanderer can consume.
 
 #### Features
 
-- Downloads the latest SDE directly from CCP
-- Parses YAML files with parallel processing for performance
+- Downloads only the tables it needs from CCP's SDE API
+- Parses the SDE's JSON Lines tables
 - Generates CSV files (default) matching Fuzzwork format, or JSON
 - Supports passthrough of community-maintained data files
 - Version tracking to avoid redundant downloads
@@ -65,14 +65,14 @@ Available Commands:
   version     Print the version number
 
 Flags:
-  -d, --download             Download latest SDE from CCP
+  -d, --download             Download the latest SDE from CCP's SDE API
   -f, --format string        Output format: csv or json (default "csv")
   -h, --help                 help for sdeconvert
   -o, --output string        Output directory for output files (default "./output")
   -p, --passthrough string   Directory with Wanderer JSON files to copy
       --pretty               Pretty-print JSON output (only applies to JSON format) (default true)
-  -s, --sde-path string      Path to SDE directory or ZIP file
-      --sde-url string       URL to download SDE from
+  -s, --sde-path string      Path to a directory of SDE JSONL tables
+      --sde-url string       SDE API URL that lists the releases (default "https://sde.evetech.net/tranquility/")
   -v, --verbose              Enable verbose output
   -w, --workers int          Number of parallel workers (default 4)
 ```
@@ -97,7 +97,7 @@ sdeconvert --download --output ./output --format json
 
 ##### Convert an Existing SDE Directory
 
-If you already have the SDE extracted locally:
+If you already have the tables locally, as `--download` saves them in `<output>/sde` (`types.jsonl`, `groups.jsonl`, ...):
 
 ```bash
 sdeconvert --sde-path /path/to/sde --output ./output
@@ -121,13 +121,14 @@ For debugging or monitoring large conversions:
 sdeconvert --download --output ./output --verbose --workers 8
 ```
 
-##### Custom SDE URL
+##### Custom SDE API URL
 
-Use a specific SDE version or mirror:
+Download from a mirror of the SDE API. The URL lists the releases of a
+tenant; the converter reads `latest/` below it:
 
 ```bash
 sdeconvert --download \
-  --sde-url "https://example.com/custom-sde.zip" \
+  --sde-url "https://sde-mirror.example.com/tranquility/" \
   --output ./output
 ```
 
@@ -139,13 +140,13 @@ The converter generates the following files (CSV by default, JSON with `--format
 
 | File | Description | Source |
 |------|-------------|--------|
-| `mapSolarSystems.csv` | Solar systems with coordinates, security status, region/constellation IDs | `mapSolarSystems.yaml` |
-| `mapRegions.csv` | Region ID, name, and coordinate bounds | `mapRegions.yaml` |
-| `mapConstellations.csv` | Constellation ID, name, region, and coordinate bounds | `mapConstellations.yaml` |
-| `mapLocationWormholeClasses.csv` | Space class assignments for locations | `mapRegions.yaml`, `mapConstellations.yaml`, `mapSolarSystems.yaml` |
-| `invTypes.csv` | All item type definitions | `types.yaml` |
-| `invGroups.csv` | All item group definitions | `groups.yaml` |
-| `mapSolarSystemJumps.csv` | Stargate connections between systems | `mapStargates.yaml` |
+| `mapSolarSystems.csv` | Solar systems with coordinates, security status, region/constellation IDs | `mapSolarSystems` |
+| `mapRegions.csv` | Region ID, name, and coordinate bounds | `mapRegions` |
+| `mapConstellations.csv` | Constellation ID, name, region, and coordinate bounds | `mapConstellations` |
+| `mapLocationWormholeClasses.csv` | Space class assignments for locations | `mapRegions`, `mapConstellations`, `mapSolarSystems` |
+| `invTypes.csv` | All item type definitions | `types` |
+| `invGroups.csv` | All item group definitions | `groups` |
+| `mapSolarSystemJumps.csv` | Stargate connections between systems | `mapStargates` |
 
 #### Passthrough Files (Community-Maintained)
 
@@ -215,8 +216,10 @@ system ID in the error. This normalization applies to both CSV and JSON output.
 
 After updating converter logic, regenerate and publish the output before
 refreshing Wanderer's database and restarting the server. The scheduled workflow
-checks the SDE build number even on manual dispatch, so it does not regenerate an
-already-processed build just because converter code changed. An existing local
+checks the SDE release even on manual dispatch, so it does not regenerate an
+already-processed release just because converter code changed. Releases are
+named by their date, such as `20261119T110708Z`, and `.last-sde-version`
+stores that name: CCP can publish several releases with the same build number. An existing local
 SDE can be reconverted with `sdeconvert --sde-path /path/to/sde --output ./output`.
 
 #### Item Types (`invTypes.csv`)
@@ -282,7 +285,7 @@ wanderer-assets/
 │   ├── config/
 │   │   └── config.go              # Configuration management
 │   ├── downloader/
-│   │   ├── downloader.go          # SDE download & extraction
+│   │   ├── downloader.go          # SDE API download
 │   │   └── version.go             # Version checking
 │   ├── models/
 │   │   ├── sde.go                 # SDE data structures
@@ -291,9 +294,9 @@ wanderer-assets/
 │   ├── parser/
 │   │   ├── parser.go              # Main parser orchestration
 │   │   ├── universe.go            # Region/constellation/system parsing
-│   │   ├── types.go               # types.yaml parsing
-│   │   ├── groups.go              # groups.yaml parsing
-│   │   ├── categories.go          # categories.yaml parsing
+│   │   ├── types.go               # types table parsing
+│   │   ├── groups.go              # groups table parsing
+│   │   ├── categories.go          # categories table parsing
 │   │   ├── jumps.go               # Stargate jump parsing
 │   │   ├── stars.go               # Star type parsing
 │   │   └── wormhole_classes.go    # Wormhole class parsing
@@ -307,8 +310,8 @@ wanderer-assets/
 │       ├── csv_writer.go          # CSV output generation
 │       └── json_writer.go         # JSON output generation
 ├── pkg/
-│   └── yaml/
-│       └── yaml.go                # YAML utilities
+│   └── jsonl/
+│       └── jsonl.go               # JSON Lines reader
 ├── go.mod
 ├── go.sum
 ├── Makefile
@@ -320,8 +323,8 @@ wanderer-assets/
 
 The converter follows a pipeline architecture:
 
-1. **Downloader**: Downloads and extracts the SDE from CCP
-2. **Parser**: Reads YAML files and converts to internal Go structs
+1. **Downloader**: Downloads the SDE tables from CCP's SDE API
+2. **Parser**: Reads the JSON Lines tables and converts them to internal Go structs
 3. **Transformer**: Applies business logic (bounds calculation, faction inheritance, sorting)
 4. **Writer**: Serializes data to CSV or JSON files
 
@@ -329,7 +332,7 @@ Each component is isolated and testable independently.
 
 ### Data Sources
 
-- **SDE**: [EVE Online Static Data Export](https://developers.eveonline.com/docs/services/static-data/)
+- **SDE**: [EVE Online Static Data Export](https://developers.eveonline.com/docs/services/static-data/), served by the [SDE API](https://developers.eveonline.com/blog/the-sde-over-http-static-data-dynamically)
 - **Wanderer**: [wanderer-industries/wanderer](https://github.com/wanderer-industries/wanderer)
 
 ## Contributing

@@ -1,9 +1,7 @@
 package downloader
 
 import (
-	"bufio"
 	"context"
-	"encoding/json"
 	"fmt"
 	"net/http"
 	"os"
@@ -14,17 +12,14 @@ import (
 	"github.com/guarzo/wanderer-sde/internal/config"
 )
 
-// LatestJSONLURL is the URL to check for the latest SDE build number.
-const LatestJSONLURL = "https://developers.eveonline.com/static-data/tranquility/latest.jsonl"
-
-// VersionFileName is the name of the file that stores the last processed SDE version.
+// VersionFileName is the name of the file that stores the last processed SDE release.
 const VersionFileName = ".last-sde-version"
 
 // VersionChecker handles checking and tracking SDE versions.
 type VersionChecker struct {
 	config     *config.Config
 	httpClient *http.Client
-	versionURL string // URL to check for latest version (defaults to LatestJSONLURL)
+	versionURL string // index of the latest release (defaults to <SDEUrl>/latest/)
 }
 
 // NewVersionChecker creates a new VersionChecker.
@@ -34,25 +29,20 @@ func NewVersionChecker(cfg *config.Config) *VersionChecker {
 		httpClient: &http.Client{
 			Timeout: 30 * time.Second,
 		},
-		versionURL: LatestJSONLURL,
+		versionURL: releaseURL(cfg.SDEUrl, ""),
 	}
 }
 
-// VersionInfo contains information about the SDE version.
+// VersionInfo identifies an SDE release. CCP can publish several releases
+// with the same build number, so Release is what tells them apart.
 type VersionInfo struct {
+	Release     string `json:"release"`
 	BuildNumber string `json:"sde"`
 	ReleaseDate string `json:"releaseDate,omitempty"`
 	ETag        string `json:"-"`
 }
 
-// latestRecord represents a record from the latest.jsonl file.
-type latestRecord struct {
-	Key         string `json:"_key"`
-	BuildNumber int64  `json:"buildNumber,omitempty"`
-	ReleaseDate string `json:"releaseDate,omitempty"`
-}
-
-// GetLatestVersion fetches the latest SDE version from CCP.
+// GetLatestVersion reads the index of the latest SDE release.
 func (vc *VersionChecker) GetLatestVersion(ctx context.Context) (*VersionInfo, error) {
 	if vc.config.Verbose {
 		fmt.Println("Checking latest SDE version...")
@@ -60,66 +50,24 @@ func (vc *VersionChecker) GetLatestVersion(ctx context.Context) (*VersionInfo, e
 
 	url := vc.versionURL
 	if url == "" {
-		url = LatestJSONLURL
+		url = releaseURL(vc.config.SDEUrl, "")
 	}
 
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
-	if err != nil {
-		return nil, fmt.Errorf("failed to create request: %w", err)
-	}
-
-	// Add User-Agent header
-	version := vc.config.Version
-	if version == "" {
-		version = "dev"
-	}
-	req.Header.Set("User-Agent", fmt.Sprintf("wanderer-sde/%s (https://github.com/guarzo/wanderer-sde)", version))
-
-	resp, err := vc.httpClient.Do(req)
+	var rel Release
+	header, err := getJSON(ctx, vc.httpClient, vc.config.Version, url, &rel)
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch latest version: %w", err)
 	}
-	defer func() { _ = resp.Body.Close() }()
-
-	if resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("unexpected status code: %d", resp.StatusCode)
+	if rel.Release == "" || rel.BuildNumber <= 0 {
+		return nil, fmt.Errorf("SDE release not found in %s", url)
 	}
 
-	// Parse JSON Lines format - each line is a separate JSON object
-	scanner := bufio.NewScanner(resp.Body)
-	for scanner.Scan() {
-		line := strings.TrimSpace(scanner.Text())
-		if line == "" {
-			continue
-		}
-
-		var record latestRecord
-		if err := json.Unmarshal([]byte(line), &record); err != nil {
-			// Skip malformed lines
-			if vc.config.Verbose {
-				fmt.Printf("Warning: skipping malformed JSONL line: %v\n", err)
-			}
-			continue
-		}
-
-		// Look for the "sde" key with buildNumber
-		if record.Key == "sde" && record.BuildNumber > 0 {
-			return &VersionInfo{
-				BuildNumber: fmt.Sprintf("%d", record.BuildNumber),
-				ReleaseDate: record.ReleaseDate,
-				ETag:        resp.Header.Get("ETag"),
-			}, nil
-		}
-	}
-
-	if err := scanner.Err(); err != nil {
-		return nil, fmt.Errorf("error reading response: %w", err)
-	}
-
-	return nil, fmt.Errorf("SDE version not found in latest.jsonl")
+	info := rel.VersionInfo()
+	info.ETag = header.Get("ETag")
+	return info, nil
 }
 
-// GetStoredVersion retrieves the previously stored SDE version.
+// GetStoredVersion retrieves the previously stored SDE release.
 func (vc *VersionChecker) GetStoredVersion(dir string) (string, error) {
 	versionFile := filepath.Join(dir, VersionFileName)
 
@@ -134,7 +82,7 @@ func (vc *VersionChecker) GetStoredVersion(dir string) (string, error) {
 	return strings.TrimSpace(string(data)), nil
 }
 
-// StoreVersion saves the current SDE version.
+// StoreVersion saves the current SDE release.
 func (vc *VersionChecker) StoreVersion(dir, version string) error {
 	if err := os.MkdirAll(dir, 0755); err != nil {
 		return fmt.Errorf("failed to create directory: %w", err)
@@ -148,19 +96,19 @@ func (vc *VersionChecker) StoreVersion(dir, version string) error {
 	return nil
 }
 
-// NeedsUpdate checks if the SDE needs to be updated.
+// NeedsUpdate checks if the SDE needs to be updated. It compares releases:
+// a version file written before the SDE API holds a build number, which
+// never matches, so the first run after the switch downloads again.
 func (vc *VersionChecker) NeedsUpdate(ctx context.Context, storageDir string) (bool, *VersionInfo, error) {
-	// Get the latest version
 	latest, err := vc.GetLatestVersion(ctx)
 	if err != nil {
 		return false, nil, err
 	}
 
 	if vc.config.Verbose {
-		fmt.Printf("Latest SDE version: %s\n", latest.BuildNumber)
+		fmt.Printf("Latest SDE release: %s (build %s)\n", latest.Release, latest.BuildNumber)
 	}
 
-	// Get the stored version
 	stored, err := vc.GetStoredVersion(storageDir)
 	if err != nil {
 		return false, nil, err
@@ -174,10 +122,10 @@ func (vc *VersionChecker) NeedsUpdate(ctx context.Context, storageDir string) (b
 	}
 
 	if vc.config.Verbose {
-		fmt.Printf("Stored SDE version: %s\n", stored)
+		fmt.Printf("Stored SDE release: %s\n", stored)
 	}
 
-	needsUpdate := stored != latest.BuildNumber
+	needsUpdate := stored != latest.Release
 	if vc.config.Verbose {
 		if needsUpdate {
 			fmt.Println("Update available")
@@ -191,14 +139,15 @@ func (vc *VersionChecker) NeedsUpdate(ctx context.Context, storageDir string) (b
 
 // CheckETag performs an HTTP HEAD request to check if the SDE has been updated
 // using ETag headers, which is more efficient than downloading the full version info.
-// If url is empty, the default versionURL (or LatestJSONLURL) is used.
+// If url is empty, the index of the latest release is used.
 func (vc *VersionChecker) CheckETag(ctx context.Context, url string, storedETag string) (bool, string, error) {
 	if url == "" {
 		url = vc.versionURL
 		if url == "" {
-			url = LatestJSONLURL
+			url = releaseURL(vc.config.SDEUrl, "")
 		}
 	}
+
 	req, err := http.NewRequestWithContext(ctx, http.MethodHead, url, nil)
 	if err != nil {
 		return false, "", fmt.Errorf("failed to create request: %w", err)

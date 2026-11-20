@@ -16,6 +16,7 @@ jobs:
     outputs:
       sde_updated: ${{ steps.check.outputs.updated }}
       sde_version: ${{ steps.check.outputs.version }}
+      sde_build: ${{ steps.check.outputs.build }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,10 +24,13 @@ jobs:
       - name: Check SDE Version
         id: check
         run: |
-          # Fetch latest SDE build number from CCP's API (JSON Lines format)
-          echo "Fetching SDE version from CCP API..."
-          LATEST=$(curl -s https://developers.eveonline.com/static-data/tranquility/latest.jsonl | jq -r 'select(._key == "sde") | .buildNumber')
-          echo "Extracted version: $LATEST"
+          # Fetch the latest release from CCP's SDE API. The release name
+          # identifies the SDE: several releases can share a build number.
+          echo "Fetching SDE version from CCP's SDE API..."
+          INDEX=$(curl -sfL --compressed https://sde.evetech.net/tranquility/latest/)
+          LATEST=$(echo "$INDEX" | jq -r '.release // empty')
+          BUILD=$(echo "$INDEX" | jq -r '.buildNumber // empty')
+          echo "Extracted version: $LATEST (build $BUILD)"
 
           if [ -z "$LATEST" ]; then
             echo "Failed to fetch SDE version from CCP API"
@@ -35,6 +39,7 @@ jobs:
 
           echo "Latest SDE version: $LATEST"
           echo "version=$LATEST" >> $GITHUB_OUTPUT
+          echo "build=$BUILD" >> $GITHUB_OUTPUT
 
           # Check if we've processed this version before
           if [ -f sde-files/.last-sde-version ] && [ "$(cat sde-files/.last-sde-version)" = "$LATEST" ]; then
@@ -83,7 +88,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: update SDE data to build ${{ needs.check-sde-update.outputs.sde_version }}"
+            git commit -m "chore: update SDE data to build ${{ needs.check-sde-update.outputs.sde_build }} (release ${{ needs.check-sde-update.outputs.sde_version }})"
             # Retry push up to 3 times with exponential backoff
             max_retries=3
             retry_count=0

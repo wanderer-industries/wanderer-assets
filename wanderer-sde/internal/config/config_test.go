@@ -16,8 +16,8 @@ func TestNewConfig(t *testing.T) {
 		t.Errorf("Expected default OutputDir './output', got %q", cfg.OutputDir)
 	}
 
-	if cfg.SDEUrl != SDELatestURL {
-		t.Errorf("Expected default SDEUrl %q, got %q", SDELatestURL, cfg.SDEUrl)
+	if cfg.SDEUrl != SDEAPIURL {
+		t.Errorf("Expected default SDEUrl %q, got %q", SDEAPIURL, cfg.SDEUrl)
 	}
 
 	if !cfg.PrettyPrint {
@@ -120,11 +120,11 @@ func TestConfig_Validate(t *testing.T) {
 	}
 }
 
-func TestSDELatestURL(t *testing.T) {
+func TestSDEAPIURL(t *testing.T) {
 	// Verify the URL is properly set
-	expectedURL := "https://developers.eveonline.com/static-data/eve-online-static-data-latest-yaml.zip"
-	if SDELatestURL != expectedURL {
-		t.Errorf("SDELatestURL mismatch: got %q, want %q", SDELatestURL, expectedURL)
+	expectedURL := "https://sde.evetech.net/tranquility/"
+	if SDEAPIURL != expectedURL {
+		t.Errorf("SDEAPIURL mismatch: got %q, want %q", SDEAPIURL, expectedURL)
 	}
 }
 

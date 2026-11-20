@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/guarzo/wanderer-sde/internal/models"
-	"github.com/guarzo/wanderer-sde/pkg/yaml"
+	"github.com/guarzo/wanderer-sde/pkg/jsonl"
 )
 
 // blueLootBuyerCorpIDs contains corporation IDs that buy blue loot.
@@ -18,11 +18,11 @@ func IsBlueLootBuyer(corpID int64) bool {
 	return blueLootBuyerCorpIDs[corpID]
 }
 
-// ParseNPCStations parses the npcStations.yaml file.
+// ParseNPCStations parses the npcStations.jsonl file.
 func (p *Parser) ParseNPCStations() (map[int64]models.SDENPCStation, error) {
-	path := p.filePath("npcStations.yaml")
+	path := p.filePath("npcStations.jsonl")
 
-	stations, err := yaml.ParseFileMap[int64, models.SDENPCStation](path)
+	stations, err := jsonl.ParseFileMap(path, models.SDENPCStation.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse NPC stations file: %w", err)
 	}
@@ -30,11 +30,11 @@ func (p *Parser) ParseNPCStations() (map[int64]models.SDENPCStation, error) {
 	return stations, nil
 }
 
-// ParseNPCCorporations parses the npcCorporations.yaml file.
+// ParseNPCCorporations parses the npcCorporations.jsonl file.
 func (p *Parser) ParseNPCCorporations() (map[int64]models.SDENPCCorporation, error) {
-	path := p.filePath("npcCorporations.yaml")
+	path := p.filePath("npcCorporations.jsonl")
 
-	corps, err := yaml.ParseFileMap[int64, models.SDENPCCorporation](path)
+	corps, err := jsonl.ParseFileMap(path, models.SDENPCCorporation.ID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse NPC corporations file: %w", err)
 	}

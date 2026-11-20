@@ -1,32 +1,77 @@
-// Package downloader handles downloading and extracting the EVE SDE.
+// Package downloader fetches the EVE SDE tables the converter needs from
+// CCP's SDE API (https://sde.evetech.net).
+//
+// The API lists releases per tenant. Each release has an index with its
+// release name, build number, release date and one JSON Lines file per
+// table. Only the current and the previous release are kept, so table URLs
+// are always read from a fresh index and never stored.
 package downloader
 
 import (
-	"archive/zip"
+	"compress/gzip"
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
+	"strings"
 	"time"
 
 	"github.com/guarzo/wanderer-sde/internal/config"
 )
 
-// ExpectedFiles are the files we expect to find in a valid SDE.
-// The new SDE format (2025+) uses a flat file structure.
-var ExpectedFiles = []string{
-	"types.yaml",
-	"groups.yaml",
-	"categories.yaml",
-	"mapSolarSystems.yaml",
-	"mapRegions.yaml",
-	"mapConstellations.yaml",
-	"mapStargates.yaml",
+// Tables are the SDE tables the parser reads. Each is saved as <table>.jsonl.
+var Tables = []string{
+	"types",
+	"groups",
+	"categories",
+	"mapRegions",
+	"mapConstellations",
+	"mapSolarSystems",
+	"mapStars",
+	"mapStargates",
+	"npcStations",
+	"npcCorporations",
 }
 
-// Downloader handles downloading and extracting the SDE.
+// ExpectedFiles are the files a valid SDE directory holds.
+var ExpectedFiles = func() []string {
+	files := make([]string, len(Tables))
+	for i, t := range Tables {
+		files[i] = t + ".jsonl"
+	}
+	return files
+}()
+
+// Release is the index of one SDE release.
+type Release struct {
+	Release     string           `json:"release"`
+	BuildNumber int64            `json:"buildNumber"`
+	ReleaseDate string           `json:"releaseDate"`
+	Tables      map[string]Table `json:"tables"`
+}
+
+// Table is one table of a release.
+type Table struct {
+	Version string `json:"version"`
+	JSONL   struct {
+		URL string `json:"url"`
+	} `json:"jsonl"`
+}
+
+// VersionInfo returns the version of the release.
+func (r *Release) VersionInfo() *VersionInfo {
+	return &VersionInfo{
+		Release:     r.Release,
+		BuildNumber: strconv.FormatInt(r.BuildNumber, 10),
+		ReleaseDate: r.ReleaseDate,
+	}
+}
+
+// Downloader downloads SDE tables.
 type Downloader struct {
 	config     *config.Config
 	httpClient *http.Client
@@ -37,189 +82,91 @@ func New(cfg *config.Config) *Downloader {
 	return &Downloader{
 		config: cfg,
 		httpClient: &http.Client{
-			Timeout: 30 * time.Minute, // SDE is large, allow generous timeout
+			Timeout: 10 * time.Minute, // per table; types is the largest at ~25 MB gzipped
 		},
 	}
 }
 
-// DownloadResult contains information about a completed download.
-type DownloadResult struct {
-	ZipPath     string
-	ExtractPath string
-	SDEPath     string
-	BytesRead   int64
+// releaseURL returns the index URL of a release, or of the latest one when
+// release is empty.
+func releaseURL(base, release string) string {
+	if release == "" {
+		release = "latest"
+	}
+	return strings.TrimSuffix(base, "/") + "/" + release + "/"
 }
 
-// Download downloads the SDE from the configured URL.
-// Returns the path to the downloaded ZIP file.
-func (d *Downloader) Download(ctx context.Context) (*DownloadResult, error) {
-	if d.config.Verbose {
-		fmt.Printf("Downloading SDE from: %s\n", d.config.SDEUrl)
+// FetchRelease reads the index of a release, such as "20261119T110708Z",
+// or of the latest one when release is empty.
+func (d *Downloader) FetchRelease(ctx context.Context, release string) (*Release, error) {
+	var rel Release
+	if _, err := getJSON(ctx, d.httpClient, d.config.Version, releaseURL(d.config.SDEUrl, release), &rel); err != nil {
+		return nil, err
 	}
-
-	// Create a temporary directory for the download
-	tempDir, err := os.MkdirTemp("", "wanderer-sde-")
-	if err != nil {
-		return nil, fmt.Errorf("failed to create temp directory: %w", err)
+	if rel.Release == "" || len(rel.Tables) == 0 {
+		return nil, fmt.Errorf("not an SDE release index: %s", releaseURL(d.config.SDEUrl, release))
 	}
-
-	// Clean up temp directory on error; disabled on success
-	success := false
-	defer func() {
-		if !success {
-			_ = os.RemoveAll(tempDir)
-		}
-	}()
-
-	zipPath := filepath.Join(tempDir, "sde.zip")
-
-	// Create the output file
-	out, err := os.Create(zipPath)
-	if err != nil {
-		return nil, fmt.Errorf("failed to create output file: %w", err)
-	}
-	defer func() { _ = out.Close() }()
-
-	// Create the HTTP request with context
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, d.config.SDEUrl, nil)
-	if err != nil {
-		return nil, fmt.Errorf("failed to create request: %w", err)
-	}
-
-	// Add User-Agent header (required by some CDNs)
-	version := d.config.Version
-	if version == "" {
-		version = "dev"
-	}
-	req.Header.Set("User-Agent", fmt.Sprintf("wanderer-sde/%s (https://github.com/guarzo/wanderer-sde)", version))
-	req.Header.Set("Accept", "*/*")
-
-	// Perform the request
-	resp, err := d.httpClient.Do(req)
-	if err != nil {
-		return nil, fmt.Errorf("failed to download SDE: %w", err)
-	}
-	defer func() { _ = resp.Body.Close() }()
-
-	if resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("unexpected status code: %d", resp.StatusCode)
-	}
-
-	// Get content length for progress tracking
-	contentLength := resp.ContentLength
-
-	// Create progress writer
-	pw := &progressWriter{
-		writer:        out,
-		total:         contentLength,
-		verbose:       d.config.Verbose,
-		lastPrintTime: time.Now(),
-	}
-
-	// Copy the response body to file with progress tracking
-	bytesWritten, err := io.Copy(pw, resp.Body)
-	if err != nil {
-		return nil, fmt.Errorf("failed to write SDE file: %w", err)
-	}
-
-	if d.config.Verbose {
-		fmt.Printf("\nDownload complete: %d bytes\n", bytesWritten)
-	}
-
-	success = true
-	return &DownloadResult{
-		ZipPath:   zipPath,
-		BytesRead: bytesWritten,
-	}, nil
+	return &rel, nil
 }
 
-// Extract extracts a ZIP archive to the specified destination directory.
-// Returns the path to the extracted SDE directory.
-func (d *Downloader) Extract(zipPath, destDir string) (string, error) {
-	if d.config.Verbose {
-		fmt.Printf("Extracting SDE to: %s\n", destDir)
-	}
-
-	// Open the ZIP file
-	r, err := zip.OpenReader(zipPath)
+// Download saves every table in Tables from a release (the latest when
+// release is empty) into a new temporary directory, and returns that
+// directory with the release it came from.
+func (d *Downloader) Download(ctx context.Context, release string) (string, *Release, error) {
+	rel, err := d.FetchRelease(ctx, release)
 	if err != nil {
-		return "", fmt.Errorf("failed to open ZIP file: %w", err)
+		return "", nil, err
 	}
-	defer func() { _ = r.Close() }()
-
-	// Create destination directory
-	if err := os.MkdirAll(destDir, 0755); err != nil {
-		return "", fmt.Errorf("failed to create destination directory: %w", err)
+	if d.config.Verbose {
+		fmt.Printf("Downloading SDE release %s (build %d)\n", rel.Release, rel.BuildNumber)
 	}
 
-	totalFiles := len(r.File)
-	extractedCount := 0
-
-	// Extract each file
-	for _, f := range r.File {
-		if err := d.extractFile(f, destDir); err != nil {
-			return "", fmt.Errorf("failed to extract %s: %w", f.Name, err)
+	dir, err := os.MkdirTemp("", "wanderer-sde-")
+	if err != nil {
+		return "", nil, fmt.Errorf("failed to create temp directory: %w", err)
+	}
+	for _, name := range Tables {
+		t, ok := rel.Tables[name]
+		if !ok || t.JSONL.URL == "" {
+			_ = os.RemoveAll(dir)
+			return "", nil, fmt.Errorf("release %s has no JSONL table %q", rel.Release, name)
 		}
-		extractedCount++
-
-		if d.config.Verbose && extractedCount%1000 == 0 {
-			fmt.Printf("Extracted %d/%d files...\n", extractedCount, totalFiles)
+		n, err := d.downloadFile(ctx, t.JSONL.URL, filepath.Join(dir, name+".jsonl"))
+		if err != nil {
+			_ = os.RemoveAll(dir)
+			return "", nil, fmt.Errorf("failed to download %s: %w", name, err)
+		}
+		if d.config.Verbose {
+			fmt.Printf("  %s.jsonl (%s)\n", name, formatBytes(n))
 		}
 	}
-
-	if d.config.Verbose {
-		fmt.Printf("Extraction complete: %d files\n", extractedCount)
-	}
-
-	// The new SDE format extracts directly to the destination directory
-	return destDir, nil
+	return dir, rel, nil
 }
 
-// extractFile extracts a single file from the ZIP archive.
-func (d *Downloader) extractFile(f *zip.File, destDir string) error {
-	// Sanitize the file path to prevent zip slip attacks
-	// Using filepath.IsLocal is the recommended approach per Go documentation
-	if !filepath.IsLocal(f.Name) {
-		return fmt.Errorf("illegal file path: %s", f.Name)
-	}
-	destPath := filepath.Join(destDir, f.Name)
-
-	// Handle directories
-	if f.FileInfo().IsDir() {
-		return os.MkdirAll(destPath, f.Mode())
-	}
-
-	// Create parent directories
-	if err := os.MkdirAll(filepath.Dir(destPath), 0755); err != nil {
-		return err
-	}
-
-	// Create the file
-	outFile, err := os.OpenFile(destPath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
+func (d *Downloader) downloadFile(ctx context.Context, url, path string) (int64, error) {
+	body, _, err := get(ctx, d.httpClient, d.config.Version, url)
 	if err != nil {
-		return err
+		return 0, err
 	}
-	defer func() { _ = outFile.Close() }()
+	defer func() { _ = body.Close() }()
 
-	// Open the file in the archive
-	rc, err := f.Open()
+	out, err := os.Create(path)
 	if err != nil {
-		return err
+		return 0, err
 	}
-	defer func() { _ = rc.Close() }()
-
-	// Copy contents
-	_, err = io.Copy(outFile, rc)
-	return err
+	n, err := io.Copy(out, body)
+	if cerr := out.Close(); err == nil {
+		err = cerr
+	}
+	return n, err
 }
 
-// Validate checks that the SDE directory has the expected structure.
+// Validate checks that the SDE directory holds every expected table.
 func (d *Downloader) Validate(sdePath string) error {
 	if d.config.Verbose {
 		fmt.Printf("Validating SDE structure at: %s\n", sdePath)
 	}
 
-	// Check for expected files (new flat SDE format)
 	for _, file := range ExpectedFiles {
 		checkPath := filepath.Join(sdePath, file)
 		if _, err := os.Stat(checkPath); os.IsNotExist(err) {
@@ -230,76 +177,62 @@ func (d *Downloader) Validate(sdePath string) error {
 	if d.config.Verbose {
 		fmt.Println("SDE validation successful")
 	}
-
 	return nil
 }
 
-// DownloadAndExtract is a convenience method that downloads and extracts the SDE.
-func (d *Downloader) DownloadAndExtract(ctx context.Context) (string, error) {
-	// Download
-	result, err := d.Download(ctx)
+func userAgent(version string) string {
+	if version == "" {
+		version = "dev"
+	}
+	return fmt.Sprintf("wanderer-sde/%s (https://github.com/guarzo/wanderer-sde)", version)
+}
+
+// get follows redirects (table URLs point at content-addressed blobs) and
+// undoes the gzip the API applies to every file. Go's transport only does
+// that on its own when it asked for gzip itself.
+func get(ctx context.Context, client *http.Client, version, url string) (io.ReadCloser, http.Header, error) {
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
-		return "", err
+		return nil, nil, fmt.Errorf("failed to create request: %w", err)
 	}
+	req.Header.Set("User-Agent", userAgent(version))
 
-	// Determine extraction directory
-	extractDir := filepath.Dir(result.ZipPath)
-
-	// Extract
-	sdePath, err := d.Extract(result.ZipPath, extractDir)
+	resp, err := client.Do(req)
 	if err != nil {
-		// Clean up temp directory on extraction failure
-		_ = os.RemoveAll(extractDir)
-		return "", err
+		return nil, nil, fmt.Errorf("GET %s: %w", url, err)
 	}
-
-	// Clean up ZIP file
-	if err := os.Remove(result.ZipPath); err != nil && d.config.Verbose {
-		fmt.Printf("Warning: failed to remove ZIP file: %v\n", err)
+	if resp.StatusCode != http.StatusOK {
+		_ = resp.Body.Close()
+		return nil, nil, fmt.Errorf("GET %s: unexpected status code: %d", url, resp.StatusCode)
 	}
-
-	// Validate
-	if err := d.Validate(sdePath); err != nil {
-		// Clean up extracted directory on validation failure
-		_ = os.RemoveAll(extractDir)
-		return "", fmt.Errorf("SDE validation failed: %w", err)
+	if !resp.Uncompressed && strings.EqualFold(resp.Header.Get("Content-Encoding"), "gzip") {
+		zr, err := gzip.NewReader(resp.Body)
+		if err != nil {
+			_ = resp.Body.Close()
+			return nil, nil, fmt.Errorf("GET %s: %w", url, err)
+		}
+		return gzipBody{zr, resp.Body}, resp.Header, nil
 	}
-
-	return sdePath, nil
+	return resp.Body, resp.Header, nil
 }
 
-// progressWriter wraps an io.Writer to track and display progress.
-type progressWriter struct {
-	writer        io.Writer
-	total         int64
-	written       int64
-	verbose       bool
-	lastPrintTime time.Time
+type gzipBody struct {
+	*gzip.Reader
+	body io.Closer
 }
 
-func (pw *progressWriter) Write(p []byte) (int, error) {
-	n, err := pw.writer.Write(p)
-	pw.written += int64(n)
+func (g gzipBody) Close() error { return g.body.Close() }
 
-	// Print progress every second
-	if pw.verbose && time.Since(pw.lastPrintTime) > time.Second {
-		pw.printProgress()
-		pw.lastPrintTime = time.Now()
+func getJSON(ctx context.Context, client *http.Client, version, url string, v any) (http.Header, error) {
+	body, header, err := get(ctx, client, version, url)
+	if err != nil {
+		return nil, err
 	}
-
-	return n, err
-}
-
-func (pw *progressWriter) printProgress() {
-	if pw.total > 0 {
-		percent := float64(pw.written) / float64(pw.total) * 100
-		fmt.Printf("\rDownloading: %.1f%% (%s / %s)",
-			percent,
-			formatBytes(pw.written),
-			formatBytes(pw.total))
-	} else {
-		fmt.Printf("\rDownloading: %s", formatBytes(pw.written))
+	defer func() { _ = body.Close() }()
+	if err := json.NewDecoder(body).Decode(v); err != nil {
+		return nil, fmt.Errorf("GET %s: failed to decode JSON: %w", url, err)
 	}
+	return header, nil
 }
 
 // formatBytes formats bytes into a human-readable string.
@@ -309,7 +242,6 @@ func formatBytes(bytes int64) string {
 		MB = KB * 1024
 		GB = MB * 1024
 	)
-
 	switch {
 	case bytes >= GB:
 		return fmt.Sprintf("%.2f GB", float64(bytes)/float64(GB))
